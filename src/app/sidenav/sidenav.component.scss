@@ -1,0 +1,27 @@
+.sidenav > ul {padding:0;margin:0;}
+.sidenav > ul > li > a, header .top-nav ul.navigation > li > a { padding: 0; margin: 0; }
+.sidenavWrap + .top-nav { padding-left:220px;}
+.sidenav { height: calc( 100% - 36px); padding-top:100px; }
+.sidenav > ul { display: inline-block; padding: 0; margin: 0; list-style: none; width: 100%; }
+.sidenav > ul > li { display: block; }
+.sidenav > ul > li > a { display: block; padding:13px 16px 13px 54px; color: #fff;font-family:'Ambit' }
+.sidenav > ul > li > a > i {position: absolute; left:12px;top:5px;}
+.sidenav > ul > li.all-doc > a {line-height:normal;}
+.sidenav > ul > li.all-doc > a > i {top:10px}
+.sidenav > ul > li > a:hover { /*background: #fff;*/ color:#181f2c; text-decoration: none;}
+.sidenav > ul > li > a, .card-header {display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center;}
+.sidenav > ul > li > a.active { /*background: #fff;*/ color:#181f2c; text-decoration: none;}
+.sidenav > ul > li > a.active:after { width: 100%;}
+.sidenav > ul > li > a:hover .fc-home:before, .sidenav > ul > li > a.active .fc-home:before { background-image: url(/assets/images/common/icons/fc-home-d.png); }
+.sidenav > ul > li > a:hover .fc-user-plus:before, .sidenav > ul > li > a.active .fc-user-plus:before { background-image: url(/assets/images/common/icons/fc-user-plus-d.png); }
+.sidenav > ul > li > a:hover .fc-list-thumb:before, .sidenav > ul > li > a.active .fc-list-thumb:before { background-image: url(/assets/images/common/icons/fc-list-thumb-d.png); }
+.sidenav > ul > li > a:hover .fc-map-marker:before, .sidenav > ul > li > a.active .fc-map-marker:before { background-image: url(/assets/images/common/icons/fc-map-marker-d.png); }
+.sidenav > ul > li > a:hover .fc-info:before, .sidenav > ul > li > a.active .fc-info:before { background-image: url(/assets/images/common/icons/fc-info-d.png); }
+.sidenav > ul > li > a:hover .fc-all-documents:before, .sidenav > ul > li > a.active .fc-all-documents.dark:before { background-image: url(/assets/images/common/icons/fc-all-documents-d.png); }
+
+
+
+.copy-txt { position: absolute; bottom: 5px;  left: 0; right:0; text-align: center; color: #fff; }
+.copy-txt:before {content:'';background-image: url(/assets/images/common/icons/fc-copy.png);min-width:16px; min-height:16px;position: absolute;margin-left: -20px;}
+
+

@@ -1,0 +1,33 @@
+<header>
+  
+  <ng-sidebar-container>
+    <ng-sidebar [opened]="opened">
+      <!--- SideBar -->
+      <app-sidenav></app-sidenav>
+    </ng-sidebar>
+    <div ng-sidebar-content>
+      
+      <!--pageContent-->
+        <div class="navbar">
+          <div class="container">
+          <a href="index.html" class="navbar-brand d-flex align-items-center"><img src="assets/images/common/logo.png" alt=""></a>
+          <div class="top-nav">
+            <div class="toogle-search">
+              <button class="navbar-toggler" type="button" (click)="toggleSidebar()"><span class="navbar-toggler-icon"></span></button>
+              <app-search-bar></app-search-bar>
+            </div>
+            <div class="top-menu">
+              <app-sidenav></app-sidenav>
+            </div>
+            <ul class="navigation nav-user">
+              <li><a href="#" class="info-btn"><i class="fc-info dark"></i></a></li>
+              <li><a href="#" class="profile-btn fc-user"><img src="assets/images/common/user-profile.png" alt="user image"></a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+  </ng-sidebar-container>
+  
+ 
+</header>

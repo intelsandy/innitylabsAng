@@ -1,0 +1,22 @@
+<div class="table-responsive">
+<table class="table tbl-form">
+  <thead>
+    <tr>
+      <th>Meeting Title</th>
+      <th>Due Date</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of momDataTbl">
+      <td>{{data.MeetingTitle}}</td>
+      <td>{{data.Duedate}}</td>
+      <td>{{data.Priority}}</td>
+      <td>{{data.Status}}</td>
+      <td><a href="#" class="btn btn-success">{{data.Action}}</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>

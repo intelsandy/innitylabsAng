@@ -1,0 +1,18 @@
+.cust-card {border-radius:0; padding:10px 15px 0 25px; border:0; }
+.cust-card h2 {color:#515151;font-size:18px; line-height:30px; display: inline-block;vertical-align: middle;position: relative;}
+.cust-card h2 > a {position: absolute; right:0; top:-5px;}
+.meeting-listing {margin:0; padding:0;}
+.meeting-listing li{list-style:none; display:table;width:100%;padding-bottom:13px; font-size: 0.9rem;}
+.meeting-listing li > .txt {font-size: 0.8rem;}
+.meeting-listing li > .date {width:100px;}
+.meeting-listing li > .time {width:95px;text-align:right;}
+.meeting-listing li > div{padding:0 10px;display:table-cell; vertical-align:top;}
+.meeting-listing li > div:first-child {padding-left:0;}
+.meeting-listing li > div > span{display:block;}
+.graybg {background:#f7f7f7;}
+.cust-card.graybg {height:545px;}
+.tbl-form.table thead th {border-top:0;border-bottom:0;vertical-align: top;}
+.tbl-form.table td, .tbl-form.table th {border-top:0;}
+.tbl-form.table td {font-size:16px; padding:0 11px;}
+input[type=checkbox] {width:14px; height:14px; border-radius:0; background: #fff; display: inline-block;}
+.meeting-wrap {margin:20px 0 0 10px;}
