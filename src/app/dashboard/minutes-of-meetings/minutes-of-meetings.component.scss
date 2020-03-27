@@ -2,10 +2,10 @@
 .meeting-listing {margin:0; padding:0;
     li{list-style:none; display:table;width:100%;padding-bottom:13px; font-size: 0.8rem;}
     li > .txt {font-size: 0.9rem;}
-    li > .date {width:100px;}
-    li > .time {width:95px;text-align:right;}
+    li > .date {width:100px;font-size: 0.8rem;}
+    li > .time {width:95px;text-align:right;font-size: 0.8rem;}
     li > div{padding:0 10px;display:table-cell; vertical-align:top;}
-    li > div:first-child {padding-left:0;}
+    li > div:first-child {padding-left:0;line-height:normal;}
     li > div > span{display:block;}
 }
 
@@ -14,3 +14,23 @@ input[type=checkbox] {width:14px; height:14px; border-radius:0; background: #fff
 
 
 
+@media (max-width: 991.98px) {
+  .meeting-listing {
+    li{display:block;width:100%;
+       div{padding:0 10px;display:block;}
+       .date {width:100px;font-size: 0.8rem;display:inline-block;padding:0;}
+       .time {width:95px;text-align:right;font-size: 0.8rem;display:inline-block;padding:0;}
+      }
+    }
+}
+
+@media (max-width: 767.98px) {
+  .meeting-listing {
+    li{display:table;width:100%;
+       div{padding:0 10px;display:table-cell;}
+       .txt {width:50%}
+       .date {width:100px;font-size: 0.8rem;}
+       .time {width:95px;text-align:right;font-size: 0.8rem;}
+      }
+    }
+}

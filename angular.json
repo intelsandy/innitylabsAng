@@ -29,13 +29,10 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/media.scss",
               "src/assets/fontface.css",
               "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": [
-              "src/assets/js/main.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

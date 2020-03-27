@@ -14,7 +14,7 @@ export class PieChartComponent implements OnInit {
     responsive: true,
     legend: {
       position: 'right',
-      labels: { fontSize: 15, fontFamily:"'Ambit', Arial, Helvetica, sans-serif", fontColor: '#000' }
+      labels: { fontSize: 16, fontFamily:"'Ambit', Arial, Helvetica, sans-serif", fontColor: '#000' }
     }
   };
   public pieChartLabels: Label[] = [['Information'], ['Decisions'], 'Actions'];

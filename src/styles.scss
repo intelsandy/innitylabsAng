@@ -39,7 +39,6 @@ body {
 .sidenav > ul > li > a:active,
 .top-nav ul.navigation > li > a:hover,
 .top-nav ul.navigation > li > a:active { color: #0e83cd;}
-
 .btn-1c:hover:after,
 .btn-1c:active:after,
 .sidenav > ul > li > a:hover:after,
@@ -87,10 +86,12 @@ body {
 .sidenavClosed .wrapper {margin:45px 0px 0 0px; transition: all 0.3s;width:calc(100% - 0%);}
 
 
+/**TopMenu Css**/
 .top-menu {display:inline-block;
   .sidenav { height:auto;  width:100%;padding-top:0px !important;
-        li { display: inline-block !important; }
-        li > a { display: inline-block; padding:13px 20px 13px 20px !important; color: #fff;font-family:'Ambit' }
+        li { display: inline-block !important;
+          a { display: inline-block; padding:13px 20px 13px 20px !important; color: #fff;font-family:'Ambit' }
+        }
         li > a > span,
         li.all-doc > a > span {display: none;}
         li > a > i {position: absolute; left:12px;top:5px;}
@@ -110,9 +111,9 @@ body {
 
 
 .graybg {background:#f7f7f7;height:100%;}
-.tbl-form.table thead th {border-top:0;border-bottom:0;vertical-align: top;}
+.tbl-form.table thead th {border-top:0;border-bottom:0;vertical-align: top;font-size:14px; font-family: 'Microsoft New Tai Lue';}
 .tbl-form.table td, .tbl-form.table th {border-top:0;}
-.tbl-form.table td {font-size:16px; padding:6px 11px;}
+.tbl-form.table td {font-size:15px; padding:6px 11px;line-height: normal;}
 
 .wrap .card {border-radius:0; padding:10px 15px 0 15px; border:0;}
 .cust-card {border-radius:0; padding:10px 15px 0 25px; border:0;
