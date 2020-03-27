@@ -1,5 +1,5 @@
 * {margin:0; padding:0;}
-body { font-family:'Ambit', Arial, Helvetica, sans-serif; font-size: 14px; background-color: #e9edf4 !important; transition: margin-left 0s;}
+body { font-family:'Ambit', Arial, Helvetica, sans-serif !important; font-size: 14px; background-color: #e9edf4 !important; transition: margin-left 0s;}
 body, header .navbar .navbar-brand { transition: 0.5s;}
 body.sidenavOpend { margin-left: 220px; padding-top: 64px;
   .sidenavWrap {width:220px;/* background: rgba(24,31,44,1); */}
