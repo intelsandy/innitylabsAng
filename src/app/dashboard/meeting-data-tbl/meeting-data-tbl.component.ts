@@ -9,18 +9,18 @@ export class MeetingDataTblComponent implements OnInit {
 
   momDataTbl: any;
 
-  constructor() { 
+  constructor() {
     this.momDataTbl = [
       {
       MeetingTitle: 'Design Thinking Workshop',
-      Duedate : 'today',
+      Duedate : 'Today',
       Priority : 'High',
       Status: 'Open',
       Action: 'Update'
       },
       {
       MeetingTitle: 'UX Sitemap Discussion',
-      Duedate : 'today',
+      Duedate : 'Today',
       Priority : 'High',
       Status: 'Open',
       Action: 'Update'
