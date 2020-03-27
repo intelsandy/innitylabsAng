@@ -38,3 +38,9 @@ ng-sidebar {display:table-cell; width:220px; background:red;}
 .sidenavOpend .navbar-toggler > .navbar-toggler-icon:after { content: ''; height: 100%; width: 100%; left: 0; position: absolute; transform: rotate(0); }
 .sidenavOpend .navbar-toggler > .navbar-toggler-icon:before { top: -8px; }
 .sidenavOpend .navbar-toggler > .navbar-toggler-icon:after { bottom: -8px; }
+
+
+@media (max-width: 991.98px) {
+  .toogle-search {width:50%}
+}
+
