@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
-import { SingleDataSet, Label, Color, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 
 
 @Component({
@@ -14,6 +14,7 @@ export class PieChartComponent implements OnInit {
     responsive: true,
     legend: {
       position: 'right',
+      labels: { fontSize: 15, fontFamily:"'Ambit', Arial, Helvetica, sans-serif", fontColor: '#000' }
     }
   };
   public pieChartLabels: Label[] = [['Information'], ['Decisions'], 'Actions'];

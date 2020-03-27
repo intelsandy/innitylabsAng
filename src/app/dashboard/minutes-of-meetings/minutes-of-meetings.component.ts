@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MinutesOfMeetingsComponent implements OnInit {
   momdata: any;
-  heading = 'Minutes of Meetings';
+  heading = 'Minutes of Meeting';
 
 constructor() {
   this.momdata = [
