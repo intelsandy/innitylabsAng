@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'innitylabs';
 
+  opened = true;
+
+  toggleSidebar() {
+    this.opened = !this.opened;
+    document.querySelector("body").classList.toggle("sidenavClosed");
+  }
+
 }

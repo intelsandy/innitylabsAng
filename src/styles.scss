@@ -2,10 +2,10 @@ body { font-family:'Ambit', Arial, Helvetica, sans-serif; font-size: 14px; backg
 .container.fluid { width:100%; max-width: none; }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 h3 {font-size: 1.6rem; font-weight: 400;}
-/* header .navbar .container { justify-content:flex-start; } */
 
 .row-zero{margin-left:-15px;margin-right:-15px}
 .row-zero > [class^="col"]{padding-left:0px;padding-right:0px;}
+.btn {border-radius:0 !important;padding: 0.100rem 0.75rem !important;}
 /* General button style (reset) */
 .anim-btn,
 .sidenav > ul > li > a,
@@ -87,8 +87,8 @@ body.sidenavOpend .sidenavWrap + .top-nav {background: #fff;}
 /* Custom Icons */
 
 
-.wrapper {display: inline-block;margin: 47px 0 0 200px;transition: all 0.3s;overflow: hidden;padding: 1rem;width:calc(100% - 220px);}
-.sidenavClosed .wrapper {margin:47px 0px 0 0px;padding:1rem; transition: all 0.3s;width:calc(100% - 0%);}
+.wrapper {display: inline-block;margin: 45px 0 0 220px;transition: all 0.3s;overflow: hidden;width:calc(100% - 220px);}
+.sidenavClosed .wrapper {margin:45px 0px 0 0px; transition: all 0.3s;width:calc(100% - 0%);}
 
 
 .top-menu {display:inline-block;}
@@ -101,8 +101,8 @@ body.sidenavOpend .sidenavWrap + .top-nav {background: #fff;}
 .top-menu .sidenav > ul > li.all-doc > a {line-height:normal;}
 .top-menu .sidenav > ul > li.all-doc > a > i {top:5px !important}
 .top-menu .sidenav > ul > li.abt {display:none !important;}
-.top-menu .sidenav > ul > li > a:hover .fc-home:before, 
-.top-menu .sidenav > ul > li > a.active .fc-home:before { background-image: url(/assets/images/common/icons/fc-home-d.png); }
+.top-menu .sidenav > ul > li > a:hover .fc-home:before,
+.top-menu .sidenav > ul > li > a .fc-home:before { background-image: url(/assets/images/common/icons/fc-home-d.png); }
 .top-menu .sidenav > ul > li > a .fc-user-plus:before { background-image: url(/assets/images/common/icons/fc-user-plus-d.png); }
 .top-menu .sidenav > ul > li > a .fc-list-thumb:before { background-image: url(/assets/images/common/icons/fc-list-thumb-d.png); }
 .top-menu .sidenav > ul > li > a .fc-map-marker:before { background-image: url(/assets/images/common/icons/fc-map-marker-d.png); }
@@ -110,7 +110,9 @@ body.sidenavOpend .sidenavWrap + .top-nav {background: #fff;}
 .top-menu .sidenav > ul > li > a .fc-all-documents:before { background-image: url(/assets/images/common/icons/fc-all-documents-d.png); }
 .top-menu .copy-txt {display:none;}
 
+
+
 .graybg {background:#f7f7f7;height:100%;}
 .tbl-form.table thead th {border-top:0;border-bottom:0;vertical-align: top;}
 .tbl-form.table td, .tbl-form.table th {border-top:0;}
-.tbl-form.table td {font-size:16px; padding:0 11px;}
+.tbl-form.table td {font-size:16px; padding:6px 11px;}

@@ -1,8 +1,9 @@
-ng-sidebar-container {min-height:150vh;display:table;width:100%;}
-ng-sidebar {display:table-cell; width:220px;}
-ng-sidebar-content {padding-left:220px;display:table-cell;}
+ng-sidebar-container {min-height:175vh;display:table;width:100%;}
+ng-sidebar {display:table-cell; width:220px; background:red;}
+.ng-sidebar__content {padding-left:220px;display:table-cell;position:relative;}
 ::ng-deep .ng-sidebar {width:220px; background:#181f2c;}
 .toogle-search {display:inline-block;}
+
 header {position: absolute;width:100%}
 header .navbar { padding-left: 220px; }
 header .navbar .navbar-brand {position: fixed;left: 0;top: 0;z-index: 3;margin: 0;padding: 0;min-width: 220px;text-align: center;padding: 19px 0;background: rgba(24,31,44,1);/* background-color: white; */}
@@ -48,7 +49,6 @@ header .top-nav ul.navigation > li > a:hover .fc-bell:before { background-image:
 .navbar-toggler > .navbar-toggler-icon:before,
 .navbar-toggler > .navbar-toggler-icon:after { height: 4px; background:#181f2c; width: 28px; position: relative; border-radius: 2px; transition: all 0.3s; }
 .navbar-toggler > .navbar-toggler-icon:before{ content: ''; height: 100%; width: 100%; left: 0; position: absolute; top: -8px; background:#181f2c;  }
-
 .navbar-toggler > .navbar-toggler-icon:after { content: ''; height: 100%; width: 100%; left: 0; position: absolute; bottom: -8px;background:#181f2c; }
 
 .sidenavOpend .navbar-toggler > .navbar-toggler-icon,
