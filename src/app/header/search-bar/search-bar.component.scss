@@ -1,5 +1,7 @@
-.search-input-sec {min-width:400px; display:inline-block;}
-.search-input-sec .form-group { margin: 0; }
-.search-input-sec .form-group > button { width:40px; height: 40px; line-height: 40px; padding:0; margin: 0; border: 0;  outline: 0; text-align: center; }
-.search-input-sec .form-group > button > i { vertical-align: top; }
-.search-input-sec .form-group > input[type="text"]{ color:#181f2c; border: 0; outline: 0; line-height: 40px; padding: 0;min-width: 250px;}
+.search-input-sec {min-width:400px; display:inline-block;
+    .form-group { margin: 0;
+        button { width:40px; height: 40px; line-height: 40px; padding:0 !important; margin: 0; border: 0;  outline: 0; text-align: center; }
+        button > i { vertical-align: top; }
+        input[type="text"]{ color:#181f2c; border: 0; outline: 0; line-height: 40px; padding: 0;min-width: 250px;font-size: 1.2rem; color:#000}
+    }
+  }
