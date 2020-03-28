@@ -12,6 +12,7 @@ import { MinutesOfMeetingsComponent } from './dashboard/minutes-of-meetings/minu
 import { MeetingDataTblComponent } from './dashboard/meeting-data-tbl/meeting-data-tbl.component';
 import { ChartsModule } from 'ng2-charts';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
+import { DocumentMomComponent } from './document-mom/document-mom.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
     DashboardComponent,
     MinutesOfMeetingsComponent,
     MeetingDataTblComponent,
-    PieChartComponent
+    PieChartComponent,
+    DocumentMomComponent
   ],
   imports: [
     BrowserModule,
