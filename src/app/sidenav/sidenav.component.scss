@@ -36,6 +36,15 @@
 .fc-copy {width:30px; display:inline-block}
 .fc-copy:before {top:-2px; position: absolute;}
 
+.sidenav > ul > li > a.active { /*background: #fff;*/ color:#181f2c; text-decoration: none;}
+.sidenav > ul > li > a.active:after { width: 100%;}
+
+.sidenav > ul > li > a:hover .fc-home:before, .sidenav > ul > li > a.active .fc-home:before { background-image: url(/assets/images/common/icons/fc-home-d.png); }
+.sidenav > ul > li > a:hover .fc-user-plus:before, .sidenav > ul > li > a.active .fc-user-plus:before { background-image: url(/assets/images/common/icons/fc-user-plus-d.png); }
+.sidenav > ul > li > a:hover .fc-list-thumb:before, .sidenav > ul > li > a.active .fc-list-thumb:before { background-image: url(/assets/images/common/icons/fc-list-thumb-d.png); }
+.sidenav > ul > li > a:hover .fc-map-marker:before, .sidenav > ul > li > a.active .fc-map-marker:before { background-image: url(/assets/images/common/icons/fc-map-marker-d.png); }
+.sidenav > ul > li > a:hover .fc-info:before, .sidenav > ul > li > a.active .fc-info:before { background-image: url(/assets/images/common/icons/fc-info-d.png); }
+
 
 @media (max-width: 767.98px) {
   .copy-txt span {display:none}

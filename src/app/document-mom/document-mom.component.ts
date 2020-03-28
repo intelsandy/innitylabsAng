@@ -10,6 +10,7 @@ export class DocumentMomComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
