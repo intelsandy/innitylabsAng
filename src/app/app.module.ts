@@ -18,6 +18,7 @@ import { DocumentMomComponent } from './document-mom/document-mom.component';
 import { AllDocumentedMomComponent } from './all-documented-mom/all-documented-mom.component';
 import { TrackActionComponent } from './track-action/track-action.component';
 import { AboutComponent } from './about/about.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     ChartsModule,
     SidebarModule.forRoot(),
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [MeetingdataService],
   bootstrap: [AppComponent]
