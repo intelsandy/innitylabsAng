@@ -2,7 +2,7 @@ ng-sidebar-container {position: absolute;}
 ng-sidebar {display:table-cell; width:220px;}
 .ng-sidebar__content {padding-left:220px;display:table-cell;position:relative;}
 ::ng-deep .ng-sidebar {width:220px; background:#181f2c;}
-.toogle-search {display:inline-block;}
+.toogle-search {display:inline-block;vertical-align: top;}
 
 /**NavBar Css**/
 .navbar { padding-left: 220px;
@@ -45,6 +45,17 @@ ng-sidebar {display:table-cell; width:220px;}
 
 @media (max-width: 991.98px) {
   .toogle-search {width:50%;vertical-align: top;}
+}
+
+@media (max-width: 767.98px) {
+  ::ng-deep .ng-sidebar {width:60px;}
+  .navbar .navbar-brand {width:100%}
+  .top-nav {margin-top:64px;width: 100%;left: 0 !important;z-index:12 !important;}
+
+  .sidenav > ul > li > a > span {display:none}
+
+  .top-nav {left:0px}
+
 }
 
 

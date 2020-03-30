@@ -48,4 +48,10 @@
 
 @media (max-width: 767.98px) {
   .copy-txt span {display:none}
+  .sidenav > ul > li > a > span {display:none;}
+  .sidenav > ul > li > a { padding:25px 0 ;}
+  .sidenav {padding-top:150px}
+
+  
+  .sidenavClosed .top-nav {left:0px !important}
 }

@@ -1,17 +1,14 @@
 /*******Tabs*************/
 .tab-content {background: #fff;padding: 1rem;}
-.nav-pills .nav-item + .nav-item {margin-left:0.5rem}
-.nav-pills .nav-link {border-radius: 0;font-size: 1rem;position: relative;color: #515151;background: #b9c1ce;margin-bottom: 5px;}
-.nav-pills .nav-link.active{background: #3f84fc;}
-.nav-pills .nav-link.active:after, .nav-pills .show>.nav-link:after{content:'';position: absolute;bottom: -13px;border-left: 16px solid transparent;border-right: 16px solid transparent;border-top: 13px solid #3f84fc;width: 0;height: 0;left: 0;right: 0;margin: 0 auto;}
-.nav-pills .nav-link.success{background-color: #28a745;color: #fff;}
-.btn-primary{background-color: #17a2b8; border: 0}
-.btn-primary:hover{background-color: #1b5fd6; border: 0}
-.btn-secondary{background-color: #fb6362; border: 0;}
-.btn-secondary:hover{background-color: #d24544; border: 0;}
-.btn-orange-sm{background: #ff5a00;padding: 0.2rem 0.9rem;font-size: 1rem;color: #fff;border-radius: 0;border: 0;}
-.btn-orange-sm:hover{ background: #ddd;}
+.nav-tabs {border-bottom:0;}
+.nav-tabs .nav-item + .nav-item {margin-left:0.5rem}
+.nav-tabs .nav-link {border-radius: 0;font-size: 1rem;position: relative;color: #515151;background: #b9c1ce;margin-bottom: 5px;}
+.nav-tabs .nav-link.active{background: #3f84fc;color:#fff;}
+.nav-tabs .nav-link.active:after, .nav-pills .show>.nav-link:after{content:'';position: absolute;bottom: -13px;border-left: 16px solid transparent;border-right: 16px solid transparent;border-top: 13px solid #3f84fc;width: 0;height: 0;left: 0;right: 0;margin: 0 auto;}
+.nav-tabs .nav-link.success{background-color: #28a745;color: #fff;}
 #meetingSetup .col-form-label, #SessionTopic .col-form-label { padding-left: 12px; padding-right: 12px;}
 .date-picker input {position: relative;z-index: 1;background: none;}
 .date-picker input:before {content:'...';position: absolute;color: #000;left: 0;top:0;width: 4rem;height: 4rem;background: #ddd;display: inline-block;z-index: 9;}
 /*******Tabs*************/
+
+

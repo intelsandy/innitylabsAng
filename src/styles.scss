@@ -15,8 +15,13 @@ body {
 .row-zero > [class^="col"]{padding-left:0px;padding-right:0px;}
 
 .container.fluid { width:100%; max-width: none; }
-.btn {border-radius:0 !important;padding: 0.100rem 0.75rem !important; font-weight:500 !important;}
-
+.btn {border-radius:0 !important; font-weight:600 !important;}
+.btn-primary{background-color: #17a2b8; border: 0}
+.btn-primary:hover{background-color: #1b5fd6; border: 0}
+.btn-secondary{background-color: #fb6362; border: 0;}
+.btn-secondary:hover{background-color: #d24544; border: 0;}
+.btn-orange-sm{background: #ff5a00;padding: 0.2rem 0.9rem;font-size: 1rem;color: #fff;border-radius: 0;border: 0;}
+.btn-orange-sm:hover{ background: #ddd;}
 
 
 /* General button style (reset) */
@@ -82,8 +87,8 @@ body {
 /* Custom Icons */
 
 
-.wrapper {display: inline-block;margin: 45px 0 0 220px;transition: all 0.3s;overflow: hidden;width:calc(100% - 220px);}
-.sidenavClosed .wrapper {margin:45px 0px 0 0px; transition: all 0.3s;width:calc(100% - 0%);}
+.wrapper {display: inline-block;margin: 65px 0 0 220px;transition: all 0.3s;overflow: hidden;width:calc(100% - 220px);}
+.sidenavClosed .wrapper {margin:65px 0px 0 0px; transition: all 0.3s;width:calc(100% - 0%);}
 
 
 /**TopMenu Css**/
@@ -118,4 +123,17 @@ body {
 .wrap .card {border-radius:0; padding:10px 15px 0 15px; border:0;}
 .cust-card {border-radius:0; padding:10px 15px 0 25px; border:0;
   h2 {line-height:30px; display: inline-block;vertical-align: middle;position: relative;}
+}
+
+
+@media (max-width: 576.98px) {
+  
+}
+
+
+@media (max-width: 767.98px) {
+
+  .wrapper {margin: 132px 0 0 60px;width: calc(100% - 60px);}
+  .sidenavClosed .wrapper {margin: 112px 0 0 0px;width: calc(100% - 0px);}
+  .container, .container-sm {max-width: 100% !important;width: 100%;}
 }

@@ -14,6 +14,9 @@ import { MeetingDataTblComponent } from './dashboard/meeting-data-tbl/meeting-da
 import { ChartsModule } from 'ng2-charts';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { DocumentMomComponent } from './document-mom/document-mom.component';
+import { AllDocumentedMomComponent } from './all-documented-mom/all-documented-mom.component';
+import { TrackActionComponent } from './track-action/track-action.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { DocumentMomComponent } from './document-mom/document-mom.component';
     MinutesOfMeetingsComponent,
     MeetingDataTblComponent,
     PieChartComponent,
-    DocumentMomComponent
+    DocumentMomComponent,
+    AllDocumentedMomComponent,
+    TrackActionComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
