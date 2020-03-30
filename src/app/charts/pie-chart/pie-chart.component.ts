@@ -14,15 +14,13 @@ export class PieChartComponent implements OnInit {
     responsive: true,
     legend: {
       position: 'right',
-      labels: { fontSize: 16, fontFamily:"'Ambit', Arial, Helvetica, sans-serif", fontColor: '#000' }
+      labels: { fontSize: 16, fontFamily: '\'Ambit\', Arial, Helvetica, sans-serif', fontColor: '#000' }
     }
   };
   public pieChartLabels: Label[] = [['Information'], ['Decisions'], 'Actions'];
   public pieChartData: SingleDataSet = [45, 35, 40];
   public pieChartType: ChartType = 'pie';
-  //public pieChartColors: Color = ['#ffd700', '#00c0ef', '#91cd18'];
   public pieChartLegend = true;
-  public pieChartPlugins = [];
   public pieChartColors = [
     {
       backgroundColor: ['#ffd700', '#00c0ef', '#91cd18'],
