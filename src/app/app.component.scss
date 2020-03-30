@@ -6,7 +6,7 @@ ng-sidebar {display:table-cell; width:220px;}
 
 /**NavBar Css**/
 .navbar { padding-left: 220px;
-    .navbar-brand {position: fixed;left: 0;top: 0;z-index: 3;margin: 0;padding: 0;min-width: 220px;text-align: center;padding: 19px 0;background: rgba(24,31,44,1);
+    .navbar-brand {position: fixed;left: 0;top: 0;z-index: 3;margin: 0;min-width: 220px;text-align: center;padding: 17px 0;background: rgba(24,31,44,1);
       img { margin: 0 auto; }
     }
     .navbar-brand .navbar-toggler{display: none;}
@@ -50,7 +50,7 @@ ng-sidebar {display:table-cell; width:220px;}
 @media (max-width: 767.98px) {
   ::ng-deep .ng-sidebar {width:60px;}
   .navbar .navbar-brand {width:100%}
-  .top-nav {margin-top:64px;width: 100%;left: 0 !important;z-index:12 !important;}
+  .top-nav {margin-top:60px;width: 100%;left: 0 !important;z-index:12 !important;}
 
   .sidenav > ul > li > a > span {display:none}
 
