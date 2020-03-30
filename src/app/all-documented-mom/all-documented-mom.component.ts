@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MeetingdataService } from '../meetingdata.service';
 
 @Component({
   selector: 'app-all-documented-mom',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-documented-mom.component.scss']
 })
 export class AllDocumentedMomComponent implements OnInit {
+  meetingdtlTBL: any;
 
-  constructor() { }
+  constructor(private service: MeetingdataService) {}
 
   ngOnInit(): void {
+    this.meetingdtlTBL = this.service.getMeetingData();
   }
 
 }

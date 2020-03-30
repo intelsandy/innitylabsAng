@@ -2,6 +2,32 @@
   <section>
       <div class="container">
           <h3>All Documented MOM</h3>
+          <div class="main-container">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Meeting Owner</th>
+                    <th>Meeting Title</th>
+                    <th>Meeting Start Date</th>
+                    <th>Meeting End Date</th>
+                    <th>Meeting Location</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of meetingdtlTBL">
+                    <td>{{data.meetingOwner}}</td>
+                    <td>{{data.meetingTitle}}</td>
+                    <td>{{data.meetingStartDate}}</td>
+                    <td>{{data.meetingEndDate}}</td>
+                    <td>{{data.meetingLocation}}</td>
+                    <td><a href="#" class="btn btn-sm btn-primary">{{data.actionView}}</a><a href="#" class="btn btn-sm btn-success">{{data.actionEdit}}</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
       </div>
   </section>
 </div>
