@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NgbNavChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-document-mom',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
 })
 export class DocumentMomComponent {
   active = 1;
-
+  // disable = false;
+  onNavChange(changeEvent: NgbNavChangeEvent) {
+    if (changeEvent) {
+      console.log(changeEvent.activeId);
+    }
+    // if (changeEvent.nextId === 3) {
+    //   changeEvent.preventDefault();
+    // }
+  }
 }
