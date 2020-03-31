@@ -1,188 +1,183 @@
 <div class="wrapper">
-    <section>
-        <div class="container">
-            <h3>New Meeting</h3>
-          <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-            <li [ngbNavItem]="1">
-              <a ngbNavLink>Meeting Setup</a>
-              <ng-template ngbNavContent>
-                <form>
-                  <div class="form-group row">
-                    <label for="MeetingOwner" class="col-sm-2 col-form-label">Meeting Owner</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="MeetingOwner">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="MeetingName" class="col-sm-2 col-form-label">Meeting Name</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="MeetingName">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="MeetingStartDate" class="col-sm-2 col-form-label">Meeting Start Date</label>
-                    <div class="col-sm-3 date-picker">
-                      <input id="MeetingStartDate" class="form-control" type="text" placeholder="Select your start date" readonly="readonly">
-                    </div>
-                    <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
-                    <div class="col-sm-3 date-picker">
-                      <input id="MeetingEndDate" class="form-control" type="text" placeholder="Select your end date" readonly="readonly">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="MeetingLocaltion" class="col-sm-2 col-form-label">Meeting Localtion</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="MeetingLocaltion">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="OtherInformation" class="col-sm-2 col-form-label">Other Information</label>
-                    <div class="col-sm-9">
-                      <textarea class="form-control" id="OtherInformation"></textarea>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="d-flex justify-content-center col">
-                      <button class="btn-primary btn mr-2">Cancel</button>
-                      <button class="btn-secondary btn" id="sessionTab">Save and Continue</button>
-                    </div>
-                  </div>
-                </form>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="2">
-              <a ngbNavLink>Session Topic</a>
-              <ng-template ngbNavContent>
-                <form>
-                  <div id="sesion-topic-1">
+  <section>
+      <div class="container">
+          <h3>New Meeting</h3>
+          <form [formGroup]="meetingDataForm" (ngSubmit)="onSubmit()">
+            <ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event)" class="nav-tabs">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>Meeting Setup</a>
+                <ng-template ngbNavContent>
                     <div class="form-group row">
-                      <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic 1</b></label>
+                      <label for="MeetingOwner" class="col-sm-2 col-form-label">Meeting Owner</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="SessionTopic1">
+                        <input type="text" class="form-control" id="MeetingOwner" formControlName="MeetingOwner">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="Preseenter" class="col-sm-2 col-form-label">Preseenter</label>
+                      <label for="MeetingName" class="col-sm-2 col-form-label">Meeting Name</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="Preseenter">
+                        <input type="text" class="form-control" id="MeetingName" formControlName="MeetingName">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="ExternalPresenter" class="col-sm-2 col-form-label">External Presenter</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="ExternalPresenter">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="MeetingDate" class="col-sm-2 col-form-label">Meeting Date</label>
+                      <label for="MeetingStartDate" class="col-sm-2 col-form-label">Meeting Start Date</label>
                       <div class="col-sm-3 date-picker">
-                        <input id="MeetingDate" class="form-control" type="text" placeholder="22/03/2020" readonly="readonly">
+                        <input id="MeetingStartDate" class="form-control" type="date" placeholder="Select your start date" formControlName="MeetingStartDate">
                       </div>
                       <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
                       <div class="col-sm-3 date-picker">
-                        <input id="MeetingEndDate" class="form-control" type="text" placeholder="Select your end date" readonly="readonly">
+                        <input id="MeetingEndDate" class="form-control" type="date" placeholder="Select your end date" formControlName="MeetingEndDate">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="MeetingLocaltion" class="col-sm-2 col-form-label">Meeting Localtion</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="MeetingLocaltion">
+                        <input type="text" class="form-control" id="MeetingLocaltion" formControlName="MeetingLocaltion">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="OtherInformation" class="col-sm-2 col-form-label">Other Information</label>
                       <div class="col-sm-9">
-                        <textarea class="form-control" id="OtherInformation"></textarea>
+                        <textarea class="form-control" id="OtherInformation" formControlName="OtherInformation"></textarea>
                       </div>
                     </div>
-                  </div>
-                  <div id="cloned" style="display: none;">
-                    <hr>
+                    <div class="form-group row">
+                      <div class="d-flex justify-content-center col">
+                        <button class="btn-primary btn mr-2" (click)="nav.select(1)">Cancel</button>
+                        <button class="btn-secondary btn" id="sessionTab" (click)="nav.select(2)" [disabled]="!meetingDataForm.valid">Save and Continue</button>
+                      </div>
+                    </div>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>Session Topic</a>
+                <ng-template ngbNavContent>
+                    <div id="sesion-topic-1">
+                      <div class="form-group row">
+                        <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic 1</b></label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="SessionTopic1">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="Preseenter" class="col-sm-2 col-form-label">Preseenter</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="Preseenter">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="ExternalPresenter" class="col-sm-2 col-form-label">External Presenter</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="ExternalPresenter">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="MeetingDate" class="col-sm-2 col-form-label">Meeting Date</label>
+                        <div class="col-sm-3 date-picker">
+                          <input id="MeetingDate" class="form-control" type="text" placeholder="22/03/2020">
+                        </div>
+                        <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
+                        <div class="col-sm-3 date-picker">
+                          <input id="MeetingEndDate" class="form-control" type="text" placeholder="Select your end date">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="MeetingLocaltion" class="col-sm-2 col-form-label">Meeting Localtion</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="MeetingLocaltion">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="OtherInformation" class="col-sm-2 col-form-label">Other Information</label>
+                        <div class="col-sm-9">
+                          <textarea class="form-control" id="OtherInformation"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="cloned" style="display: none;">
+                      <hr>
 
-                  </div>
-                  <div class="form-group row">
-                    <div class="d-flex col">
-                      <a class="btn-orange-sm btn" id="addNew" href="#">+ Add Session Topic 2</a>
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="d-flex justify-content-center col">
-                      <button class="btn-primary btn mr-2">Cancel</button>
-                      <button class="btn-secondary btn" id="summaryTab">Save and Continue</button>
-                    </div>
-                  </div>
-                </form>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="3">
-              <a ngbNavLink>Meeting Summary</a>
-              <ng-template ngbNavContent>
-                <form>
-                  <div id="sesion-topic-1">
                     <div class="form-group row">
-                      <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic 1</b></label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="SessionTopic1">
+                      <div class="d-flex col">
+                        <a class="btn-orange-sm btn" id="addNew" href="#">+ Add Session Topic 2</a>
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="Preseenter" class="col-sm-2 col-form-label">Preseenter</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="Preseenter">
+                      <div class="d-flex justify-content-center col">
+                        <button class="btn-primary btn mr-2" (click)="nav.select(1)">Cancel</button>
+                        <button class="btn-secondary btn" (click)="nav.select(3)">Save and Continue</button>
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label for="ExternalPresenter" class="col-sm-2 col-form-label">External Presenter</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="ExternalPresenter">
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>Meeting Summary</a>
+                <ng-template ngbNavContent>
+                    <div id="sesion-topic-1">
+                      <div class="form-group row">
+                        <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic 1</b></label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="SessionTopic1">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="Preseenter" class="col-sm-2 col-form-label">Preseenter</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="Preseenter">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="ExternalPresenter" class="col-sm-2 col-form-label">External Presenter</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="ExternalPresenter">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="MeetingDate" class="col-sm-2 col-form-label">Meeting Date</label>
+                        <div class="col-sm-3 date-picker">
+                          <input id="MeetingDate" class="form-control" type="text" placeholder="22/03/2020">
+                        </div>
+                        <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
+                        <div class="col-sm-3 date-picker">
+                          <input id="MeetingEndDate" class="form-control" type="text" placeholder="Select your end date">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="MeetingLocaltion" class="col-sm-2 col-form-label">Meeting Localtion</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="MeetingLocaltion">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="OtherInformation" class="col-sm-2 col-form-label">Other Information</label>
+                        <div class="col-sm-9">
+                          <textarea class="form-control" id="OtherInformation"></textarea>
+                        </div>
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label for="MeetingDate" class="col-sm-2 col-form-label">Meeting Date</label>
-                      <div class="col-sm-3 date-picker">
-                        <input id="MeetingDate" class="form-control" type="text" placeholder="22/03/2020" readonly="readonly">
-                      </div>
-                      <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
-                      <div class="col-sm-3 date-picker">
-                        <input id="MeetingEndDate" class="form-control" type="text" placeholder="Select your end date" readonly="readonly">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="MeetingLocaltion" class="col-sm-2 col-form-label">Meeting Localtion</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="MeetingLocaltion">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="OtherInformation" class="col-sm-2 col-form-label">Other Information</label>
-                      <div class="col-sm-9">
-                        <textarea class="form-control" id="OtherInformation"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="cloned" style="display: none;">
-                    <hr>
+                    <div id="cloned" style="display: none;">
+                      <hr>
 
-                  </div>
-                  <div class="form-group row">
-                    <div class="d-flex col">
-                      <a class="btn-orange-sm btn" id="addNew" href="#">+ Add Session Topic 2</a>
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="d-flex justify-content-center col">
-                      <button class="btn-primary btn mr-2">Cancel</button>
-                      <button class="btn-secondary btn" id="summaryTab">Save and Continue</button>
+                    <div class="form-group row">
+                      <div class="d-flex col">
+                        <a class="btn-orange-sm btn" id="addNew" href="#">+ Add Session Topic 2</a>
+                      </div>
                     </div>
-                  </div>
-                </form>
-              </ng-template>
-            </li>
-          </ul>
-
+                    <div class="form-group row">
+                      <div class="d-flex justify-content-center col">
+                        <button class="btn-primary btn mr-2"  (click)="nav.select(2)">Cancel</button>
+                        <button class="btn-secondary btn">Save and Continue</button>
+                      </div>
+                    </div>
+                </ng-template>
+              </li>
+            </ul>
+          </form>
           <div [ngbNavOutlet]="nav" class=""></div>
 
-        </div>
-    </section>
+      </div>
+  </section>
 
- </div>
+</div>
