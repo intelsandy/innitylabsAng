@@ -1,40 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbNavChangeEvent} from '@ng-bootstrap/ng-bootstrap';
-
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MeetingdataService } from '../meetingdata.service';
 
 @Component({
-  selector: 'app-document-mom',
-  templateUrl: './document-mom.component.html',
-  styleUrls: ['./document-mom.component.scss']
+  selector: 'app-session-topic',
+  templateUrl: './session-topic.component.html',
+  styleUrls: ['./session-topic.component.scss']
 })
-export class DocumentMomComponent implements OnInit{
-  active = 1;
-  // disable = false;
-  constructor( private metingdataService: MeetingdataService) {   }
-  ngOnInit() {
-  }
-  
-  onSubmit(){
-      // this.metingdataService.addRecipe(this.meetingDataForm.value);
-      console.log(this.meetingDataForm.value);
+export class SessionTopicComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
   }
 
-  onNavChange(changeEvent: NgbNavChangeEvent) {
-    if (changeEvent) {
-      console.log(changeEvent.activeId);
-    }
-    // if (changeEvent.nextId === 3) {
-    //   changeEvent.preventDefault();
-    // }
-  }
 
-    // onCancel() {
-    //   this.router.navigate(['../'], {relativeTo: this.route});
-    // }
-  
-    meetingDataForm = new FormGroup({
+  sessionDataForm = new FormGroup({
       meetingOwner: new FormControl(''),
       meetingTitle: new FormControl(''),
       meetingStartDate: new FormControl(''),
@@ -42,9 +22,11 @@ export class DocumentMomComponent implements OnInit{
       meetingLocation: new FormControl(''),
       sessionData: new FormGroup(
         {
+          sessionId: new FormControl(''),
           sessionTopic:new FormControl(''),
           presenter:new FormControl(''),
           externalPresenter:new FormControl(''),
+          meetingDate:new FormControl(''),
           sessionStartTime:new FormControl(''),
           sessionEndTime:new FormControl(''),
           internalParticipants:new FormGroup(
@@ -62,6 +44,4 @@ export class DocumentMomComponent implements OnInit{
           description: new FormControl(''), type:new FormControl(''), actionOwner:new FormControl(''), targetDate:new FormControl(''), priority:new FormControl(''), remarks:new FormControl('')
         })
       });
-
-
 }

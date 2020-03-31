@@ -19,6 +19,7 @@ import { AllDocumentedMomComponent } from './all-documented-mom/all-documented-m
 import { TrackActionComponent } from './track-action/track-action.component';
 import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SessionTopicComponent } from './document-mom/session-topic/session-topic.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DocumentMomComponent,
     AllDocumentedMomComponent,
     TrackActionComponent,
-    AboutComponent
+    AboutComponent,
+    SessionTopicComponent
   ],
   imports: [
     BrowserModule,
