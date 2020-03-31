@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MeetingdataService } from './meetingdata.service';
+import { MeetingdataService } from '../assets/shared/services/meetingdata.service';
 
 describe('MeetingdataService', () => {
   let service: MeetingdataService;

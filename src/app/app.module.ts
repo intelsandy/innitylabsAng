@@ -1,4 +1,4 @@
-import { MeetingdataService } from './meetingdata.service';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +19,7 @@ import { AllDocumentedMomComponent } from './all-documented-mom/all-documented-m
 import { TrackActionComponent } from './track-action/track-action.component';
 import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
 
 @NgModule({
   declarations: [

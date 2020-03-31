@@ -1,7 +1,7 @@
 <div class="wrapper">
   <section>
       <div class="container">
-          <h3>New Meeting</h3>
+          <h1>Documented MOM</h1>
           <form [formGroup]="meetingDataForm" (ngSubmit)="onSubmit()">
             <ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event)" class="nav-tabs">
               <li [ngbNavItem]="1">
@@ -174,9 +174,9 @@
                 </ng-template>
               </li>
             </ul>
-          </form>
-          <div [ngbNavOutlet]="nav" class=""></div>
 
+          <div [ngbNavOutlet]="nav" class=""></div>
+        </form>
       </div>
   </section>
 

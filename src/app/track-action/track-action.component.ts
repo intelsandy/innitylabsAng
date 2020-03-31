@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MeetingdataService } from '../meetingdata.service';
+import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
 
 @Component({
   selector: 'app-track-action',

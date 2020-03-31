@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgbNavChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MeetingdataService } from '../meetingdata.service';
+import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
 
 @Component({
   selector: 'app-document-mom',
