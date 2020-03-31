@@ -1,15 +1,16 @@
+@import 'src/variables';
 
 .sidenav > ul > li > a { padding: 0; margin: 0; }
 .sidenavWrap + .top-nav { padding-left:220px;}
 
 .sidenav { height: calc( 100% - 36px); padding-top:100px;
-    ul { display: inline-block; padding: 0; margin: 0; list-style: none; width: 100%;
-      li { display: block;
-        a { display: block; padding:13px 16px 13px 54px; color: #fff;font-family:'Ambit';
+    ul { display: $DisplayInlineBlock; padding: 0; margin: 0; list-style: none; width: $Width100;
+      li { display: $DisplayBlock;
+        a { display: $DisplayBlock; padding:13px 16px 13px 54px; color: $TextWhite;font-family:$FontFamily;
           i {position: absolute; left:12px;top:5px;}
-          &:hover { /*background: #fff;*/ color:#181f2c; text-decoration: none;}
-          &.active { /*background: #fff;*/ color:#181f2c; text-decoration: none;}
-          &.active:after { width: 100%;}
+          &:hover { /*background: $TextWhite;*/ color:#181f2c; text-decoration: none;}
+          &.active { /*background: $TextWhite;*/ color:#181f2c; text-decoration: none;}
+          &.active:after { width: $Width100;}
           &:hover .fc-home:before,
           &.active .fc-home:before { background-image: url(/assets/images/common/icons/fc-home-d.png); }
           &:hover .fc-user-plus:before,
@@ -32,12 +33,12 @@
   }
 
 
-.copy-txt { position: absolute; bottom: 0px;  left: 0; right:0; text-align: center; color: #fff; font-size:12px;background: #181f2c;padding: 0.5rem;}
-.fc-copy {width:30px; display:inline-block}
+.copy-txt { position: absolute; bottom: 0px;  left: 0; right:0; text-align: center; color: $TextWhite; font-size:12px;background: #181f2c;padding: 0.5rem;}
+.fc-copy {width:30px; display:$DisplayInlineBlock}
 .fc-copy:before {top:-2px; position: absolute;}
 
 .sidenav > ul > li > a.active { /*background: #fff;*/ color:#181f2c; text-decoration: none;}
-.sidenav > ul > li > a.active:after { width: 100%;}
+.sidenav > ul > li > a.active:after { width: $Width100;}
 
 .sidenav > ul > li > a:hover .fc-home:before, .sidenav > ul > li > a.active .fc-home:before { background-image: url(/assets/images/common/icons/fc-home-d.png); }
 .sidenav > ul > li > a:hover .fc-user-plus:before, .sidenav > ul > li > a.active .fc-user-plus:before { background-image: url(/assets/images/common/icons/fc-user-plus-d.png); }
@@ -47,8 +48,8 @@
 
 
 @media (max-width: 767.98px) {
-  .copy-txt span {display:none}
-  .sidenav > ul > li > a > span {display:none;}
+  .copy-txt span {display:$DisplayNone}
+  .sidenav > ul > li > a > span {display:$DisplayNone;}
   .sidenav > ul > li > a { padding:25px 0 ;}
   .sidenav {padding-top:150px}
 
