@@ -16,7 +16,7 @@ export class RecipeService {
     addRecipe(recipe) {
         this.recipes.push(recipe);
       }
-      updateRecipe(index: number, newRecipe) {
-        this.recipes[index] = newRecipe;
-      }
+    updateRecipe(index: number, newRecipe) {
+      this.recipes[index] = newRecipe;
+    }
 }

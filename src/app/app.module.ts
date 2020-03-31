@@ -20,6 +20,8 @@ import { TrackActionComponent } from './track-action/track-action.component';
 import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
+import { SessionTopicComponent } from './document-mom/session-topic/session-topic.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { MeetingdataService } from 'src/assets/shared/services/meetingdata.servi
     DocumentMomComponent,
     AllDocumentedMomComponent,
     TrackActionComponent,
-    AboutComponent
+    AboutComponent,
+    SessionTopicComponent
   ],
   imports: [
     BrowserModule,

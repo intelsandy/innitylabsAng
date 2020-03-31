@@ -1,0 +1,42 @@
+<div id="sesion-topic-1">
+    <div class="form-group row">
+      <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic 1</b></label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="SessionTopic1" formControlName="sessionTopic1($index)">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Preseenter" class="col-sm-2 col-form-label">Presenter</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="Preseenter" formControlName="presenter">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="ExternalPresenter" class="col-sm-2 col-form-label">External Presenter</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="ExternalPresenter" formControlName="ExternalPresenter">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="MeetingDate" class="col-sm-2 col-form-label">Meeting Date</label>
+      <div class="col-sm-3 date-picker">
+        <input id="MeetingDate" class="form-control" type="text" placeholder="22/03/2020" formControlName="MeetingDate">
+      </div>
+      <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
+      <div class="col-sm-3 date-picker">
+        <input id="MeetingEndDate" class="form-control" type="text" placeholder="Select your end date" formControlName="MeetingEndDate">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="MeetingLocaltion" class="col-sm-2 col-form-label">Meeting Localtion</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="MeetingLocaltion" formControlName="MeetingLocaltion">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="OtherInformation" class="col-sm-2 col-form-label">Other Information</label>
+      <div class="col-sm-9">
+        <textarea class="form-control" id="OtherInformation" formControlName="OtherInformation"></textarea>
+      </div>
+    </div>
+  </div>
