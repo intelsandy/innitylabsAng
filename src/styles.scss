@@ -44,9 +44,10 @@ textarea.form-control {resize:none;}
 }
 
 .accordion > .card {border-radius: 0;margin-bottom: 1rem;border:0;}
-.accordion > .card > .card-header {padding:0 !important; background:#f1f1f1 !important;}
-.accordion > .card > .card-header .btn-link {color:#000;font-weight:$FontWeight600;font-size:1.2rem;}
-
+.accordion > .card > .card-header {padding:0 !important; background:#f1f1f1 !important;border-bottom: 0;}
+.accordion > .card > .card-header .btn-link {color:#000;font-weight:$FontWeight600;font-size:1.2rem;width:$Width100;text-align:left;text-decoration:none;}
+.accordion > .card > .card-header .btn-link.collapsed:after {content:'';background:url('src/assets/images/common/icons/fc-plus.png');width:20px;height:20px; position:absolute;right: 10px;top: 10px; }
+.accordion > .card > .card-header .btn-link:after {content:'';background:url('src/assets/images/common/icons/fc-minus.png');width:20px;height:20px; position:absolute;right: 10px;top: 10px;  }
 
 .form-control {height:calc(1em + 0.75rem + 2px);}
 .form-group {margin-bottom: 0.75rem;}
