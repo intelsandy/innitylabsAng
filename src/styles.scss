@@ -22,8 +22,8 @@ body {
 .btn + .btn {margin-left:0.5rem}
 .btn-primary{background-color: $BtnPrimary;  border:1px solid #17a2b8}
 .btn-primary:hover{background-color: $BtnPrimaryHover; border:1px solid #17a2b8;color:#17a2b8;}
-.btn-secondary{background-color: $BtnSecondary; border: $ZeroBorder;}
-.btn-secondary:hover{background-color: $BtnSecondaryHover; border: $ZeroBorder;}
+.btn-secondary{background-color: $BtnSecondary; border:1px solid #fb6362;}
+.btn-secondary:hover{background-color: $BtnSecondaryHover; border:1px solid #977f7f;color:#977f7f;}
 .btn-success{background-color:$BtnSuccess; border:1px solid #009e0f;}
 .btn-success:hover{background-color: $BtnSuccessHover; border:1px solid #009e0f;color:#009e0f;}
 .btn-orange-sm{background: $BtnOrange;padding: 0.2rem 0.9rem;font-size: 1rem;color:$TextWhite;border-radius: $ZeroBorderRadius;border: $ZeroBorder;}

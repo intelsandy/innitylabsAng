@@ -110,68 +110,70 @@
                       </div>
                     </div>
                     <div class="mt-2">
-                      <table class="table table-striped" formGroupName="actionItems">
-                        <thead>
-                        <tr>
-                          <th scope="col">Sr. No.</th>
-                          <th scope="col">Item Description</th>
-                          <th scope="col">Type</th>
-                          <th scope="col">Action Owner</th>
-                          <th scope="col">Target Date</th>
-                          <th scope="col">Priority</th>
-                          <th scope="col">Remarks</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>
-                            <input type="text" formControlName="description" class="form-control">
-                          </td>
-                          <td>
-                            <select name="type" formControlName="type" id="type">
-                              <option value="Select">Action</option>
-                              <option value="Select">Information</option>
-                            </select>
-                          </td>
-                          <td>
-                            <input type="text" formControlName="actionOwner" class="form-control">
-                          </td>
-                          <td>
-                            <div class="form-group">
-                              <div class="input-group">
-                                <input class="form-control" placeholder="yyyy-mm-dd" formControlName="targetDate"
-                                       name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
-                                <div class="input-group-append">
-                                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                      <div class="table-responsive">
+                        <table class="table table-bordered" formGroupName="actionItems">
+                          <thead>
+                          <tr>
+                            <th scope="col">Sr. No.</th>
+                            <th scope="col">Item Description</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Action Owner</th>
+                            <th scope="col">Target Date</th>
+                            <th scope="col">Priority</th>
+                            <th scope="col">Remarks</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>
+                              <input type="text" formControlName="description" class="form-control">
+                            </td>
+                            <td>
+                              <select name="type" formControlName="type" id="type">
+                                <option value="Select">Action</option>
+                                <option value="Select">Information</option>
+                              </select>
+                            </td>
+                            <td>
+                              <input type="text" formControlName="actionOwner" class="form-control">
+                            </td>
+                            <td>
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <input class="form-control" placeholder="yyyy-mm-dd" formControlName="targetDate"
+                                        name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
 
-                            <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
-                              <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
-                                    [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
-                                {{ date.day }}
-                              </span>
-                            </ng-template>
-                          </td>
-                          <td>
-                            <select name="priority" formControlName="priority" id="priority">
-                              <option value="Select">Action</option>
-                              <option value="Select">Information</option>
-                            </select>
-                          </td>
-                          <td>
-                            <textarea name="remarks" id="remarks" formControlName="remarks"></textarea>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="7">
-                            <a href="#" onclick="addMoreDesc()">Add More</a>
-                          </td>
-                        </tr>
-                        </tbody>
-                      </table>
+                              <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
+                                <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
+                                      [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
+                                  {{ date.day }}
+                                </span>
+                              </ng-template>
+                            </td>
+                            <td>
+                              <select name="priority" formControlName="priority" id="priority">
+                                <option value="Select">Action</option>
+                                <option value="Select">Information</option>
+                              </select>
+                            </td>
+                            <td>
+                              <textarea name="remarks" id="remarks" formControlName="remarks"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="7">
+                              <a href="#" onclick="addMoreDesc()">Add More</a>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                     <div class="form-group row">
                       <div class="d-flex col">
@@ -189,7 +191,7 @@
               <li [ngbNavItem]="3">
                 <a ngbNavLink>Meeting Summary</a>
                 <ng-template ngbNavContent>
-                    
+
                 </ng-template>
               </li>
             </ul>

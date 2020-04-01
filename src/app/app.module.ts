@@ -21,6 +21,7 @@ import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
 import { SessionTopicComponent } from './document-mom/session-topic/session-topic.component';
+import { PeoplePickerModule } from "ng2-people-picker";
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { SessionTopicComponent } from './document-mom/session-topic/session-topi
     AppRoutingModule,
     ChartsModule,
     SidebarModule.forRoot(),
+    // PeoplePickerModule.forRoot(),
     NgbModule,
     ReactiveFormsModule
   ],
