@@ -21,6 +21,7 @@ import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
 import { SessionTopicComponent } from './document-mom/session-topic/session-topic.component';
+import { RightTopBarComponent } from './header/right-top-bar/right-top-bar.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SessionTopicComponent } from './document-mom/session-topic/session-topi
     AllDocumentedMomComponent,
     TrackActionComponent,
     AboutComponent,
-    SessionTopicComponent
+    SessionTopicComponent,
+    RightTopBarComponent
   ],
   imports: [
     BrowserModule,
