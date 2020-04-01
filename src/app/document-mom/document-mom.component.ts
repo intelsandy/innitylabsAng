@@ -1,24 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbNavChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
 
+
 @Component({
   selector: 'app-document-mom',
   templateUrl: './document-mom.component.html',
-  styleUrls: ['./document-mom.component.scss']
+  styleUrls: ['./document-mom.component.scss'],
+  providers: [NgbAccordionConfig]
 })
 export class DocumentMomComponent implements OnInit{
   active = 1;
   meridian = true;
   model: NgbDateStruct;
+  meetingdtlTBL;
+  sessionData;
+
+  
+
   // disable = false;
-  constructor( private metingdataService: MeetingdataService, private calendar: NgbCalendar) {   }
+  constructor( private metingdataService: MeetingdataService, private calendar: NgbCalendar, config: NgbAccordionConfig) {
+    config.closeOthers = true;
+    config.type = 'info';
+   }
   isDisabled = (date: NgbDate, current: {month: number, year: number}) => date.month !== current.month;
   isWeekend = (date: NgbDate) =>  this.calendar.getWeekday(date) >= 6;
-  
+
   meetingDataForm = new FormGroup({
     meetingOwner: new FormControl(''),
     meetingName: new FormControl(''),
@@ -48,19 +59,24 @@ export class DocumentMomComponent implements OnInit{
         })
       }
     ),
-    
+
     });
 
 
   ngOnInit() {
+    this.meetingdtlTBL = this.metingdataService.getMeetingData();
+    this.sessionData = this.meetingdtlTBL.map(item => item.sessionData);
+
+    console.log(this.sessionData);
   }
 
   addMoreDesc() {
-    
+
   }
-  
+
   onSubmit(){
       // this.metingdataService.addRecipe(this.meetingDataForm.value);
+      this.metingdataService.addMeetingData(this.meetingDataForm.value);
       console.log(this.meetingDataForm.value);
   }
 
@@ -76,5 +92,5 @@ export class DocumentMomComponent implements OnInit{
     // onCancel() {
     //   this.router.navigate(['../'], {relativeTo: this.route});
     // }
-  
+
 }

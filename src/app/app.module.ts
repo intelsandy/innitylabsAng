@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,7 +21,7 @@ import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
 import { SessionTopicComponent } from './document-mom/session-topic/session-topic.component';
-import { PeoplePickerModule } from "ng2-people-picker";
+import { RightTopBarComponent } from './header/right-top-bar/right-top-bar.component';
 
 
 @NgModule({
@@ -38,7 +38,8 @@ import { PeoplePickerModule } from "ng2-people-picker";
     AllDocumentedMomComponent,
     TrackActionComponent,
     AboutComponent,
-    SessionTopicComponent
+    SessionTopicComponent,
+    RightTopBarComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +48,7 @@ import { PeoplePickerModule } from "ng2-people-picker";
     SidebarModule.forRoot(),
     // PeoplePickerModule.forRoot(),
     NgbModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [MeetingdataService],
