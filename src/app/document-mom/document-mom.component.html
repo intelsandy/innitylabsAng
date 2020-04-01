@@ -60,9 +60,9 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="Preseenter" class="col-sm-2 col-form-label">Preseenter</label>
+                        <label for="Presenter" class="col-sm-2 col-form-label">Presenter</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="Preseenter" formControlName="presenter">
+                          <input type="text" class="form-control" id="Presenter" formControlName="presenter">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -92,7 +92,7 @@
                         <label for="InternalParticipants" class="col-sm-2 col-form-label">Internal Participants</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="InternalParticipants" formControlName="name">
-                          <input type="text" class="form-control" id="designation" formControlName="designation">
+                          <div *ngFor="let item of internalParticipants">{{item.name}} - {{item.designation}}</div>
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="externalParticipants">
@@ -165,9 +165,37 @@
                             <textarea name="remarks" id="remarks" formControlName="remarks"></textarea>
                           </td>
                         </tr>
+                        <!-- <tr>
+                          <td>
+                            <div class="card-header">Contact Information</div>
+                              <div class="card-body" formArrayName="contacts">
+                                <div class="row">
+                                  <div class="col-6" *ngFor="let contact of contactFormGroup.controls; let i = index;">
+                                    <div [formGroupName]="i" class="row">
+                                      <div class="form-group col-6">
+                                        <label>Type of Contact</label>
+                                        <select (change)="changedFieldType(i)" class="form-control" formControlName="type" type="text">
+                                          <option value="email">Email</option>
+                                          <option value="phone">Phone</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group col-6">
+                                        <label>Contact Label</label>
+                                        <input class="form-control" formControlName="name" type="text">
+                                      </div>
+                                      <div class="form-group col-12 text-right">
+                                        <button class="btn btn-danger" type="button" (click)="removeContact(i)"> Remove </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </td>
+                        </tr>  -->
                         <tr>
                           <td colspan="7">
                             <a href="#" onclick="addMoreDesc()">Add More</a>
+                            <button class="btn btn-primary m-1" type="button" (click)="addContact()"> Add Contact </button>
                           </td>
                         </tr>
                         </tbody>
