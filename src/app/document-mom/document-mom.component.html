@@ -72,9 +72,9 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="Preseenter" class="col-sm-2 col-form-label">Preseenter</label>
+                        <label for="Presenter" class="col-sm-2 col-form-label">Presenter</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="Preseenter" formControlName="presenter">
+                          <input type="text" class="form-control" id="Presenter" formControlName="presenter">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -111,7 +111,7 @@
                         <label for="InternalParticipants" class="col-sm-2 col-form-label">Internal Participants</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="InternalParticipants" formControlName="name">
-                          <input type="text" class="form-control" id="designation" formControlName="designation">
+                          <div *ngFor="let item of internalParticipants">{{item.name}} - {{item.designation}}</div>
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="externalParticipants">
@@ -165,32 +165,60 @@
                                   <button class="calendar" (click)="d.toggle()" type="button"></button>
                                 </div>
                               </div>
-                              <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
-                                <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
-                                      [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
-                                  {{ date.day }}
-                                </span>
-                              </ng-template>
+                            </div>
+
+                            <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
+                              <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
+                                    [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
+                                {{ date.day }}
+                              </span>
+                            </ng-template>
+                          </td>
+                          <td>
+                            <select name="priority" formControlName="priority" id="priority">
+                              <option value="Select">Action</option>
+                              <option value="Select">Information</option>
+                            </select>
+                          </td>
+                          <td>
+                            <textarea name="remarks" id="remarks" formControlName="remarks"></textarea>
+                          </td>
+                        </tr>
+                        <!-- <tr>
+                          <td>
+                            <div class="card-header">Contact Information</div>
+                              <div class="card-body" formArrayName="contacts">
+                                <div class="row">
+                                  <div class="col-6" *ngFor="let contact of contactFormGroup.controls; let i = index;">
+                                    <div [formGroupName]="i" class="row">
+                                      <div class="form-group col-6">
+                                        <label>Type of Contact</label>
+                                        <select (change)="changedFieldType(i)" class="form-control" formControlName="type" type="text">
+                                          <option value="email">Email</option>
+                                          <option value="phone">Phone</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group col-6">
+                                        <label>Contact Label</label>
+                                        <input class="form-control" formControlName="name" type="text">
+                                      </div>
+                                      <div class="form-group col-12 text-right">
+                                        <button class="btn btn-danger" type="button" (click)="removeContact(i)"> Remove </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </td>
-                            <td>
-                              <select class="form-control" name="priority" formControlName="priority" id="priority">
-                                <option>Select</option>
-                                <option value="Select">Action</option>
-                                <option value="Select">Information</option>
-                              </select>
-                            </td>
-                            <td>
-                              <textarea class="form-control" name="remarks" id="remarks" formControlName="remarks"></textarea>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td colspan="7">
-                              <a href="#" onclick="addMoreDesc()">Add More</a>
-                            </td>
-                          </tr>
-                          </tbody>
-                        </table>
+                          </td>
+                        </tr>  -->
+                        <tr>
+                          <td colspan="7">
+                            <a href="#" onclick="addMoreDesc()">Add More</a>
+                            <button class="btn btn-primary m-1" type="button" (click)="addContact()"> Add Contact </button>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
                     </div>
                     <div class="form-group row">
                       <div class="d-flex col">
