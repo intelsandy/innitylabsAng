@@ -1,7 +1,7 @@
 <div class="wrapper">
   <section>
       <div class="container">
-          <h3>Documented MOM</h3>
+          <h1>Documented MOM</h1>
           <form [formGroup]="meetingDataForm" (submit)="onSubmit()">
             <ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event)" class="nav-tabs">
               <li [ngbNavItem]="1">
@@ -10,6 +10,7 @@
                     <div class="form-group row">
                       <label for="MeetingOwner" class="col-sm-2 col-form-label">Meeting Owner</label>
                       <div class="col-sm-9">
+
                         <input type="text" class="form-control" id="MeetingOwner" formControlName="meetingOwner">
                       </div>
                     </div>
@@ -22,11 +23,23 @@
                     <div class="form-group row">
                       <label for="MeetingStartDate" class="col-sm-2 col-form-label">Meeting Start Date</label>
                       <div class="col-sm-3">
-                        <input id="MeetingStartDate" class="form-control" type="date" placeholder="Select your start date" formControlName="meetingStartDate">
+                        <div class="cal-wrap">
+                          <input id="MeetingStartDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #d="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="calendar" (click)="d.toggle()" type="button"></button>
+                          </div>
+                        </div>
+                        <!-- <input id="MeetingStartDate" class="form-control" type="date" placeholder="Select your start date" formControlName="meetingStartDate"> -->
                       </div>
                       <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
                       <div class="col-sm-3">
-                        <input id="MeetingEndDate" class="form-control" type="date" placeholder="Select your end date" formControlName="meetingEndDate">
+                        <div class="cal-wrap">
+                          <input id="MeetingEndDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingEndDate" ngbDatepicker #e="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="calendar" (click)="e.toggle()" type="button"></button>
+                          </div>
+                        </div>
+                        <!-- <input id="MeetingEndDate" class="form-control" type="date" placeholder="Select your end date" formControlName="meetingEndDate"> -->
                       </div>
                     </div>
                     <div class="form-group row">
@@ -42,7 +55,7 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <div class="d-flex justify-content-center col">
+                      <div class="d-flex justify-content-center col mt-4">
                         <button class="btn-primary btn mr-2" (click)="nav.select(1)">Cancel</button>
                         <button class="btn-secondary btn" type="button" id="sessionTab" (click)="nav.select(2)">Save and Continue</button>
                       </div>
@@ -74,12 +87,19 @@
                       <div class="form-group row">
                         <label for="MeetingDate" class="col-sm-2 col-form-label">Meeting Date</label>
                         <div class="col-sm-3">
-                          <input id="MeetingDate" class="form-control" type="date" placeholder="22/03/2020" formControlName="meetingStartDate">
+                          <div class="cal-wrap">
+                            <input id="MeetingDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #f="ngbDatepicker">
+                            <div class="input-group-append">
+                              <button class="calendar" (click)="f.toggle()" type="button"></button>
+                            </div>
+                          </div>
+                          <!-- <input id="MeetingDate" class="form-control" type="date" placeholder="22/03/2020" formControlName="meetingStartDate"> -->
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="SessionStartTime" class="col-sm-2 col-form-label">Session Start Time</label>
                         <div class="col-sm-3">
+                          
                           <ngb-timepicker [meridian]="meridian" formControlName="sessionStartTime"></ngb-timepicker>
                         </div>
                         <label for="SessionEndTime" class="col-sm-3 col-form-label text-right">Session End Time</label>
@@ -110,7 +130,7 @@
                       </div>
                     </div>
                     <div class="mt-2 table-responsive">
-                      <table class="table table-striped" formGroupName="actionItems">
+                      <table class="table table-bordered" formGroupName="actionItems">
                         <thead>
                         <tr>
                           <th scope="col">Sr. No.</th>
@@ -124,12 +144,13 @@
                         </thead>
                         <tbody>
                         <tr>
-                          <th scope="row">1</th>
+                          <td scope="row">1</td>
                           <td>
                             <input type="text" formControlName="description" class="form-control">
                           </td>
                           <td>
-                            <select name="type" formControlName="type" id="type">
+                            <select class="form-control" name="type" formControlName="type" id="type">
+                              <option>Select</option>
                               <option value="Select">Action</option>
                               <option value="Select">Information</option>
                             </select>
@@ -139,11 +160,10 @@
                           </td>
                           <td>
                             <div class="form-group">
-                              <div class="input-group">
-                                <input class="form-control" placeholder="yyyy-mm-dd" formControlName="targetDate"
-                                       name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
+                              <div class="cal-wrap">
+                                <input class="form-control" placeholder="mm-dd-yyyy" formControlName="targetDate" name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
                                 <div class="input-group-append">
-                                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                  <button class="calendar" (click)="d.toggle()" type="button"></button>
                                 </div>
                               </div>
                             </div>
@@ -207,7 +227,7 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <div class="d-flex justify-content-center col">
+                      <div class="d-flex justify-content-center col mt-4">
                         <button class="btn-primary btn mr-2" (click)="nav.select(1)">Cancel</button>
                         <button class="btn-secondary btn">Save and Continue</button>
                       </div>
@@ -326,10 +346,8 @@
                 </ng-template>
               </li>
             </ul>
-
+          </form>
           <div [ngbNavOutlet]="nav" class=""></div>
-        </form>
       </div>
   </section>
-
 </div>

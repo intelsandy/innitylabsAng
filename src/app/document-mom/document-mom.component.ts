@@ -6,6 +6,7 @@ import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@ang
 import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
 
+
 @Component({
   selector: 'app-document-mom',
   templateUrl: './document-mom.component.html',
@@ -21,6 +22,7 @@ export class DocumentMomComponent implements OnInit{
   internalParticipantsList: any;
   internalParticipants = [];
   
+
   // disable = false;
   constructor( private metingdataService: MeetingdataService, private calendar: NgbCalendar, config: NgbAccordionConfig, private fb: FormBuilder) {  
     config.closeOthers = true;
@@ -146,9 +148,9 @@ export class DocumentMomComponent implements OnInit{
 
 
   addMoreDesc() {
-    
+
   }
-  
+
   onSubmit(){
       // this.metingdataService.addRecipe(this.meetingDataForm.value);
       this.metingdataService.addMeetingData(this.meetingDataForm.value);
@@ -167,5 +169,5 @@ export class DocumentMomComponent implements OnInit{
     // onCancel() {
     //   this.router.navigate(['../'], {relativeTo: this.route});
     // }
-  
+
 }

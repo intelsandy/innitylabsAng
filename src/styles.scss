@@ -13,20 +13,44 @@ body {
   h2 {color:$HeadingColor;font-size:$H2FontSize; font-weight:$FontWeight600;}
   h3 {font-size: $H3FontSize; font-weight: $FontWeight400;}
 }
+textarea.form-control {resize:none;}
 
 .row-zero{margin-left:-15px;margin-right:-15px}
 .row-zero > [class^="col"]{padding-left:0px;padding-right:0px;}
 
 .container.fluid { width:$Width100; max-width: none; }
-.btn {border-radius:$ZeroBorderRadius;}
+.btn {border-radius:$ZeroBorderRadius; font-size:1rem;padding:0.375 2rem !important; }
 .btn + .btn {margin-left:0.5rem}
-.btn-primary{background-color: $BtnPrimary; border: $ZeroBorder}
-.btn-primary:hover{background-color: $BtnPrimaryHover; border: $ZeroBorder}
-.btn-secondary{background-color: $BtnSecondary; border: $ZeroBorder;}
-.btn-secondary:hover{background-color: $BtnSecondaryHover; border: $ZeroBorder;}
-.btn-orange-sm{background: $BtnOrange;padding: 0.2rem 0.9rem;font-size: 1rem;color:$TextWhite;border-radius: $ZeroBorderRadius;border: $ZeroBorder;}
-.btn-orange-sm:hover{ background: $BtnOrangeHover;}
+.btn-primary{background-color: $BtnPrimary;  border:1px solid #17a2b8;font-weight: $FontWeight600;
+  &:hover{background-color: $BtnPrimaryHover; border:1px solid #17a2b8;color:#17a2b8;}
+  &:focus {border:0;box-shadow:none;}
+}
+.btn-secondary{background-color: $BtnSecondary; border:1px solid #fb6362;font-weight: $FontWeight600;
+  &:hover{background-color: $BtnSecondaryHover; border:1px solid #fb6362;color:#fb6362;}
+  &:focus {border:0;box-shadow:none;}
+}
+.btn-success{background-color:$BtnSuccess; border:1px solid #009e0f;
+  &:hover{background-color: $BtnSuccessHover; border:1px solid #009e0f;color:#009e0f;}
+  &:focus {border:0;box-shadow:none;}
+}
+.btn-orange-sm{background: $BtnOrange;padding: 0.2rem 0.9rem;font-size: 1rem;color:$TextWhite !important;border-radius: $ZeroBorderRadius;border: $ZeroBorder;
+  &:hover{ background: $BtnOrangeHover;}
+  &:focus {border:0;box-shadow:none;}
+}
 
+.cal-wrap {position:relative;
+  .calendar {box-shadow: none;border: 0;background:url('src/assets/images/common/icons/fc-cal.png');width:35px;height:24px; position:absolute; right:5px; top:3px;display:inline-block;}
+  input {padding-right:45px;}
+}
+
+.accordion > .card {border-radius: 0;margin-bottom: 1rem;border:0;}
+.accordion > .card > .card-header {padding:0 !important; background:#f1f1f1 !important;}
+.accordion > .card > .card-header .btn-link {color:#000;font-weight:$FontWeight600;font-size:1.2rem;}
+
+
+.form-control {height:calc(1em + 0.75rem + 2px);}
+.form-group {margin-bottom: 0.75rem;}
+.col-form-label { padding-left: 10px; padding-right: 10px;font-size: 1.1rem;padding-top: calc(0.175rem + 1px);padding-bottom: calc(0.175rem + 1px);}
 
 /* General button style (reset) */
 .anim-btn,
@@ -133,6 +157,9 @@ body {
 .cust-card {border-radius:$ZeroBorderRadius; padding:10px 10px 0 10px; border:$ZeroBorder;background:$BgWhite;
   h2 {line-height:30px; display: $DisplayInlineBlock;vertical-align: middle;position: relative;}
 }
+
+
+
 
 
 @media (max-width: 576.98px) {
