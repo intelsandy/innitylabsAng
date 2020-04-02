@@ -23,7 +23,7 @@
                       <label for="MeetingStartDate" class="col-sm-2 col-form-label">Meeting Start Date</label>
                       <div class="col-sm-3">
                         <div class="cal-wrap">
-                          <input id="MeetingStartDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #d="ngbDatepicker">
+                          <input id="MeetingStartDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" formControlName="meetingStartDate" ngbDatepicker #d="ngbDatepicker">
                           <div class="input-group-append">
                             <button class="calendar" (click)="d.toggle()" type="button"></button>
                           </div>
@@ -33,7 +33,7 @@
                       <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
                       <div class="col-sm-3">
                         <div class="cal-wrap">
-                          <input id="MeetingEndDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingEndDate" ngbDatepicker #e="ngbDatepicker">
+                          <input id="MeetingEndDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" formControlName="meetingEndDate" ngbDatepicker #e="ngbDatepicker">
                           <div class="input-group-append">
                             <button class="calendar" (click)="e.toggle()" type="button"></button>
                           </div>
@@ -87,7 +87,7 @@
                         <label for="MeetingDate" class="col-sm-2 col-form-label">Meeting Date</label>
                         <div class="col-sm-3">
                           <div class="cal-wrap">
-                            <input id="MeetingDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #f="ngbDatepicker">
+                            <input id="MeetingDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" formControlName="meetingStartDate" ngbDatepicker #f="ngbDatepicker">
                             <div class="input-group-append">
                               <button class="calendar" (click)="f.toggle()" type="button"></button>
                             </div>
@@ -184,7 +184,7 @@
                             <textarea name="remarks" id="remarks" formControlName="remarks"></textarea>
                           </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                           <td>
                             <div class="card-header">Contact Information</div>
                               <div class="card-body" formArrayName="contacts">
@@ -210,7 +210,7 @@
                                 </div>
                               </div>
                           </td>
-                        </tr> 
+                        </tr>  -->
                         <tr>
                           <td colspan="7">
                             <a href="#" onclick="addMoreDesc()">Add More</a>
