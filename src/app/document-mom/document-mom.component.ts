@@ -5,6 +5,7 @@ import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
+import { NavbarService } from '../../assets/shared/services/navbar.service';
 
 
 @Component({
@@ -20,11 +21,10 @@ export class DocumentMomComponent implements OnInit{
   meetingdtlTBL;
   sessionData;
   internalParticipantsList: any;
-  internalParticipants = [];
-  
+  internalParticipants = [];  
 
   // disable = false;
-  constructor( private metingdataService: MeetingdataService, private calendar: NgbCalendar, config: NgbAccordionConfig, private fb: FormBuilder) {  
+  constructor( private metingdataService: MeetingdataService, private calendar: NgbCalendar, config: NgbAccordionConfig, private fb: FormBuilder, public nav: NavbarService) {  
     config.closeOthers = true;
     config.type = 'info';
    }
@@ -38,13 +38,29 @@ export class DocumentMomComponent implements OnInit{
   get contactFormGroup() {
     return this.form.get('contacts') as FormArray;
   }
+  // type: ['email', Validators.compose([Validators.required])], // i.e Email, Phone
   
   // contact formgroup
   createContact(): FormGroup {
     return this.fb.group({
-      type: ['email', Validators.compose([Validators.required])], // i.e Email, Phone
-      name: [null, Validators.compose([Validators.required])], // i.e. Home, Office
-      value: [null, Validators.compose([Validators.required, Validators.email])]
+        sessionTopic:new FormControl('', Validators.compose([Validators.required])),
+        presenter:new FormControl(''),
+        externalPresenter:new FormControl(''),
+        sessionStartTime:new FormControl(''),
+        sessionEndTime:new FormControl(''),
+        meetingStartDate:new FormControl(''),
+        internalParticipants:new FormGroup(
+          {
+          name:new FormControl(''), designation:new FormControl('')
+          }),
+        externalParticipants: new FormGroup(
+          {
+          name:new FormControl(''), extDesignation:new FormControl('')
+          }),
+        attachments:new FormControl(''),
+        actionItems:new FormGroup({
+          description: new FormControl(''), type:new FormControl(''), actionOwner:new FormControl(''), targetDate:new FormControl(''), priority:new FormControl(''), remarks:new FormControl('')
+        })
     });
   }
 
@@ -88,7 +104,7 @@ export class DocumentMomComponent implements OnInit{
 
   // method triggered when form is submitted
   submit() {
-    console.log(this.form.value);
+    console.log(this.meetingDataForm.value);
   }
 
   
@@ -126,13 +142,13 @@ export class DocumentMomComponent implements OnInit{
 
   ngOnInit() {
     this.meetingdtlTBL = this.metingdataService.getMeetingData();
-    this.sessionData = this.meetingdtlTBL.map(item => item.sessionData);
+    this.sessionData = this.metingdataService.getSessionData();
     this.internalParticipantsList = this.sessionData.map(item => {
       for (let i = 0; i < item.length; i++){
         this.internalParticipants.push({name: item[i].internalParticipants[i].name, designation: item[i].internalParticipants[i].designation})
       }
     });
-    console.log(this.internalParticipants);
+    // console.log(this.internalParticipants);
 
     
     this.form = this.fb.group({
@@ -143,6 +159,8 @@ export class DocumentMomComponent implements OnInit{
 
     // set contactlist to this field
     this.contactList = this.form.get('contacts') as FormArray;
+
+    this.nav.show();
   }
 
 

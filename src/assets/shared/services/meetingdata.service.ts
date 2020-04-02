@@ -151,4 +151,7 @@ export class MeetingdataService {
   addMeetingData(meetingData) {
     return this.meetingData.push(meetingData);
   }
+  getSessionData () {
+      return this.meetingData.map(item => item.sessionData).slice();
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from '../../assets/shared/services/navbar.service';
+import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
+  constructor(public nav: NavbarService, private meetingDataService: MeetingdataService) { }
+  sessionData = this.meetingDataService.getSessionData();
 
-  constructor() { }
 
   ngOnInit(): void {
+    this.nav.hide();
+    console.log(this.sessionData);
   }
 
 }

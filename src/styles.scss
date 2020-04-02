@@ -141,6 +141,7 @@ textarea.form-control {resize:none;}
         li > a .fc-all-documents:before { background-image: url(/assets/images/common/icons/fc-all-documents-d.png); }
   }
   .copy-txt {display:$DisplayNone;}
+  .subnav {display:$DisplayNone !important;}
 }
 .main-container {background:$BgWhite; width:$Width100; display:$DisplayInlineBlock;padding:1rem;}
 
