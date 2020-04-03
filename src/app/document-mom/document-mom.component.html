@@ -34,6 +34,7 @@
                           </mat-form-field>
 
                           <!-- <input id="MeetingStartDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #d="ngbDatepicker">
+                          <input id="MeetingStartDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" formControlName="meetingStartDate" ngbDatepicker #d="ngbDatepicker">
                           <div class="input-group-append">
                             <button class="calendar" (click)="d.toggle()" type="button"></button>
                           </div> -->
@@ -50,6 +51,7 @@
                             <mat-datepicker #MeetingEndDate></mat-datepicker>
                           </mat-form-field>
                           <!-- <input id="MeetingEndDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingEndDate" ngbDatepicker #e="ngbDatepicker">
+                          <input id="MeetingEndDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" formControlName="meetingEndDate" ngbDatepicker #e="ngbDatepicker">
                           <div class="input-group-append">
                             <button class="calendar" (click)="e.toggle()" type="button"></button>
                           </div> -->
@@ -110,6 +112,7 @@
                               <mat-datepicker #MeetingDate></mat-datepicker>
                             </mat-form-field>
                             <!-- <input id="MeetingDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #f="ngbDatepicker">
+                            <input id="MeetingDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" formControlName="meetingStartDate" ngbDatepicker #f="ngbDatepicker">
                             <div class="input-group-append">
                               <button class="calendar" (click)="f.toggle()" type="button"></button>
                             </div> -->
@@ -211,12 +214,12 @@
                               </div> -->
                             </div>
 
-                            <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
+                            <!-- <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
                               <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
                                     [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
                                 {{ date.day }}
                               </span>
-                            </ng-template>
+                            </ng-template> -->
                           </td>
                           <td>
                             <select class="form-control" name="priority" formControlName="priority" id="priority">
@@ -273,7 +276,7 @@
                     <div class="form-group row">
                       <div class="d-flex justify-content-center col mt-4">
                         <button class="btn-primary btn mr-2" (click)="nav.select(1)">Cancel</button>
-                        <button class="btn-secondary btn">Save and Continue</button>
+                        <button class="btn-secondary btn" (click)="nav.select(3)">Save and Continue</button>
                       </div>
                     </div>
                 </ng-template>

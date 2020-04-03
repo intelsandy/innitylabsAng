@@ -2,10 +2,17 @@
   <div class="sidenav">
     <ul>
       <li ><a routerLinkActive="active" routerLink="dashboard"><i class="fc-home"></i> <span>Dashboard</span></a></li>
-      <li ><a routerLinkActive="active" routerLink="document-mom"><i class="fc-user-plus"></i> <span>Document MOM</span></a></li>
+      <li >
+        <a routerLinkActive="active" routerLink="document-mom"><i class="fc-user-plus"></i> <span>Document MOM</span></a>
+        <ul class="subnav" *ngIf="nav.visible">
+          <li><a routerLink="document-mom">Meeting Setup</a></li>
+          <li><a routerLink="document-mom">Session Topic 1</a></li>
+          <li><a routerLink="document-mom">Meeting Summary</a></li>
+        </ul>
+      </li>
       <li class="all-doc"><a routerLinkActive="active" routerLink="all-documented-mom"><i class="fc-all-documents"></i> <span>All Documented MOM</span></a></li>
       <li ><a routerLinkActive="active" routerLink="track-action"><i class="fc-map-marker"></i> <span>Track Action</span></a></li>
-      <li  class="abt"><a routerLinkActive="active" routerLink="about"><i class="fc-info"></i> <span>About</span></a></li>
+      <li class="abt"><a routerLinkActive="active" routerLink="about"><i class="fc-info"></i> <span>About</span></a></li>
    </ul>
     <span class="d-flex"><span class="align-items-center"><span class="copy-txt"><i class="fc-copy"></i> <span>Copyright</span></span></span></span>
   </div>
