@@ -1,0 +1,11 @@
+<div class="fileUpload">
+  <span>
+    <input type="file" ng2FileSelect [uploader]="uploader" (onFileSelected)="onFileSelected($event)" />
+  </span>
+  <span>
+    <button type="button" class="btn btn-gray sm" ng2FileSelect [uploader]="uploader" (onFileSelected)="onFileSelected($event)">Browse</button>
+    <button type="button" class="btn btn-gray btn-upload">Upload</button>
+  </span>
+</div>
+
+

@@ -1,9 +1,13 @@
 
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -22,6 +26,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
 import { SessionTopicComponent } from './document-mom/session-topic/session-topic.component';
 import { RightTopBarComponent } from './header/right-top-bar/right-top-bar.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import {FileUploadModule} from 'ng2-file-upload';
 
 
 @NgModule({
@@ -39,17 +50,27 @@ import { RightTopBarComponent } from './header/right-top-bar/right-top-bar.compo
     TrackActionComponent,
     AboutComponent,
     SessionTopicComponent,
-    RightTopBarComponent
+    RightTopBarComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ChartsModule,
     SidebarModule.forRoot(),
     // PeoplePickerModule.forRoot(),
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    FileUploadModule,
+    ReactiveFormsModule,
+    NgScrollbarModule,
+    ScrollingModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [MeetingdataService],
   bootstrap: [AppComponent]

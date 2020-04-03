@@ -21,10 +21,11 @@ export class DocumentMomComponent implements OnInit{
   sessionData;
   internalParticipantsList: any;
   internalParticipants = [];
-  
+
+
 
   // disable = false;
-  constructor( private metingdataService: MeetingdataService, private calendar: NgbCalendar, config: NgbAccordionConfig, private fb: FormBuilder) {  
+  constructor( private metingdataService: MeetingdataService, private calendar: NgbCalendar, config: NgbAccordionConfig, private fb: FormBuilder) {
     config.closeOthers = true;
     config.type = 'info';
    }
@@ -38,7 +39,9 @@ export class DocumentMomComponent implements OnInit{
   get contactFormGroup() {
     return this.form.get('contacts') as FormArray;
   }
-  
+
+
+
   // contact formgroup
   createContact(): FormGroup {
     return this.fb.group({
@@ -91,7 +94,7 @@ export class DocumentMomComponent implements OnInit{
     console.log(this.form.value);
   }
 
-  
+
   meetingDataForm = new FormGroup({
     meetingOwner: new FormControl(''),
     meetingName: new FormControl(''),
@@ -120,7 +123,7 @@ export class DocumentMomComponent implements OnInit{
           description: new FormControl(''), type:new FormControl(''), actionOwner:new FormControl(''), targetDate:new FormControl(''), priority:new FormControl(''), remarks:new FormControl('')
         })
       }
-    )    
+    )
     });
 
 
@@ -134,7 +137,7 @@ export class DocumentMomComponent implements OnInit{
     });
     console.log(this.internalParticipants);
 
-    
+
     this.form = this.fb.group({
       name: [null, Validators.compose([Validators.required])],
       organization: [null],
@@ -160,6 +163,8 @@ export class DocumentMomComponent implements OnInit{
   onNavChange(changeEvent: NgbNavChangeEvent) {
     if (changeEvent) {
       console.log(changeEvent.activeId);
+      document.querySelector(".nav-link").classList.add("success");
+      
     }
     // if (changeEvent.nextId === 3) {
     //   changeEvent.preventDefault();

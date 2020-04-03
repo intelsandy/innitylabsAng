@@ -1,4 +1,7 @@
+
+
 @import 'variables';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {margin:0; padding:0;}
 body {font-family:$FontFamily; font-size:$BaseFont; background-color: $BodyBgColor; transition: margin-left 0s;}
@@ -7,7 +10,7 @@ body.sidenavOpend { margin-left: 220px; padding-top: 64px;
   .sidenavWrap {width:220px;/* background: rgba(24,31,44,1); */}
   .sidenavWrap + .top-nav {background: $BgWhite;}
 }
-
+html, body { height: 100%; }
 body {
   h1 {font-size: $H1FontSize; font-weight: $FontWeight400;}
   h2 {color:$HeadingColor;font-size:$H2FontSize; font-weight:$FontWeight600;}
@@ -37,10 +40,29 @@ textarea.form-control {resize:none;}
   &:hover{ background: $BtnOrangeHover;}
   &:focus {border:0;box-shadow:none;}
 }
+.btn-gray {background:#e9ecef;color:#000;}
 
 .cal-wrap {position:relative;
-  .calendar {box-shadow: none;border: 0;background:url('src/assets/images/common/icons/fc-cal.png');width:35px;height:24px; position:absolute; right:5px; top:3px;display:inline-block;}
+  .mat-button-wrapper {box-shadow: none;border: 0;background:url('src/assets/images/common/icons/fc-cal.png');width:35px;height:24px; position:absolute; right:5px; top:3px;display:inline-block;
+  svg {display:none;}
+  }
   input {padding-right:45px;}
+  .mat-form-field {width:100%;}
+  .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon-button:focus {outline:0;box-shadow:none; background:none;}
+  .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom:0}
+  .mat-form-field-appearance-legacy .mat-form-field-underline {display:none;}
+  .mat-form-field-flex {border:1px solid #ced4da; border-radius:0.3rem;}
+  .mat-form-field-appearance-legacy .mat-form-field-infix {border-top:0;}
+  .mat-form-field-appearance-legacy .mat-form-field-label { padding-left:10px}
+  .mat-form-field-label-wrapper {top:-15px;}
+  .cdk-text-field-autofill-monitored:not(:-webkit-autofill) {padding-left: 10px;}
+  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {display:none;}
+  .mat-button-focus-overlay {display:none;transition: none; background:none;}
+
+  .timepicker-wrap {border:1px solid #ced4da; border-radius:0.3rem;height:30px;}
+  .timepicker-wrap input {width:100%; border:0;height: 28px; border-radius: 0.3rem;padding-left: 10px;font-size: 0.9rem;color: rgba(0,0,0,.54);}
+  .timepicker-wrap .ngx-material-timepicker-toggle {position:absolute; border-radius:0;  right:5px; top:3px;background:url('src/assets/images/common/icons/fc-timepicker.png');width:35px;height:24px; }
+  .timepicker-wrap .ngx-material-timepicker-toggle svg {display:none;}
 }
 
 .accordion > .card {border-radius: 0;margin-bottom: 1rem;border:0;}
@@ -174,3 +196,6 @@ textarea.form-control {resize:none;}
   .sidenavClosed .wrapper {margin: 112px 0 0 0px;width: calc(100% - 0px);}
   .container, .container-sm {max-width: $Width100;width: $Width100;}
 }
+
+
+

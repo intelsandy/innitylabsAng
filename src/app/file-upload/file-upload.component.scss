@@ -1,0 +1,14 @@
+.fileUpload {display:inline-block; height:30px;width:100%;min-width:482px;
+
+  span {width: 55%;display: inline-block;position: relative;
+    &:first-child {vertical-align:top;border-radius:0.2rem;border: 1px solid #ddd;height: 30px;}
+    input {position:absolute; min-width:610px;text-indent: -9999px;text-align:left;overflow:hidden;margin-left: -90px;z-index:1;
+    &:focus {outline:0; box-shadow: none;}
+    }
+    .btn {height:30px;line-height: 1rem;border:1px solid #ddd;
+      &:focus {outline:0; box-shadow: none;}
+    }
+    .btn + .btn {margin-left:0;border-top-right-radius: 0.3rem;border-bottom-right-radius: 0.3rem;}
+  }
+  span + span {width:auto; display:inline-block;margin-left:-2px;}
+}

@@ -2,14 +2,15 @@
   <section>
       <div class="container">
           <h1>Documented MOM</h1>
+
           <form [formGroup]="meetingDataForm" (submit)="onSubmit()">
             <ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event)" class="nav-tabs">
               <li [ngbNavItem]="1">
                 <a ngbNavLink>Meeting Setup</a>
                 <ng-template ngbNavContent>
                     <div class="form-group row">
-                      <label for="MeetingOwner" class="col-md-2 col-sm-4 col-form-label">Meeting Owner</label>
-                      <div class="col-md-9 col-sm-8">
+                      <label for="MeetingOwner" class="col-sm-2 col-form-label">Meeting Owner</label>
+                      <div class="col-sm-9">
                         <input type="text" class="form-control" id="MeetingOwner" formControlName="meetingOwner">
                       </div>
                     </div>
@@ -22,21 +23,36 @@
                     <div class="form-group row">
                       <label for="MeetingStartDate" class="col-sm-2 col-form-label">Meeting Start Date</label>
                       <div class="col-sm-3">
+
                         <div class="cal-wrap">
-                          <input id="MeetingStartDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #d="ngbDatepicker">
+
+                          <mat-form-field>
+                            <mat-label>dd-mm-yyyy</mat-label>
+                            <input matInput [matDatepicker]="MeetingStartDate">
+                            <mat-datepicker-toggle matSuffix [for]="MeetingStartDate"></mat-datepicker-toggle>
+                            <mat-datepicker #MeetingStartDate></mat-datepicker>
+                          </mat-form-field>
+
+                          <!-- <input id="MeetingStartDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #d="ngbDatepicker">
                           <div class="input-group-append">
                             <button class="calendar" (click)="d.toggle()" type="button"></button>
-                          </div>
+                          </div> -->
                         </div>
                         <!-- <input id="MeetingStartDate" class="form-control" type="date" placeholder="Select your start date" formControlName="meetingStartDate"> -->
                       </div>
                       <label for="MeetingEndDate" class="col-sm-3 col-form-label text-right">Meeting End Date</label>
                       <div class="col-sm-3">
                         <div class="cal-wrap">
-                          <input id="MeetingEndDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingEndDate" ngbDatepicker #e="ngbDatepicker">
+                          <mat-form-field>
+                            <mat-label>dd-mm-yyyy</mat-label>
+                            <input matInput [matDatepicker]="MeetingEndDate">
+                            <mat-datepicker-toggle matSuffix [for]="MeetingEndDate"></mat-datepicker-toggle>
+                            <mat-datepicker #MeetingEndDate></mat-datepicker>
+                          </mat-form-field>
+                          <!-- <input id="MeetingEndDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingEndDate" ngbDatepicker #e="ngbDatepicker">
                           <div class="input-group-append">
                             <button class="calendar" (click)="e.toggle()" type="button"></button>
-                          </div>
+                          </div> -->
                         </div>
                         <!-- <input id="MeetingEndDate" class="form-control" type="date" placeholder="Select your end date" formControlName="meetingEndDate"> -->
                       </div>
@@ -87,10 +103,16 @@
                         <label for="MeetingDate" class="col-sm-2 col-form-label">Meeting Date</label>
                         <div class="col-sm-3">
                           <div class="cal-wrap">
-                            <input id="MeetingDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #f="ngbDatepicker">
+                            <mat-form-field>
+                              <mat-label>dd-mm-yyyy</mat-label>
+                              <input matInput [matDatepicker]="MeetingDate">
+                              <mat-datepicker-toggle matSuffix [for]="MeetingDate"></mat-datepicker-toggle>
+                              <mat-datepicker #MeetingDate></mat-datepicker>
+                            </mat-form-field>
+                            <!-- <input id="MeetingDate" class="form-control"  placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" formControlName="meetingStartDate" ngbDatepicker #f="ngbDatepicker">
                             <div class="input-group-append">
                               <button class="calendar" (click)="f.toggle()" type="button"></button>
-                            </div>
+                            </div> -->
                           </div>
                           <!-- <input id="MeetingDate" class="form-control" type="date" placeholder="22/03/2020" formControlName="meetingStartDate"> -->
                         </div>
@@ -98,13 +120,26 @@
                       <div class="form-group row">
                         <label for="SessionStartTime" class="col-sm-2 col-form-label">Session Start Time</label>
                         <div class="col-sm-3">
-
-                          <ngb-timepicker [meridian]="meridian" formControlName="sessionStartTime"></ngb-timepicker>
+                          <div class="cal-wrap">
+                            <div class="timepicker-wrap">
+                              <input [ngxTimepicker]="startTimepicker" [disableClick]="true" readonly>
+                              <ngx-material-timepicker-toggle [for]="startTimepicker"></ngx-material-timepicker-toggle>
+                              <ngx-material-timepicker #startTimepicker></ngx-material-timepicker>
+                            </div>
+                          </div>
+                          <!-- <ngb-timepicker [meridian]="meridian" formControlName="sessionStartTime"></ngb-timepicker> -->
                         </div>
                         <label for="SessionEndTime" class="col-sm-3 col-form-label text-right">Session End Time</label>
                         <div class="col-sm-3">
+                          <div class="cal-wrap">
+                            <div class="timepicker-wrap">
+                              <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
+                              <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+                              <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
+                            </div>
+                          </div>
                           <!-- <input id="SessionEndTime" class="form-control" type="time" formControlName="sessionEndTime"> -->
-                          <ngb-timepicker [meridian]="meridian" formControlName="sessionEndTime"></ngb-timepicker>
+                          <!-- <ngb-timepicker [meridian]="meridian" formControlName="sessionEndTime"></ngb-timepicker> -->
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="internalParticipants">
@@ -124,7 +159,8 @@
                       <div class="form-group row">
                         <label for="Attachments" class="col-sm-2 col-form-label">Attachments</label>
                         <div class="col-sm-9">
-                          <input type="file" formControlName="attachments" class="form-control">
+                          <app-file-upload></app-file-upload>
+                          <!-- <input type="file" formControlName="attachments" class="form-control"> -->
                         </div>
                       </div>
                     </div>
@@ -149,7 +185,7 @@
                           </td>
                           <td>
                             <select class="form-control" name="type" formControlName="type" id="type">
-                              <option>Select</option>
+                              <option value="Select">Select</option>
                               <option value="Select">Action</option>
                               <option value="Select">Information</option>
                             </select>
@@ -160,11 +196,19 @@
                           <td>
                             <div class="form-group">
                               <div class="cal-wrap">
+                                <mat-form-field>
+                                  <mat-label>dd-mm-yyyy</mat-label>
+                                  <input matInput [matDatepicker]="targetDate">
+                                  <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
+                                  <mat-datepicker #targetDate></mat-datepicker>
+                                </mat-form-field>
+                              </div>
+                              <!-- <div class="cal-wrap">
                                 <input class="form-control" placeholder="mm-dd-yyyy" formControlName="targetDate" name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
                                 <div class="input-group-append">
                                   <button class="calendar" (click)="d.toggle()" type="button"></button>
                                 </div>
-                              </div>
+                              </div> -->
                             </div>
 
                             <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
@@ -175,13 +219,14 @@
                             </ng-template>
                           </td>
                           <td>
-                            <select name="priority" formControlName="priority" id="priority">
+                            <select class="form-control" name="priority" formControlName="priority" id="priority">
+                              <option value="Select">Select</option>
                               <option value="Select">Action</option>
                               <option value="Select">Information</option>
                             </select>
                           </td>
                           <td>
-                            <textarea name="remarks" id="remarks" formControlName="remarks"></textarea>
+                            <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
                           </td>
                         </tr>
                         <!-- <tr>

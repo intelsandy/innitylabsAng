@@ -9,6 +9,7 @@ export class MinutesOfMeetingsComponent implements OnInit {
   momdata: any;
   heading = 'Minutes of Meeting';
 
+
 constructor() {
   this.momdata = [
     {
@@ -56,7 +57,7 @@ constructor() {
       date : '27/01/2020',
       time : '11:15 am'
     },
-    
+
     {
       department: 'Product Vertical Meeting',
       date : '27/01/2020',
@@ -66,6 +67,26 @@ constructor() {
       department: 'IT Infra Meeting',
       date : '26/01/2020',
       time : '5:45 pm'
+    },
+    {
+      department: 'Marketing Team Meeting',
+      date : '28/02/2020',
+      time : '10:15 am'
+    },
+    {
+      department: 'Product Vertical Meeting',
+      date : '27/02/2020',
+      time : '4:35 pm'
+    },
+    {
+      department: 'IT Infra Meeting',
+      date : '26/02/2020',
+      time : '2:30 pm'
+    },
+    {
+      department: 'Product Vertical Meeting',
+      date : '27/01/2020',
+      time : '11:15 am'
     },
     {
       department: 'Marketing Team Meeting',

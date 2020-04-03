@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'innitylabs';
-
+  items = Array.from({length: 1000}, (v, k) => k + 1);
   opened = true;
 
   toggleSidebar() {
