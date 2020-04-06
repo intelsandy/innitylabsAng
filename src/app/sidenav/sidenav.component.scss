@@ -46,6 +46,16 @@
 .sidenav > ul > li > a:hover .fc-map-marker:before, .sidenav > ul > li > a.active .fc-map-marker:before { background-image: url(/assets/images/common/icons/fc-map-marker-d.png); }
 .sidenav > ul > li > a:hover .fc-info:before, .sidenav > ul > li > a.active .fc-info:before { background-image: url(/assets/images/common/icons/fc-info-d.png); }
 
+.sidenav  .subnav {margin:0; padding:10px 0 10px 30px;
+  li {list-style: none;position: relative;
+    &:before {content:'';background-image: url(/assets/images/common/icons/fc-nav-arrow.png);width:11px; height:13px; position:absolute; left:0;margin-top:5px;}
+    a {padding:5px 0 5px 20px;color:#d1dae9;
+      &:hover {color:#fff;}
+    }
+  }
+}
+
+
 @media (max-width: 767.98px) {
   .copy-txt span {display:$DisplayNone}
   .sidenav > ul > li > a > span {display:$DisplayNone;}

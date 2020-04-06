@@ -13,7 +13,7 @@
                 <ng-template ngbNavContent formGroupName="sessionData">
                     <div id="sesion-topic-1">
                       <div class="form-group row">
-                        <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic <span>1</span></b></label>
+                        <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic 1</b></label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="SessionTopic1" formControlName="sessionTopic">
                         </div>
@@ -258,7 +258,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="d-flex col">
-                        <a class="btn-orange-sm btn" id="addNew" (click)="addNew()">+ Add Session Topic 2</a>
+                        <a class="btn-orange-sm btn" id="addNew" routerLink="session-topic2">+ Add Session Topic 2</a>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -270,8 +270,8 @@
                 </ng-template>
               </li>
               <li [ngbNavItem]="3">
-                <a ngbNavLink routerLink="../../document-mom/meeting-summary/meeting-summary">Meeting Summary</a>
-                <!-- <ng-template ngbNavContent  *ngFor="let data of meetingdtlTBL">
+                <a ngbNavLink>Meeting Summary</a>
+                <ng-template ngbNavContent  *ngFor="let data of meetingdtlTBL">
                     <div class="table-responsive">
                       <table class="table table-bordered">
                         <thead>
@@ -376,7 +376,7 @@
                         </ng-template>
                       </ngb-panel>
                     </ngb-accordion>
-                </ng-template> -->
+                </ng-template>
               </li>
             </ul>
           </form>

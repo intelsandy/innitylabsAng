@@ -4,17 +4,17 @@ import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
-import { NavbarService } from '../../assets/shared/services/navbar.service';
+import { MeetingdataService } from '../../../assets/shared/services/meetingdata.service';
+import { NavbarService } from '../../../assets/shared/services/navbar.service';
 
 
 @Component({
-  selector: 'app-document-mom',
-  templateUrl: './document-mom.component.html',
-  styleUrls: ['./document-mom.component.scss'],
+  selector: 'app-website-discussion',
+  templateUrl: './website-discussion.component.html',
+  styleUrls: ['./website-discussion.component.scss'],
   providers: [NgbAccordionConfig]
 })
-export class DocumentMomComponent implements OnInit {
+export class WebsiteDiscussionComponent implements OnInit {
 
   // disable = false;
   constructor(
@@ -37,33 +37,10 @@ export class DocumentMomComponent implements OnInit {
   sessionData;
   internalParticipantsList: any;
   internalParticipants = [];
-  showlisting = true;
-  session = true;
-
-
 
 
   public form: FormGroup;
   public contactList: FormArray;
-
-  public meetingDataEdit = [
-    {
-      details: 'Session Topic 1 - Design Thinking Workshop',
-      presenter: 'John Pinto',
-      meetaingDate: '22/03/2020',
-      sessionStartTime: '10:00 AM',
-      sessionEndTime: '6:30 PM',
-      InternalParticipants: 'View',
-      externalParticipants: 'View',
-      attachement: 'UI-structure.docx',
-      actionItems:
-      [
-        {
-          description: 'Lorem Ipsum Dummy Text', type: 'Action'
-        }
-      ],
-    }
-  ];
 
 
   meetingDataForm = new FormGroup({
@@ -134,47 +111,7 @@ export class DocumentMomComponent implements OnInit {
     });
   }
 
-  // add a contact form group
-  addContact() {
-    this.contactList.push(this.createContact());
-  }
 
-  // add new session topic
-  addNew() {
-
-  }
-  // remove contact from group
-  removeContact(index) {
-    // this.contactList = this.form.get('contacts') as FormArray;
-    this.contactList.removeAt(index);
-  }
-
-  // triggered to change validation of value field type
-  changedFieldType(index) {
-    let validators = null;
-
-    if (this.getContactsFormGroup(index).controls.type.value === 'email') {
-      validators = Validators.compose([Validators.required, Validators.email]);
-    } else {
-      validators = Validators.compose([
-        Validators.required,
-        Validators.pattern(new RegExp('^\\+[0-9]?()[0-9](\\d[0-9]{9})$')) // pattern for validating international phone number
-      ]);
-    }
-
-    this.getContactsFormGroup(index).controls.value.setValidators(
-      validators
-    );
-
-    this.getContactsFormGroup(index).controls.value.updateValueAndValidity();
-  }
-
-  // get the formgroup under contacts form array
-  getContactsFormGroup(index): FormGroup {
-    // this.contactList = this.form.get('contacts') as FormArray;
-    const formGroup = this.contactList.controls[index] as FormGroup;
-    return formGroup;
-  }
 
   // method triggered when form is submitted
   submit() {
@@ -194,23 +131,9 @@ export class DocumentMomComponent implements OnInit {
     // console.log(this.internalParticipants);
 
 
-    this.form = this.fb.group({
-      name: [null, Validators.compose([Validators.required])],
-      organization: [null],
-      contacts: this.fb.array([this.createContact()])
-    });
-
-    // set contactlist to this field
-    this.contactList = this.form.get('contacts') as FormArray;
-
-    this.nav.show();
-  }
-
-
-
-  addMoreDesc() {
 
   }
+
 
   onSubmit() {
       // this.metingdataService.addRecipe(this.meetingDataForm.value);
@@ -218,19 +141,7 @@ export class DocumentMomComponent implements OnInit {
       console.log(this.meetingDataForm.value);
   }
 
-  onNavChange(changeEvent: NgbNavChangeEvent) {
-    if (changeEvent) {
-      console.log(changeEvent.activeId);
-      document.querySelector('.nav-link').classList.add('success');
 
-    }
-    // if (changeEvent.nextId === 3) {
-    //   changeEvent.preventDefault();
-    // }
-  }
 
-    // onCancel() {
-    //   this.router.navigate(['../'], {relativeTo: this.route});
-    // }
 
 }

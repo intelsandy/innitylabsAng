@@ -84,7 +84,7 @@
                 <ng-template ngbNavContent formGroupName="sessionData">
                     <div id="sesion-topic-1">
                       <div class="form-group row">
-                        <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic 1</b></label>
+                        <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic {{session}}</b></label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="SessionTopic1" formControlName="sessionTopic">
                         </div>
@@ -148,15 +148,16 @@
                       <div class="form-group row" formGroupName="internalParticipants">
                         <label for="InternalParticipants" class="col-sm-2 col-form-label">Internal Participants</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="InternalParticipants" formControlName="name">
-                          <div *ngFor="let item of internalParticipants">{{item.name}} - {{item.designation}}</div>
+                          <!-- <input *ngIf="showlisting" type="text" class="form-control" id="InternalParticipants" formControlName="name"> -->
+                          <app-autocomplete></app-autocomplete>
+                          <!-- <div *ngFor="let item of internalParticipants">{{item.name}} - {{item.designation}}</div> -->
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="externalParticipants">
                         <label for="externalParticipants" class="col-sm-2 col-form-label">External Participants</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="externalParticipants" formControlName="name">
-                          <input type="text" class="form-control" id="extDesignation" formControlName="extDesignation">
+                          <!-- <input type="text" class="form-control" id="extDesignation" formControlName="extDesignation"> -->
                         </div>
                       </div>
                       <div class="form-group row">
@@ -180,76 +181,135 @@
                           <th scope="col">Remarks</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                          <td scope="row">1</td>
-                          <td>
-                            <input type="text" formControlName="description" class="form-control">
-                          </td>
-                          <td>
-                            <select class="form-control" name="type" formControlName="type" id="type">
-                              <option value="Select">Select</option>
-                              <option value="Select">Action</option>
-                              <option value="Select">Information</option>
-                            </select>
-                          </td>
-                          <td>
-                            <input type="text" formControlName="actionOwner" class="form-control">
-                          </td>
-                          <td>
-                            <div class="form-group">
-                              <div class="cal-wrap">
-                                <mat-form-field>
-                                  <mat-label>dd-mm-yyyy</mat-label>
-                                  <input matInput [matDatepicker]="targetDate">
-                                  <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
-                                  <mat-datepicker #targetDate></mat-datepicker>
-                                </mat-form-field>
-                              </div>
-                              <!-- <div class="cal-wrap">
-                                <input class="form-control" placeholder="mm-dd-yyyy" formControlName="targetDate" name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
-                                <div class="input-group-append">
-                                  <button class="calendar" (click)="d.toggle()" type="button"></button>
+                        <tbody >
+                          <tr>
+                            <td>1</td>
+                            <td>
+                              <input type="text" formControlName="description" class="form-control">
+                            </td>
+                            <td>
+                              <select class="form-control" name="type" formControlName="type" id="type">
+                                <option value="Select">Select</option>
+                                <option value="Select">Action</option>
+                                <option value="Select">Information</option>
+                              </select>
+                            </td>
+                            <td>
+                              <input type="text" formControlName="actionOwner" class="form-control">
+                            </td>
+                            <td>
+                              <div class="form-group">
+                                <div class="cal-wrap">
+                                  <mat-form-field>
+                                    <mat-label>dd-mm-yyyy</mat-label>
+                                    <input matInput [matDatepicker]="targetDate">
+                                    <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
+                                    <mat-datepicker #targetDate></mat-datepicker>
+                                  </mat-form-field>
                                 </div>
-                              </div> -->
-                            </div>
+                                <!-- <div class="cal-wrap">
+                                  <input class="form-control" placeholder="mm-dd-yyyy" formControlName="targetDate" name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
+                                  <div class="input-group-append">
+                                    <button class="calendar" (click)="d.toggle()" type="button"></button>
+                                  </div>
+                                </div> -->
+                              </div>
 
-                            <!-- <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
-                              <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
-                                    [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
-                                {{ date.day }}
-                              </span>
-                            </ng-template> -->
-                          </td>
-                          <td>
-                            <select class="form-control" name="priority" formControlName="priority" id="priority">
-                              <option value="Select">Select</option>
-                              <option value="Select">Action</option>
-                              <option value="Select">Information</option>
-                            </select>
-                          </td>
-                          <td>
-                            <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
-                          </td>
-                        </tr>
+                              <!-- <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
+                                <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
+                                      [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
+                                  {{ date.day }}
+                                </span>
+                              </ng-template> -->
+                            </td>
+                            <td>
+                              <select class="form-control" name="priority" formControlName="priority" id="priority">
+                                <option value="Select">Select</option>
+                                <option value="Select">Action</option>
+                                <option value="Select">Information</option>
+                              </select>
+                            </td>
+                            <td>
+                              <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
+                            </td>
+                          </tr>
+                          <tr scope="row">
+                            <td colspan="7" class="pad-0" formArrayName="contacts">
+                              <table class="table clone-tbl" *ngFor="let contact of contactFormGroup.controls; let i = index;">
+                                <tr [formGroupName]="i">
+                                  <td>2</td>
+                                  <td>
+                                    <input type="text" formControlName="description" class="form-control">
+                                  </td>
+                                  <td>
+                                    <select class="form-control" name="type" formControlName="type" id="type">
+                                      <option value="Select">Select</option>
+                                      <option value="Select">Action</option>
+                                      <option value="Select">Information</option>
+                                    </select>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="actionOwner" class="form-control">
+                                  </td>
+                                  <td>
+                                    <div class="form-group">
+                                      <div class="cal-wrap">
+                                        <mat-form-field>
+                                          <mat-label>dd-mm-yyyy</mat-label>
+                                          <input matInput [matDatepicker]="targetDate">
+                                          <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
+                                          <mat-datepicker #targetDate></mat-datepicker>
+                                        </mat-form-field>
+                                      </div>
+                                      <!-- <div class="cal-wrap">
+                                        <input class="form-control" placeholder="mm-dd-yyyy" formControlName="targetDate" name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
+                                        <div class="input-group-append">
+                                          <button class="calendar" (click)="d.toggle()" type="button"></button>
+                                        </div>
+                                      </div> -->
+                                    </div>
+
+                                    <!-- <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
+                                      <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
+                                            [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
+                                        {{ date.day }}
+                                      </span>
+                                    </ng-template> -->
+                                  </td>
+                                  <td>
+                                    <select class="form-control" name="priority" formControlName="priority" id="priority">
+                                      <option value="Select">Select</option>
+                                      <option value="Select">Action</option>
+                                      <option value="Select">Information</option>
+                                    </select>
+                                  </td>
+                                  <td>
+                                    <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
+                                    <a href="javascript:;" (click)="removeContact(i)">x</a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
                         <!-- <tr>
-                          <td>
-                            <div class="card-header">Contact Information</div>
-                              <div class="card-body" formArrayName="contacts">
+                          <td colspan="7">
+                            <div class="card-body" formArrayName="contacts">
                                 <div class="row">
-                                  <div class="col-6" *ngFor="let contact of contactFormGroup.controls; let i = index;">
+                                  <div class="col" *ngFor="let contact of contactFormGroup.controls; let i = index;">
                                     <div [formGroupName]="i" class="row">
-                                      <div class="form-group col-6">
+                                      <div class="form-group">
                                         <label>Type of Contact</label>
                                         <select (change)="changedFieldType(i)" class="form-control" formControlName="type" type="text">
                                           <option value="email">Email</option>
                                           <option value="phone">Phone</option>
                                         </select>
                                       </div>
-                                      <div class="form-group col-6">
+                                      <div class="form-group">
                                         <label>Contact Label</label>
                                         <input class="form-control" formControlName="name" type="text">
                                       </div>
+
                                       <div class="form-group col-12 text-right">
                                         <button class="btn btn-danger" type="button" (click)="removeContact(i)"> Remove </button>
                                       </div>
@@ -258,11 +318,10 @@
                                 </div>
                               </div>
                           </td>
-                        </tr>  -->
+                        </tr> -->
                         <tr>
                           <td colspan="7">
-                            <a href="#" onclick="addMoreDesc()">Add More</a>
-                            <button class="btn btn-primary m-1" type="button" (click)="addContact()"> Add Contact </button>
+                            <a href="javascript:;" (click)="addContact()">Add More</a>
                           </td>
                         </tr>
                         </tbody>
@@ -270,7 +329,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="d-flex col">
-                        <a class="btn-orange-sm btn" id="addNew">+ Add Session Topic 2</a>
+                        <a class="btn-orange-sm btn" id="addNew">+ Add Session Topic 2 {{session}}</a>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -279,12 +338,42 @@
                         <button class="btn-secondary btn" (click)="nav.select(3)">Save and Continue</button>
                       </div>
                     </div>
+
+                    <div class="table-responsive">
+                      <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Details</th>
+                              <th>Presenter</th>
+                              <th>Meeting Date</th>
+                              <th>Session Start Time</th>
+                              <th>Session End Time</th>
+                              <th>Internal Participant</th>
+                              <th>External Participant</th>
+                              <th>Attahchment</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let item of meetingDataEdit">
+                              <td>{{item.details}}</td>
+                              <td>{{item.presenter}}</td>
+                              <td>{{item.meetaingDate}}</td>
+                              <td>{{item.sessionStartTime}}</td>
+                              <td>{{item.sessionEndTime}}</td>
+                              <td>{{item.InternalParticipants}}</td>
+                              <td>{{item.externalParticipants}}</td>
+                              <td>{{item.attachement}}</td>
+                              <td>{{item.actionItems}}</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                    </div>
                 </ng-template>
               </li>
               <li [ngbNavItem]="3">
                 <a ngbNavLink>Meeting Summary</a>
                 <ng-template ngbNavContent  *ngFor="let data of meetingdtlTBL">
-                  <div class="main-container">
                     <div class="table-responsive">
                       <table class="table table-bordered">
                         <thead>
@@ -389,7 +478,6 @@
                         </ng-template>
                       </ngb-panel>
                     </ngb-accordion>
-                  </div>
                 </ng-template>
               </li>
             </ul>

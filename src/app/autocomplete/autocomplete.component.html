@@ -1,0 +1,10 @@
+<!-- <p>
+  Selected cities: {{selectedCity}}
+</p> -->
+<ng-select [items]="cities2"
+  bindLabel="name"
+  bindValue="id"
+  [multiple]="true"
+  [(ngModel)]="selectedCity">
+</ng-select>
+

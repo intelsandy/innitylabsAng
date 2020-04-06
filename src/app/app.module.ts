@@ -1,4 +1,6 @@
 
+import { DocumentMomService } from './../assets/shared/services/document-mom.service';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -33,7 +35,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import {FileUploadModule} from 'ng2-file-upload';
+import { WebsiteDiscussionComponent } from './track-action/website-discussion/website-discussion.component';
+import { MeetingSummaryComponent } from './document-mom/meeting-summary/meeting-summary.component';
 
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -51,7 +57,10 @@ import {FileUploadModule} from 'ng2-file-upload';
     AboutComponent,
     SessionTopicComponent,
     RightTopBarComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    WebsiteDiscussionComponent,
+    MeetingSummaryComponent,
+    AutocompleteComponent
   ],
   imports: [
     BrowserModule,
@@ -70,9 +79,10 @@ import {FileUploadModule} from 'ng2-file-upload';
     MatInputModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    NgSelectModule
   ],
-  providers: [MeetingdataService],
+  providers: [MeetingdataService, DocumentMomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

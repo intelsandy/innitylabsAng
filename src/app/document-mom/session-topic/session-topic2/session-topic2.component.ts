@@ -4,17 +4,17 @@ import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
-import { NavbarService } from '../../assets/shared/services/navbar.service';
+import { MeetingdataService } from '../../../../assets/shared/services/meetingdata.service';
+import { NavbarService } from '../../../../assets/shared/services/navbar.service';
 
 
 @Component({
-  selector: 'app-document-mom',
-  templateUrl: './document-mom.component.html',
-  styleUrls: ['./document-mom.component.scss'],
+  selector: 'app-session-topic2',
+  templateUrl: './session-topic2.component.html',
+  styleUrls: ['./session-topic2.component.scss'],
   providers: [NgbAccordionConfig]
 })
-export class DocumentMomComponent implements OnInit {
+export class SessionTopic2Component implements OnInit {
 
   // disable = false;
   constructor(
@@ -30,40 +30,17 @@ export class DocumentMomComponent implements OnInit {
   get contactFormGroup() {
     return this.form.get('contacts') as FormArray;
   }
-  active = 1;
+  active = 2;
   meridian = true;
   model: NgbDateStruct;
   meetingdtlTBL;
   sessionData;
   internalParticipantsList: any;
   internalParticipants = [];
-  showlisting = true;
-  session = true;
-
-
 
 
   public form: FormGroup;
   public contactList: FormArray;
-
-  public meetingDataEdit = [
-    {
-      details: 'Session Topic 1 - Design Thinking Workshop',
-      presenter: 'John Pinto',
-      meetaingDate: '22/03/2020',
-      sessionStartTime: '10:00 AM',
-      sessionEndTime: '6:30 PM',
-      InternalParticipants: 'View',
-      externalParticipants: 'View',
-      attachement: 'UI-structure.docx',
-      actionItems:
-      [
-        {
-          description: 'Lorem Ipsum Dummy Text', type: 'Action'
-        }
-      ],
-    }
-  ];
 
 
   meetingDataForm = new FormGroup({
@@ -73,33 +50,7 @@ export class DocumentMomComponent implements OnInit {
     meetingEndDate: new FormControl(''),
     meetingLocation: new FormControl(''),
     otherInformation: new FormControl(''),
-    sessionData: new FormGroup(
-      {
-        sessionTopic: new FormControl(''),
-        presenter: new FormControl(''),
-        externalPresenter: new FormControl(''),
-        sessionStartTime: new FormControl(''),
-        sessionEndTime: new FormControl(''),
-        meetingStartDate: new FormControl(''),
-        internalParticipants: new FormGroup(
-          {
-          name: new FormControl(''), designation: new FormControl('')
-          }),
-        externalParticipants: new FormGroup(
-          {
-          name: new FormControl(''), extDesignation: new FormControl('')
-          }),
-        attachments: new FormControl(''),
-        actionItems: new FormGroup({
-          description: new FormControl(''),
-          type: new FormControl(''),
-           actionOwner: new FormControl(''),
-          targetDate: new FormControl(''),
-          priority: new FormControl(''),
-          remarks: new FormControl('')
-        })
-      }
-    )
+
     });
   isDisabled = (date: NgbDate, current: {month: number, year: number}) => date.month !== current.month;
   isWeekend = (date: NgbDate) =>  this.calendar.getWeekday(date) >= 6;
@@ -139,10 +90,6 @@ export class DocumentMomComponent implements OnInit {
     this.contactList.push(this.createContact());
   }
 
-  // add new session topic
-  addNew() {
-
-  }
   // remove contact from group
   removeContact(index) {
     // this.contactList = this.form.get('contacts') as FormArray;

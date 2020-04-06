@@ -1,0 +1,117 @@
+<div class="wrapper">
+  <section>
+    <div class="container">
+      <h1>Track Action - Website Discussion</h1>
+      <div class="main-container">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Meeting Owner</th>
+                <th>Meeting Name</th>
+                <th>Meeting Start Date</th>
+                <th>Meeting End Date</th>
+                <th>Meeting Location</th>
+                <th>Other Information</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of meetingdtlTBL">
+                <td>{{data.meetingOwner}}</td>
+                <td>{{data.meetingTitle}}</td>
+                <td>{{data.meetingStartDate}}</td>
+                <td>{{data.meetingEndDate}}</td>
+                <td>{{data.meetingLocation}}</td>
+                <td>{{data.otherInformation}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ngb-accordion #acc="ngbAccordion">
+          <ngb-panel title="Session Topic {{item.sessionId}} - {{item.sessionTopic}}" *ngFor="let item of sessionData[0]">
+            <ng-template ngbPanelContent>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Session Topic {{item.sessionId}}</th>
+                      <th>Presenter</th>
+                      <th>External Presenter</th>
+                      <th>Meeting Date</th>
+                      <th>Session Start Time</th>
+                      <th>Session End Time</th>
+                      <th>Attachment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{item.sessionTopic}}</td>
+                      <td>{{item.presenter}}</td>
+                      <td>{{item.externalPresenter}}</td>
+                      <td>{{item.meetingDate}}</td>
+                      <td>{{item.sessionStartTime}}</td>
+                      <td>{{item.sessionEndTime}}</td>
+                      <td><a href="#" class="btn-link">{{item.attachment}}</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-responsive mt-2">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td><b>Internal Participants</b></td>
+                      <td>
+                        <ul class="list-inline">
+                          <li *ngFor="let x of item.internalParticipants" class="list-inline-item">{{x.name}}</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>External Participants</b></td>
+                      <td>
+                        <ul class="list-inline">
+                          <li *ngFor="let x of item.externalParticipants" class="list-inline-item">{{x.name}}</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-2 table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                  <tr>
+                    <th scope="col">Sr. No.</th>
+                    <th scope="col">Item Description</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Action Owner</th>
+                    <th scope="col">Target Date</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Remarks</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let item of item.actionItems">
+                    <td>{{item.id}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.actionOwner}}</td>
+                    <td>{{item.targetDate}}</td>
+                    <td>{{item.priority}}</td>
+                    <td>{{item.remarks}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+      <ng-template ngbNavContent >
+
+
+    </ng-template>
+    </div>
+  </section>
+</div>

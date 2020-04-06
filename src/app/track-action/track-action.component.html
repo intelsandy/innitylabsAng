@@ -1,7 +1,7 @@
 <div class="wrapper">
   <section>
       <div class="container">
-          <h3>Track Action</h3>
+          <h1>Track Action</h1>
           <div class="main-container">
             <div class="table-responsive">
               <table class="table table-bordered">
@@ -22,7 +22,7 @@
                     <td>{{data.meetingStartDate}}</td>
                     <td>{{data.meetingEndDate}}</td>
                     <td>{{data.meetingLocation}}</td>
-                    <td align="center"><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                    <td align="center"><a [routerLink]="['website-discussion']" class="btn btn-sm btn-primary">View</a></td>
                   </tr>
                 </tbody>
               </table>

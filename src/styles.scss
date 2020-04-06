@@ -65,11 +65,13 @@ textarea.form-control {resize:none;}
   .timepicker-wrap .ngx-material-timepicker-toggle svg {display:none;}
 }
 
-.accordion > .card {border-radius: 0;margin-bottom: 1rem;border:0;}
-.accordion > .card > .card-header {padding:0 !important; background:#f1f1f1 !important;border-bottom: 0;}
-.accordion > .card > .card-header .btn-link {color:#000;font-weight:$FontWeight600;font-size:1.2rem;width:$Width100;text-align:left;text-decoration:none;}
+.accordion > .card {border-radius: 0;margin-bottom: 1.3rem;border:0;}
+.accordion > .card > .card-header {padding:0.219rem !important; background:#f1f1f1 !important;border-bottom: 0;}
+.accordion > .card > .card-header .btn-link {color:#000;font-weight:$FontWeight600;font-size:1.1rem;width:$Width100;text-align:left;text-decoration:none;}
 .accordion > .card > .card-header .btn-link.collapsed:after {content:'';background:url('src/assets/images/common/icons/fc-plus.png');width:20px;height:20px; position:absolute;right: 10px;top: 10px; }
 .accordion > .card > .card-header .btn-link:after {content:'';background:url('src/assets/images/common/icons/fc-minus.png');width:20px;height:20px; position:absolute;right: 10px;top: 10px;  }
+.accordion > .card .card-body {padding:1rem 0;}
+
 
 .form-control {height:calc(1em + 0.75rem + 2px);}
 .form-group {margin-bottom: 0.75rem;}
@@ -185,6 +187,156 @@ textarea.form-control {resize:none;}
 
 
 
+
+
+
+/*Document Mom*/
+
+/*******Tabs*************/
+.tab-content {background: #fff;padding: 2rem 1rem;margin-top:-4px;}
+.nav-tabs {border-bottom:0;
+    a,
+    .nav-link {border-radius: 0;font-size: 1.133rem; font-weight:$FontWeight500;position: relative;color: #515151;background: #b9c1ce;margin-bottom: 5px;padding: 0.35rem 2.3rem;}
+    a.active,
+    .nav-link.active{background: #3f84fc;color:#fff;padding-bottom: 10px;border-bottom: 0;}
+    .nav-link.active:after, .nav-pills .show>  :after{content:'';position: absolute;bottom: -13px;border-left: 16px solid transparent;border-right: 16px solid transparent;border-top: 13px solid #3f84fc;width: 0;height: 0;left: 0;right: 0;margin: 0 auto;}
+    .success{background-color: #28a745;color: #fff;}
+
+    .nav-item + .nav-item {margin-left:0.5rem}
+    // .nav-item a.active[aria-selected="true"] {background: #3f84fc;}
+    // .nav-item a#ngb-nav-0[aria-selected="false"],
+    // .nav-item a#ngb-nav-1[aria-selected="false"] {background: green;color:$TextWhite;}
+    // .nav-item a[aria-selected="false"] {background: #b9c1ce;}
+}
+
+.date-picker input {position: relative;z-index: 1;background: none;}
+.date-picker input:before {content:'';position: absolute;color: #000;left: 0;top:0;width: 4rem;height: 4rem;background: #ddd;display: inline-block;z-index: 9;}
+/*******Tabs*************/
+
+
+// .ng-select {width:100%; border:1px solid #ddd; border-radius:0.3rem;height:30px;padding:0 1rem;}
+// .ng-dropdown-panel {background: #fff;border:1px solid #ddd;padding:0 1rem;margin-left: -1rem;margin-top: 0.4rem;}
+// .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder {opacity:0;}
+// .ng-select .ng-select-container {margin-top: -20px;padding-bottom:20px;}
+.ng-select.ng-select-opened > .ng-select-container {background: #ffffff;border-color: #b3b2b2 #ccc #d9d9d9;}
+.ng-select.ng-select-opened > .ng-select-container:hover {box-shadow: none;}
+.ng-select.ng-select-opened > .ng-select-container .ng-arrow {top: -2px;border-color: transparent transparent #999999;border-width: 0 5px 5px;}
+.ng-select.ng-select-opened > .ng-select-container .ng-arrow:hover {border-color: transparent transparent #333333;}
+.ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {border-bottom-right-radius: 0;border-bottom-left-radius: 0;}
+.ng-select.ng-select-opened.ng-select-top > .ng-select-container {border-top-right-radius: 0;border-top-left-radius: 0;}
+.ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {border-color: #007eff;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);}
+.ng-select.ng-select-disabled > .ng-select-container {background-color: #f9f9f9;}
+.ng-select .ng-has-value .ng-placeholder {display: none;}
+.ng-select .ng-select-container {color: #333;background-color: #ffffff;border-radius: 4px;border: 1px solid #ccc;min-height: 36px;align-items: center;}
+.ng-select .ng-select-container:hover {box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);}
+.ng-select .ng-select-container .ng-value-container {align-items: center;padding-left: 10px;}
+[dir="rtl"] .ng-select .ng-select-container .ng-value-container {padding-right: 10px;padding-left: 0;}
+.ng-select .ng-select-container .ng-value-container .ng-placeholder {color: #999999;}
+.ng-select.ng-select-single .ng-select-container {height: 36px;}
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {top: 5px;left: 0;padding-left: 10px;padding-right: 50px;}
+[dir="rtl"] .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {padding-right: 10px;padding-left: 50px;}
+.ng-select.ng-select-multiple.ng-select-disabled > .ng-select-container .ng-value-container .ng-value {background-color: #f9f9f9;border: 1px solid #e6e5e5;}
+.ng-select.ng-select-multiple.ng-select-disabled > .ng-select-container .ng-value-container .ng-value .ng-value-label {padding: 0 5px;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container {padding-top: 5px;padding-left: 7px;}
+[dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container {padding-right: 7px;padding-left: 0;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {font-size: 0.9em;margin-bottom: 5px;background-color: #ebf5ff;border-radius: 2px;margin-right: 5px;}
+[dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {margin-right: 0;margin-left: 5px;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value.ng-value-disabled {background-color: #f9f9f9;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value.ng-value-disabled .ng-value-label {padding-left: 5px;}
+[dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value.ng-value-disabled .ng-value-label {padding-left: 0;padding-right: 5px;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-label {display: inline-block;padding: 1px 5px;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon {display: inline-block;padding: 1px 5px;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon:hover {background-color: #d1e8ff;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon.left {border-right: 1px solid #b8dbff;}
+[dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon.left {border-left: 1px solid #b8dbff;border-right: none;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon.right {border-left: 1px solid #b8dbff;}
+[dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon.right {border-left: 0;border-right: 1px solid #b8dbff;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-input {padding: 0 0 3px 3px;}
+[dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-input {padding: 0 3px 3px 0;}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder {top: 5px;padding-bottom: 5px;padding-left: 3px;}
+[dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder {padding-right: 3px;padding-left: 0;}
+.ng-select .ng-clear-wrapper {color: #999999;}
+.ng-select .ng-clear-wrapper:hover .ng-clear {color: #D0021B;}
+.ng-select .ng-spinner-zone {padding: 5px 5px 0 0;}
+[dir="rtl"] .ng-select .ng-spinner-zone {padding: 5px 0 0 5px;}
+.ng-select .ng-arrow-wrapper {width: 25px;padding-right: 5px;}
+[dir="rtl"] .ng-select .ng-arrow-wrapper {padding-left: 5px;padding-right: 0;}
+.ng-select .ng-arrow-wrapper:hover .ng-arrow {border-top-color: #666666;}
+.ng-select .ng-arrow-wrapper .ng-arrow {border-color: #999999 transparent transparent;border-style: solid;border-width: 5px 5px 2.5px;}
+.ng-dropdown-panel {background-color: #ffffff;border: 1px solid #ccc; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);left: 0;}
+.ng-dropdown-panel.ng-select-bottom {top: 100%;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px; border-top-color: #e6e5e5;margin-top: -1px;}
+.ng-dropdown-panel.ng-select-bottom .ng-dropdown-panel-items .ng-option:last-child {border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;}
+.ng-dropdown-panel.ng-select-top {bottom: 100%;border-top-right-radius: 4px;border-top-left-radius: 4px;border-bottom-color: #e6e5e5;margin-bottom: -1px;}
+.ng-dropdown-panel.ng-select-top .ng-dropdown-panel-items .ng-option:first-child {border-top-right-radius: 4px;border-top-left-radius: 4px;}
+.ng-dropdown-panel .ng-dropdown-header {border-bottom: 1px solid #ccc;padding: 5px 7px;}
+.ng-dropdown-panel .ng-dropdown-footer {border-top: 1px solid #ccc;padding: 5px 7px;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup {user-select: none;padding: 8px 10px;font-weight: 500;color: rgba(0, 0, 0, 0.54);cursor: pointer;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-disabled {cursor: default;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-marked {background-color: #f5faff;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-selected.ng-option-marked {background-color: #ebf5ff;font-weight: 600;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {background-color: #ffffff;color: rgba(0, 0, 0, 0.87);padding: 8px 10px;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {color: #333;background-color: #ebf5ff;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected .ng-option-label, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked .ng-option-label {font-weight: 600;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {background-color: #f5faff;color: #333;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-disabled {color: #cccccc;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-child {padding-left: 22px;}
+[dir="rtl"] .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-child {padding-right: 22px;padding-left: 0;}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option .ng-tag-label {font-size: 80%;font-weight: 400;padding-right: 5px;}
+[dir="rtl"] .ng-dropdown-panel .ng-dropdown-panel-items .ng-option .ng-tag-label {padding-left: 5px;padding-right: 0;}
+[dir="rtl"] .ng-dropdown-panel {direction: rtl;text-align: right;}
+
+
+.table.table-bordered td.pad-0{padding:0;}
+.table.table-bordered td.pad-0 .table {border:0;margin-bottom:0;}
+.clone-tbl td {border-top:0;}
+.clone-tbl td:nth-child(1){border-top:0;border-left:0; width:60px;}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  width: 2rem;
+}
+.custom-day:hover, .custom-day.focused {
+  background-color: #e6e6e6;
+}
+.weekend {
+  background-color: #f0ad4e;
+  border-radius: 1rem;
+  color: white;
+}
+.hidden {
+  display: none;
+}
+
+
+
+@media (max-width: 991.98px) {
+  .nav-tabs {
+    .nav-link {padding: 0.35rem 1rem;}
+  }
+  .col-form-label{line-height:normal;}
+}
+
+
+@media (max-width: 767.98px) {
+  .nav-tabs {
+    .nav-item {width:100%;}
+    .nav-item + .nav-item {margin-left:0rem}
+    .nav-link.active:after, .nav-pills .show>  :after {display:none}
+  }
+
+}
+
+
+@media (max-width: 575.98px) {
+  .col-form-label.text-right {text-align:left !important;padding:1rem 0.7rem 0.2rem}
+  .tab-content .main-container{padding:0;}
+  .card .card-body {padding:1.25rem 0;}
+
+}
+
+/*Document Mom*/
 
 @media (max-width: 576.98px) {
 
