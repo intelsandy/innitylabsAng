@@ -38,7 +38,7 @@ export class DocumentMomComponent implements OnInit {
   internalParticipantsList: any;
   internalParticipants = [];
   showlisting = true;
-  session = true;
+  session = 1;
 
 
 
@@ -162,11 +162,11 @@ export class DocumentMomComponent implements OnInit {
       ]);
     }
 
-    this.getContactsFormGroup(index).controls.value.setValidators(
-      validators
-    );
+    // this.getContactsFormGroup(index).controls.value.setValidators(
+    //   validators
+    // );
 
-    this.getContactsFormGroup(index).controls.value.updateValueAndValidity();
+    // this.getContactsFormGroup(index).controls.value.updateValueAndValidity();
   }
 
   // get the formgroup under contacts form array

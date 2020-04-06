@@ -14,7 +14,7 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
     this.nav.hide();
-    console.log(this.sessionData);
+    // console.log(this.sessionData);
   }
 
 }

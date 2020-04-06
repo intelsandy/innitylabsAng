@@ -285,7 +285,7 @@
                                   </td>
                                   <td>
                                     <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
-                                    <a href="javascript:;" (click)="removeContact(i)">x</a>
+                                    <!-- <a href="javascript:;" (click)="removeContact(i)">x</a> -->
                                   </td>
                                 </tr>
                               </table>
@@ -329,7 +329,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="d-flex col">
-                        <a class="btn-orange-sm btn" id="addNew">+ Add Session Topic 2 {{session}}</a>
+                        <a class="btn-orange-sm btn" id="addNew">+ Add Session Topic {{session + 1}}</a>
                       </div>
                     </div>
                     <div class="form-group row">
