@@ -38,8 +38,13 @@ export class DocumentMomComponent implements OnInit {
   internalParticipantsList: any;
   internalParticipants = [];
   showlisting = true;
-  session = true;
+  newsession = 2;
+  showLog = true;
 
+  onShowLog(){
+        this.showLog = true;
+        return this.newsession = this.newsession + 1;
+  }
 
 
 
@@ -55,13 +60,7 @@ export class DocumentMomComponent implements OnInit {
       sessionEndTime: '6:30 PM',
       InternalParticipants: 'View',
       externalParticipants: 'View',
-      attachement: 'UI-structure.docx',
-      actionItems:
-      [
-        {
-          description: 'Lorem Ipsum Dummy Text', type: 'Action'
-        }
-      ],
+      attachement: 'UI-structure.docx'
     }
   ];
 
@@ -221,14 +220,14 @@ export class DocumentMomComponent implements OnInit {
   onNavChange(changeEvent: NgbNavChangeEvent) {
     if (changeEvent) {
       console.log(changeEvent.activeId);
-      document.querySelector('.nav-link').classList.add('success');
+      //document.querySelector('.nav-link').classList.add('success');
 
     }
     // if (changeEvent.nextId === 3) {
     //   changeEvent.preventDefault();
     // }
   }
-
+  
     // onCancel() {
     //   this.router.navigate(['../'], {relativeTo: this.route});
     // }

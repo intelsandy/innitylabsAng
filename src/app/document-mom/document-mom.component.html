@@ -84,7 +84,7 @@
                 <ng-template ngbNavContent formGroupName="sessionData">
                     <div id="sesion-topic-1">
                       <div class="form-group row">
-                        <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic {{session}}</b></label>
+                        <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic {{newsession}}</b></label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="SessionTopic1" formControlName="sessionTopic">
                         </div>
@@ -329,7 +329,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="d-flex col">
-                        <a class="btn-orange-sm btn" id="addNew">+ Add Session Topic 2 {{session}}</a>
+                        <a class="btn-orange-sm btn" id="addNew" (click)="onShowLog()" *ngIf="showLog">+ Add Session Topic {{newsession}}</a>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -412,6 +412,7 @@
                                   <th>Session Start Time</th>
                                   <th>Session End Time</th>
                                   <th>Attachment</th>
+                                  <th></th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -423,6 +424,7 @@
                                   <td>{{item.sessionStartTime}}</td>
                                   <td>{{item.sessionEndTime}}</td>
                                   <td><a href="#" class="btn-link">{{item.attachment}}</a></td>
+                                  <td><a class="fa fa-trash"></a><a class="fa fa-pencil"></a></td>
                                 </tr>
                               </tbody>
                             </table>
