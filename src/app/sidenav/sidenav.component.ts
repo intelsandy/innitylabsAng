@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { NavbarService } from '../../assets/shared/services/navbar.service';
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
+import { NavbarService } from './../../assets/shared/services/navbar.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -14,10 +14,10 @@ export class SidenavComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.nav.hide();
+    // this.nav.hide();
     // console.log(this.sessionData);
 
-
+    this.nav.events$.forEach(event => console.log(event));
   }
 
 

@@ -8,7 +8,7 @@ import { MeetingdataService } from '../../assets/shared/services/meetingdata.ser
 })
 export class TrackActionComponent implements OnInit {
   meetingdtlTBL: any;
-
+  
   constructor(private service: MeetingdataService) {
 
    }

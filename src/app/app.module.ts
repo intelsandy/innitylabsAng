@@ -40,6 +40,7 @@ import { MeetingSummaryComponent } from './document-mom/meeting-summary/meeting-
 
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NavbarService } from 'src/assets/shared/services/navbar.service';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     NgxMaterialTimepickerModule,
     NgSelectModule
   ],
-  providers: [MeetingdataService, DocumentMomService],
+  providers: [MeetingdataService, DocumentMomService, NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

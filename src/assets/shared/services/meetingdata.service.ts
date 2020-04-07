@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MeetingdataService {
+  subNav = false;
   constructor() { }
 
 
@@ -192,5 +193,8 @@ export class MeetingdataService {
   }
   getSessionData() {
       return this.meetingData.map(item => item.sessionData).slice();
+  }
+  openSubNav(){
+    alert('Hi');
   }
 }

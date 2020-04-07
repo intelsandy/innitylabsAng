@@ -60,6 +60,7 @@
                       <div class="d-flex justify-content-center col mt-4">
                         <button class="btn-primary btn mr-2" (click)="nav.select(1)">Cancel</button>
                         <button class="btn-secondary btn" type="button" id="sessionTab" (click)="nav.select(2)">Save and Continue</button>
+                        <button class="btn-primary btn mr-2" (click)="onClick()">Next</button>
                       </div>
                     </div>
                 </ng-template>
@@ -161,9 +162,9 @@
                             </td>
                             <td>
                               <select class="form-control" name="type" formControlName="type" id="type">
-                                <option value="Select">Select</option>
-                                <option value="Select">Action</option>
-                                <option value="Select">Information</option>
+                                <option selected>Select</option>
+                                <option>Action</option>
+                                <option>Information</option>
                               </select>
                             </td>
                             <td>
@@ -179,26 +180,13 @@
                                     <mat-datepicker #targetDate></mat-datepicker>
                                   </mat-form-field>
                                 </div>
-                                <!-- <div class="cal-wrap">
-                                  <input class="form-control" placeholder="mm-dd-yyyy" formControlName="targetDate" name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
-                                  <div class="input-group-append">
-                                    <button class="calendar" (click)="d.toggle()" type="button"></button>
-                                  </div>
-                                </div> -->
                               </div>
-
-                              <!-- <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
-                                <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
-                                      [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
-                                  {{ date.day }}
-                                </span>
-                              </ng-template> -->
                             </td>
                             <td>
                               <select class="form-control" name="priority" formControlName="priority" id="priority">
-                                <option value="Select">Select</option>
-                                <option value="Select">Action</option>
-                                <option value="Select">Information</option>
+                                <option>Select</option>
+                                <option>Action</option>
+                                <option>Information</option>
                               </select>
                             </td>
                             <td>
@@ -212,9 +200,9 @@
                             </td>
                             <td>
                               <select class="form-control" name="type" formControlName="type" id="type">
-                                <option value="Select">Select</option>
-                                <option value="Select">Action</option>
-                                <option value="Select">Information</option>
+                                <option>Select</option>
+                                <option>Action</option>
+                                <option>Information</option>
                               </select>
                             </td>
                             <td>
@@ -234,9 +222,9 @@
                             </td>
                             <td>
                               <select class="form-control" name="priority" formControlName="priority" id="priority">
-                                <option value="Select">Select</option>
-                                <option value="Select">Action</option>
-                                <option value="Select">Information</option>
+                                <option>Select</option>
+                                <option>Action</option>
+                                <option>Information</option>
                               </select>
                             </td>
                             <td>
@@ -250,9 +238,9 @@
                             </td>
                             <td>
                               <select class="form-control" name="type" formControlName="type" id="type">
-                                <option value="Select">Select</option>
-                                <option value="Select">Action</option>
-                                <option value="Select">Information</option>
+                                <option>Select</option>
+                                <option>Action</option>
+                                <option>Information</option>
                               </select>
                             </td>
                             <td>
@@ -272,9 +260,9 @@
                               </td>
                             <td>
                               <select class="form-control" name="priority" formControlName="priority" id="priority">
-                                <option value="Select">Select</option>
-                                <option value="Select">Action</option>
-                                <option value="Select">Information</option>
+                                <option>Select</option>
+                                <option>Action</option>
+                                <option>Information</option>
                               </select>
                             </td>
                             <td>
@@ -292,7 +280,7 @@
                     </div>
                     <div class="form-group row" *ngIf="!Session2">
                       <div class="d-flex col">
-                        <a class="btn-orange-sm btn" id="addNew" (click)="addSession()">+ Add Session Topic 2</a>
+                        <a class="btn-orange-xs" href="#" id="addNew" (click)="addSession()">+ Add Session Topic 2</a>
                       </div>
                     </div>
                     <div *ngIf="Session2">
@@ -391,9 +379,9 @@
                               </td>
                               <td>
                                 <select class="form-control" name="type" formControlName="type" id="type">
-                                  <option value="Select">Select</option>
-                                  <option value="Select">Action</option>
-                                  <option value="Select">Information</option>
+                                  <option>Select</option>
+                                  <option>Action</option>
+                                  <option>Information</option>
                                 </select>
                               </td>
                               <td>
@@ -426,9 +414,9 @@
                               </td>
                               <td>
                                 <select class="form-control" name="priority" formControlName="priority" id="priority">
-                                  <option value="Select">Select</option>
-                                  <option value="Select">Action</option>
-                                  <option value="Select">Information</option>
+                                  <option>Select</option>
+                                  <option>Action</option>
+                                  <option>Information</option>
                                 </select>
                               </td>
                               <td>
@@ -442,9 +430,9 @@
                               </td>
                               <td>
                                 <select class="form-control" name="type" formControlName="type" id="type">
-                                  <option value="Select">Select</option>
-                                  <option value="Select">Action</option>
-                                  <option value="Select">Information</option>
+                                  <option>Select</option>
+                                  <option>Action</option>
+                                  <option>Information</option>
                                 </select>
                               </td>
                               <td>
@@ -464,9 +452,9 @@
                               </td>
                               <td>
                                 <select class="form-control" name="priority" formControlName="priority" id="priority">
-                                  <option value="Select">Select</option>
-                                  <option value="Select">Action</option>
-                                  <option value="Select">Information</option>
+                                  <option>Select</option>
+                                  <option>Action</option>
+                                  <option>Information</option>
                                 </select>
                               </td>
                               <td>
@@ -480,9 +468,9 @@
                               </td>
                               <td>
                                 <select class="form-control" name="type" formControlName="type" id="type">
-                                  <option value="Select">Select</option>
-                                  <option value="Select">Action</option>
-                                  <option value="Select">Information</option>
+                                  <option>Select</option>
+                                  <option>Action</option>
+                                  <option>Information</option>
                                 </select>
                               </td>
                               <td>
@@ -502,9 +490,9 @@
                               </td>
                               <td>
                                 <select class="form-control" name="priority" formControlName="priority" id="priority">
-                                  <option value="Select">Select</option>
-                                  <option value="Select">Action</option>
-                                  <option value="Select">Information</option>
+                                  <option>Select</option>
+                                  <option>Action</option>
+                                  <option>Information</option>
                                 </select>
                               </td>
                               <td>

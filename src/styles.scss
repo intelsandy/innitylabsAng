@@ -17,7 +17,7 @@ body {
   h3 {font-size: $H3FontSize; font-weight: $FontWeight400;}
 }
 textarea.form-control {resize:none;}
-
+.form-control:disabled {background:#f7f7f7;}
 .row-zero{margin-left:-15px;margin-right:-15px}
 .row-zero > [class^="col"]{padding-left:0px;padding-right:0px;}
 
@@ -36,8 +36,20 @@ textarea.form-control {resize:none;}
   &:hover{background-color: $BtnSuccessHover; border:1px solid #009e0f;color:#009e0f;}
   &:focus {box-shadow:none;}
 }
-.btn-orange-sm{background: $BtnOrange;padding: 0.2rem 0.9rem;font-size: 1rem;color:$TextWhite !important;border-radius: $ZeroBorderRadius;border: $ZeroBorder;
-  &:hover{ background: $BtnOrangeHover;}
+.btn-success-sm{background-color:$BtnSuccess; border:1px solid #009e0f;color:$TextWhite;
+  &:hover{background-color: $BtnSuccessHover; border:1px solid #009e0f;color:#009e0f;}
+  &:focus {box-shadow:none;}
+}
+.btn-orange-sm{background: $BtnOrange;padding: 0.2rem 0.9rem;font-size: 1rem;color:$TextWhite;border-radius: $ZeroBorderRadius;border:1px solid #ff5a00;
+  &:hover{ background: $BtnOrangeHover;border:1px solid #ff5a00;color:#ff5a00;}
+  &:focus {box-shadow:none;}
+}
+.btn-orange-xs{background: $BtnOrange;padding: 0.1rem 0.9rem;font-size: 1rem;color:$TextWhite;border-radius: $ZeroBorderRadius;border:1px solid #ff5a00;
+  &:hover{ background: #fff;border:1px solid #ff5a00;color:#ff5a00;}
+  &:focus {box-shadow:none;}
+}
+.btn-blue-sm{background: $BtnBlue;padding: 0.2rem 0.9rem;font-size: 1rem;color:$TextWhite;border-radius: $ZeroBorderRadius;border:1px solid #597eaa;
+  &:hover{ background: $BtnBlueHover;border:1px solid #597eaa;color:#597eaa;}
   &:focus {box-shadow:none;}
 }
 .btn-gray {background:#e9ecef;color:#000;}

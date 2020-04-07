@@ -1,6 +1,6 @@
-.fileUpload {display:inline-block; height:30px;width:100%;min-width:482px;
+.fileUpload {display:inline-block; height:30px;width:70%;position:relative;
 
-  span {width: 74%;display: inline-block;position: relative;
+  span {width: 100%;display: inline-block;position: relative;
     &:first-child {vertical-align:top;border-radius:0.2rem;border: 1px solid #ddd;height: 30px;}
     input {position:absolute; min-width:610px;text-indent: -9999px;text-align:left;overflow:hidden;margin-left: -90px;z-index:1;
     &:focus {outline:0; box-shadow: none;}
@@ -10,12 +10,10 @@
     }
     .btn + .btn {margin-left:0;border-top-right-radius: 0.3rem;border-bottom-right-radius: 0.3rem;}
   }
-  span + span {width:auto; display:inline-block;margin-left:-2px;}
+  span + span {width:auto;position: absolute;right:0; display:inline-block;margin-left:-2px;}
 }
 
 
 @media (max-width: 991.98px) {
-  .fileUpload {min-width:100%;
-     span {width: 40%;}
-  }
+  
 }

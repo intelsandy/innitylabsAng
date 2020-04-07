@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import {NgbCalendar, NgbDate, NgbDateStruct, NgbNavChangeEvent, NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
 import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
@@ -24,6 +24,11 @@ export class DocumentMomComponent implements OnInit {
       config.closeOthers = true;
       config.type = 'info';
    }
+   
+   onClick() {
+    this.nav.newEvent('clicked!');
+    this.Subnav = true;
+  }
 
   active = 1;
   meridian = true;
@@ -107,7 +112,7 @@ export class DocumentMomComponent implements OnInit {
     });
     // console.log(this.internalParticipants);
 
-    this.nav.hide();
+    //this.nav.hide();
   }
 
 

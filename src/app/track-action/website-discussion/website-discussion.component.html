@@ -34,28 +34,68 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>Session Topic {{item.sessionId}}</th>
-                      <th>Presenter</th>
-                      <th>External Presenter</th>
-                      <th>Meeting Date</th>
-                      <th>Session Start Time</th>
-                      <th>Session End Time</th>
-                      <th>Attachment</th>
+                      <th>Sr. No.</th>
+                      <th>Item Descreption</th>
+                      <th>Action Owner</th>
+                      <th>Target Date</th>
+                      <th>Priority</th>
+                      <th>Status</th>
+                      <th>Remarks</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>{{item.sessionTopic}}</td>
-                      <td>{{item.presenter}}</td>
-                      <td>{{item.externalPresenter}}</td>
-                      <td>{{item.meetingDate}}</td>
-                      <td>{{item.sessionStartTime}}</td>
-                      <td>{{item.sessionEndTime}}</td>
-                      <td><a href="#" class="btn-link">{{item.attachment}}</a></td>
+                      <td>1</td>
+                      <td><input type="text" class="form-control" placeholder="Lorem Ipsum dummy text" disabled /></td>
+                      <td><input type="text" class="form-control" placeholder="Kaushal R" disabled /></td>
+                      <td><div class="cal-wrap">
+                        <mat-form-field>
+                          <mat-label>26-03-2020</mat-label>
+                          <input matInput [matDatepicker]="MeetingStartDate" disabled>
+                          <mat-datepicker-toggle matSuffix [for]="MeetingStartDate"></mat-datepicker-toggle>
+                          <mat-datepicker #MeetingStartDate></mat-datepicker>
+                        </mat-form-field>
+                      </div></td>
+                      <td><select class="form-control" disabled name="priority" formControlName="priority" id="priority">
+                        <option>Select</option>
+                        <option selected>High</option>
+                        <option>Low</option>
+                      </select></td>
+                      <td><select class="form-control" disabled name="priority" formControlName="status" id="status">
+                        <option>Select</option>
+                        <option selected="Open">Open</option>
+                        <option>Close</option>
+                      </select></td>
+                      <td><textarea name="remarks" id="remarks" placeholder="Lorem ipsum dummy text" disabled class="form-control" formControlName="remarks"></textarea></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td><input type="text" class="form-control" placeholder="Lorem Ipsum dummy text" disabled /></td>
+                      <td><input type="text" class="form-control" placeholder="Kaushal R" disabled /></td>
+                      <td><div class="cal-wrap">
+                        <mat-form-field>
+                          <mat-label>26-03-2020</mat-label>
+                          <input matInput [matDatepicker]="MeetingStartDate" disabled>
+                          <mat-datepicker-toggle matSuffix [for]="MeetingStartDate"></mat-datepicker-toggle>
+                          <mat-datepicker #MeetingStartDate></mat-datepicker>
+                        </mat-form-field>
+                      </div></td>
+                      <td><select class="form-control" disabled name="priority" formControlName="priority" id="priority">
+                        <option>Select</option>
+                        <option selected>High</option>
+                        <option>Low</option>
+                      </select></td>
+                      <td><select class="form-control" disabled name="priority" formControlName="status" id="status">
+                        <option>Select</option>
+                        <option selected="Open">Open</option>
+                        <option>Close</option>
+                      </select></td>
+                      <td><textarea name="remarks" id="remarks" placeholder="Lorem ipsum dummy text" disabled class="form-control" formControlName="remarks"></textarea></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+              <div class="text-right"><a href="#" class="btn btn-blue-sm">Update</a></div>
               <div class="table-responsive mt-2">
                 <table class="table table-bordered">
                   <tbody>
