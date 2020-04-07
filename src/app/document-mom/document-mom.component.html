@@ -82,7 +82,7 @@
               <li [ngbNavItem]="2">
                 <a ngbNavLink>Session Topic</a>
                 <ng-template ngbNavContent formGroupName="sessionData">
-                    <div id="sesion-topic-1">
+                    <div id="sesion-topic-1" *ngIf="!Session2">
                       <div class="form-group row">
                         <label for="SessionTopic1" class="col-sm-2 col-form-label"><b>Session Topic {{session}}</b></label>
                         <div class="col-sm-9">
@@ -168,7 +168,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="mt-2 table-responsive">
+                    <div class="mt-2 table-responsive" *ngIf="!Session2">
                       <table class="table table-bordered" formGroupName="actionItems">
                         <thead>
                         <tr>
@@ -233,113 +233,27 @@
                               <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
                             </td>
                           </tr>
-                          <tr scope="row">
-                            <td colspan="7" class="pad-0" formArrayName="contacts">
-                              <table class="table clone-tbl" *ngFor="let contact of contactFormGroup.controls; let i = index;">
-                                <tr [formGroupName]="i">
-                                  <td>2</td>
-                                  <td>
-                                    <input type="text" formControlName="description" class="form-control">
-                                  </td>
-                                  <td>
-                                    <select class="form-control" name="type" formControlName="type" id="type">
-                                      <option value="Select">Select</option>
-                                      <option value="Select">Action</option>
-                                      <option value="Select">Information</option>
-                                    </select>
-                                  </td>
-                                  <td>
-                                    <input type="text" formControlName="actionOwner" class="form-control">
-                                  </td>
-                                  <td>
-                                    <div class="form-group">
-                                      <div class="cal-wrap">
-                                        <mat-form-field>
-                                          <mat-label>dd-mm-yyyy</mat-label>
-                                          <input matInput [matDatepicker]="targetDate">
-                                          <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
-                                          <mat-datepicker #targetDate></mat-datepicker>
-                                        </mat-form-field>
-                                      </div>
-                                      <!-- <div class="cal-wrap">
-                                        <input class="form-control" placeholder="mm-dd-yyyy" formControlName="targetDate" name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
-                                        <div class="input-group-append">
-                                          <button class="calendar" (click)="d.toggle()" type="button"></button>
-                                        </div>
-                                      </div> -->
-                                    </div>
-
-                                    <!-- <ng-template #customDay let-date let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
-                                      <span class="custom-day" [class.weekend]="isWeekend(date)" [class.focused]="focused"
-                                            [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
-                                        {{ date.day }}
-                                      </span>
-                                    </ng-template> -->
-                                  </td>
-                                  <td>
-                                    <select class="form-control" name="priority" formControlName="priority" id="priority">
-                                      <option value="Select">Select</option>
-                                      <option value="Select">Action</option>
-                                      <option value="Select">Information</option>
-                                    </select>
-                                  </td>
-                                  <td>
-                                    <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
-                                    <!-- <a href="javascript:;" (click)="removeContact(i)">x</a> -->
-                                  </td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-
-                        <!-- <tr>
-                          <td colspan="7">
-                            <div class="card-body" formArrayName="contacts">
-                                <div class="row">
-                                  <div class="col" *ngFor="let contact of contactFormGroup.controls; let i = index;">
-                                    <div [formGroupName]="i" class="row">
-                                      <div class="form-group">
-                                        <label>Type of Contact</label>
-                                        <select (change)="changedFieldType(i)" class="form-control" formControlName="type" type="text">
-                                          <option value="email">Email</option>
-                                          <option value="phone">Phone</option>
-                                        </select>
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Contact Label</label>
-                                        <input class="form-control" formControlName="name" type="text">
-                                      </div>
-
-                                      <div class="form-group col-12 text-right">
-                                        <button class="btn btn-danger" type="button" (click)="removeContact(i)"> Remove </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          </td>
-                        </tr> -->
                         <tr>
                           <td colspan="7">
-                            <a href="javascript:;" (click)="addContact()">Add More</a>
+                            <a href="javascript:;">Add More</a>
                           </td>
                         </tr>
                         </tbody>
                       </table>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row" *ngIf="!Session2">
                       <div class="d-flex col">
-                        <a class="btn-orange-sm btn" id="addNew">+ Add Session Topic {{session + 1}}</a>
+                        <a class="btn-orange-sm btn" id="addNew" (click)="addSession()">+ Add Session Topic {{session + 1}}</a>
                       </div>
                     </div>
+                    <div id="sesion-topic-1" *ngIf="Session2">Session 2 Added</div>
                     <div class="form-group row">
                       <div class="d-flex justify-content-center col mt-4">
                         <button class="btn-primary btn mr-2" (click)="nav.select(1)">Cancel</button>
                         <button class="btn-secondary btn" (click)="nav.select(3)">Save and Continue</button>
                       </div>
                     </div>
-
-                    <div class="table-responsive">
+                    <div class="table-responsive" *ngIf="Session2">
                       <table class="table table-bordered">
                           <thead>
                             <tr>
