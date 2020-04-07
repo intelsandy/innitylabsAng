@@ -12,9 +12,14 @@ export class SidenavComponent implements OnInit {
   sessionData = this.meetingDataService.getSessionData();
 
 
+
   ngOnInit(): void {
     this.nav.hide();
-    console.log(this.sessionData);
+    // console.log(this.sessionData);
+
+
   }
+
+
 
 }

@@ -3,18 +3,14 @@
 /*******Tabs*************/
 .tab-content {background: #fff;padding: 2rem 1rem;margin-top:-4px;}
 .nav-tabs {border-bottom:0;
-    a,
-    .nav-link {border-radius: 0;font-size: 1.133rem; font-weight:$FontWeight500;position: relative;color: #515151;background: #b9c1ce;margin-bottom: 5px;padding: 0.35rem 2.3rem;}
-    a.active,
+    .nav-link {border-radius: 0;font-size: 1.133rem; font-weight:$FontWeight500;position: relative;color: #515151;background: #b9c1ce;margin-bottom: 5px;padding: 0.35rem 2.3rem;
+      &:hover {border-color:#b9c1ce}
+    }
     .nav-link.active{background: #3f84fc;color:#fff;padding-bottom: 10px;border-bottom: 0;}
     .nav-link.active:after, .nav-pills .show>  :after{content:'';position: absolute;bottom: -13px;border-left: 16px solid transparent;border-right: 16px solid transparent;border-top: 13px solid #3f84fc;width: 0;height: 0;left: 0;right: 0;margin: 0 auto;}
     .success{background-color: #28a745;color: #fff;}
 
     .nav-item + .nav-item {margin-left:0.5rem}
-    // .nav-item a.active[aria-selected="true"] {background: #3f84fc;}
-    // .nav-item a#ngb-nav-0[aria-selected="false"],
-    // .nav-item a#ngb-nav-1[aria-selected="false"] {background: green;color:$TextWhite;}
-    // .nav-item a[aria-selected="false"] {background: #b9c1ce;}
 }
 
 .date-picker input {position: relative;z-index: 1;background: none;}
