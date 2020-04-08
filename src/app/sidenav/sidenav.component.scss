@@ -24,6 +24,7 @@
           &:hover .fc-all-documents:before,
           &.active .fc-all-documents:before { background-image: url(/assets/images/common/icons/fc-all-documents-d.png); }
         }
+
       // a, .card-header {display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center;}
       }
       li.all-doc > a {line-height:normal;
@@ -61,7 +62,7 @@
   .sidenav > ul > li > a > span {display:$DisplayNone;}
   .sidenav > ul > li > a { padding:25px 0 ;}
   .sidenav {padding-top:150px}
-
+  .sidenav > ul > li .subnav {display:none;}
 
   .sidenavClosed .top-nav {left:0px !important}
 }

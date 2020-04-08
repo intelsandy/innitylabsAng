@@ -35,13 +35,6 @@ export class DocumentMomComponent implements OnInit {
       config.type = 'info';
    }
 
-
-
-
-
-
-
-
   public meetingDataEdit = [
     {
       details: 'Session Topic 1 - Design Thinking Workshop',
@@ -134,8 +127,10 @@ export class DocumentMomComponent implements OnInit {
 
   // functioin to show sidebar menu
   onClick() {
-    this.nav.newEvent(true);
+    // this.nav.newEvent(true);
     this.Subnav = true;
+    this.Session2 = true;
+    // this.nav.newEvent('clicked!');
     // document.getElementById("docMomNav").classList.toggle("show");
   }
 

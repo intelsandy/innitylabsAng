@@ -1,16 +1,17 @@
-.search-input-sec {min-width:400px; display:inline-block;
+.search-input-sec {min-width:500px; display:inline-block;margin-top: 10px;padding-left: 55px;
     .form-group { margin: 0;
-        button { width:40px; height: 40px; line-height: 40px; padding:0 !important; margin: 0; border: 0;  outline: 0; text-align: center; }
+        button { width:35px; height: 30px; line-height: 35px; padding:0 !important; margin: 0; border: 0;  outline: 0; text-align: center; }
         button > i { vertical-align: top; }
-        input[type="text"]{ color:#181f2c; border: 0; outline: 0; line-height: 40px; padding: 0;min-width: 300px;font-size: 1.2rem; color:#000}
+        input[type="text"]{ color:#181f2c; border: 0; outline: 0; line-height: 35px; padding: 0;min-width: 300px;font-size: 1.2rem; color:#000}
     }
+    .fc-search.dark:before {min-width:22px;min-height:22px;}
   }
 
 
   @media (max-width: 991.98px) {
-    .search-input-sec {min-width:75%; width:75%;
+    .search-input-sec {min-width:100%; width:75%;
       .form-group {
-        input[type="text"] {min-width: 75%;width:75%;font-size: 1rem;}
+        input[type="text"] {min-width: auto;width:75%;font-size: 1rem;}
         }
       }
   }

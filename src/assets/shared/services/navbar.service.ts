@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 
 export class NavbarService {
 
-    //visible: boolean;
+    visible: boolean;
 
 
     private _subject = new Subject<boolean>();
@@ -22,9 +22,8 @@ export class NavbarService {
 
     constructor() { /*this.visible = false;*/ }
 
-    // hide() { this.visible = false; }
+    hide() { this.visible = false; }
 
-    // show() {
-    //   this.visible = true; }
+    show() { this.visible = true; }
 
 }

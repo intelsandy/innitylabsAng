@@ -26,7 +26,7 @@ ng-sidebar {display:table-cell; width:220px;}
 }
 
 /**NavBar Toggle Css**/
-.navbar-toggler {margin-top:-10px;
+.navbar-toggler {margin-top:8px;position: absolute;
     &:focus {outline:0;}
     .navbar-toggler-icon,
     .navbar-toggler-icon:before,
@@ -52,7 +52,7 @@ ng-sidebar {display:table-cell; width:220px;}
 @media (max-width: 767.98px) {
   ::ng-deep .ng-sidebar {width:60px;}
   .navbar .navbar-brand {width:$Width100}
-  .top-nav {margin-top:60px;width: $Width100;left: 0 !important;z-index:12 !important;}
+  .top-nav {margin-top:60px;width: $Width100;left: 0 !important;z-index:12 !important;border-bottom: 1px solid #ddd;}
   .sidenav > ul > li > a > span {display:$DisplayNone}
   .top-nav {left:0px}
 
@@ -60,5 +60,5 @@ ng-sidebar {display:table-cell; width:220px;}
 
 
 @media (max-width: 575.98px) {
-  .toogle-search {width:30%;vertical-align: top;}
+  .toogle-search {width:20%;vertical-align: top;}
 }

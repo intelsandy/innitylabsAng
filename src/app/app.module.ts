@@ -1,5 +1,4 @@
 
-import { DocumentMomService } from './../assets/shared/services/document-mom.service';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +25,6 @@ import { TrackActionComponent } from './track-action/track-action.component';
 import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
-import { RightTopBarComponent } from './header/right-top-bar/right-top-bar.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -54,7 +52,6 @@ import { NavbarService } from 'src/assets/shared/services/navbar.service';
     AllDocumentedMomComponent,
     TrackActionComponent,
     AboutComponent,
-    RightTopBarComponent,
     FileUploadComponent,
     WebsiteDiscussionComponent,
     AutocompleteComponent
@@ -79,7 +76,7 @@ import { NavbarService } from 'src/assets/shared/services/navbar.service';
     NgxMaterialTimepickerModule,
     NgSelectModule
   ],
-  providers: [MeetingdataService, DocumentMomService, NavbarService],
+  providers: [MeetingdataService, NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

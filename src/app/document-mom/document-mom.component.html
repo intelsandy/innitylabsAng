@@ -9,20 +9,20 @@
                 <a ngbNavLink>Meeting Setup</a>
                 <ng-template ngbNavContent>
                     <div class="form-group row">
-                      <label for="MeetingOwner" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Meeting Owner</label>
+                      <label for="MeetingOwner" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Owner</label>
                       <div class="col-lg-9 col-md-7 col-sm-7">
-                        <input type="text" class="form-control" id="MeetingOwner" formControlName="meetingOwner">
+                        <input type="text" class="form-control" id="MeetingOwner" autocomplete="off" formControlName="meetingOwner">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="MeetingName" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Meeting Name</label>
+                      <label for="MeetingName" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Name</label>
                       <div class="col-lg-9 col-md-7 col-sm-7">
                         <input type="text" class="form-control" id="MeetingName" formControlName="meetingName">
                       </div>
                     </div>
                     <div class="form-group row cust-row">
-                      <label for="MeetingStartDate" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Meeting Start Date</label>
-                      <div class="col-lg-3 col-md-7 col-sm-9">
+                      <label for="MeetingStartDate" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Start Date</label>
+                      <div class="col-lg-3 col-md-7 col-sm-7">
                         <div class="cal-wrap">
                           <mat-form-field>
                             <mat-label>dd-mm-yyyy</mat-label>
@@ -32,8 +32,8 @@
                           </mat-form-field>
                         </div>
                       </div>
-                      <label for="MeetingEndDate" class="col-lg-3 col-md-4 col-sm-4 col-form-label">Meeting End Date</label>
-                      <div class="col-lg-3 col-md-7 col-sm-9">
+                      <label for="MeetingEndDate" class="col-lg-3 col-md-4 col-sm-4 col-form-label txt-center">Meeting End Date</label>
+                      <div class="col-lg-3 col-md-7 col-sm-7">
                         <div class="cal-wrap">
                           <mat-form-field>
                             <mat-label>dd-mm-yyyy</mat-label>
@@ -45,13 +45,13 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="MeetingLocation" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Meeting Localtion</label>
+                      <label for="MeetingLocation" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Localtion</label>
                       <div class="col-lg-9 col-md-7 col-sm-7">
                         <input type="text" class="form-control" id="MeetingLocation" formControlName="meetingLocation">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="OtherInformation" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Other Information</label>
+                      <label for="OtherInformation" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Other Information</label>
                       <div class="col-lg-9 col-md-7 col-sm-7">
                         <textarea class="form-control" id="OtherInformation" formControlName="otherInformation"></textarea>
                       </div>
@@ -60,7 +60,7 @@
                       <div class="d-flex justify-content-center col mt-4">
                         <button class="btn-primary btn mr-2" (click)="nav.select(1)">Cancel</button>
                         <button class="btn-secondary btn" type="button" id="sessionTab" (click)="nav.select(2)">Save and Continue</button>
-                        <button class="btn-primary btn mr-2" (click)="onClick()">Next</button>
+                        <!-- <button class="btn-primary btn mr-2">Next</button> -->
                       </div>
                     </div>
                 </ng-template>
@@ -70,26 +70,26 @@
                 <ng-template ngbNavContent formGroupName="sessionData">
                     <div id="sesion-topic-1" *ngIf="!Session2">
                       <div class="form-group row">
-                        <label for="SessionTopic1" class="col-lg-2 col-md-4 col-sm-4 col-form-label"><b>Session Topic 1</b></label>
+                        <label for="SessionTopic1" class="col-xl-2 col-lg-3 col-sm-4 col-form-label"><b>Session Topic 1</b></label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <input type="text" class="form-control" id="SessionTopic1" formControlName="sessionTopic">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="Presenter" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Presenter</label>
+                        <label for="Presenter" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Presenter</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <input type="text" class="form-control" id="Presenter" formControlName="presenter">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="ExternalPresenter" class="col-lg-2 col-md-4 col-sm-4 col-form-label">External Presenter</label>
+                        <label for="ExternalPresenter" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">External Presenter</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <input type="text" class="form-control" id="ExternalPresenter" formControlName="externalPresenter">
                         </div>
                       </div>
                       <div class="form-group row cust-row">
-                        <label for="MeetingDate" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Meeting Date</label>
-                        <div class="col-lg-3 col-md-7 col-sm-9">
+                        <label for="MeetingDate" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Date</label>
+                        <div class="col-lg-3 col-md-7 col-sm-7">
                           <div class="cal-wrap">
                             <mat-form-field>
                               <mat-label>22-03-2020</mat-label>
@@ -101,8 +101,8 @@
                         </div>
                       </div>
                       <div class="form-group row cust-row">
-                        <label for="SessionStartTime" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Session Start Time</label>
-                        <div class="col-lg-3 col-md-7 col-sm-9">
+                        <label for="SessionStartTime" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Session Start Time</label>
+                        <div class="col-lg-3 col-md-7 col-sm-7">
                           <div class="cal-wrap">
                             <div class="timepicker-wrap">
                               <input [ngxTimepicker]="startTimepicker" [disableClick]="true" readonly>
@@ -112,7 +112,7 @@
                           </div>
                         </div>
                         <label for="SessionEndTime" class="col-lg-3 col-md-4 col-sm-4 col-form-label">Session End Time</label>
-                        <div class="col-lg-3 col-md-7 col-sm-9">
+                        <div class="col-lg-3 col-md-7 col-sm-7">
                           <div class="cal-wrap">
                             <div class="timepicker-wrap">
                               <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
@@ -123,24 +123,25 @@
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="internalParticipants">
-                        <label for="InternalParticipants" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Internal Participants</label>
+                        <label for="InternalParticipants" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Internal Participants</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <app-autocomplete></app-autocomplete>
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="externalParticipants">
-                        <label for="externalParticipants" class="col-lg-2 col-md-4 col-sm-4 col-form-label">External Participants</label>
+                        <label for="externalParticipants" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">External Participants</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <input type="text" class="form-control" id="externalParticipants" formControlName="name">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="Attachments" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Attachments</label>
+                        <label for="Attachments" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Attachments</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <app-file-upload></app-file-upload>
                         </div>
                       </div>
                     </div>
+
                     <div class="mt-5 table-responsive" *ngIf="!Session2">
                       <table class="table table-bordered" formGroupName="actionItems">
                         <thead>
@@ -280,32 +281,32 @@
                     </div>
                     <div class="form-group row" *ngIf="!Session2">
                       <div class="d-flex col">
-                        <a class="btn-orange-xs" href="#" id="addNew" (click)="addSession()">+ Add Session Topic 2</a>
+                        <a class="btn-orange-xs" href="javascript:;" id="addNew" (click)="addSession()">+ Add Session Topic 2</a>
                       </div>
                     </div>
                     <div *ngIf="Session2">
 
                       <!----Session Topic 2 -->
                       <div class="form-group row">
-                        <label for="SessionTopic1" class="col-lg-2 col-md-4 col-sm-4 col-form-label"><b>Session Topic 2</b></label>
+                        <label for="SessionTopic1" class="col-xl-2 col-lg-3 col-sm-4 col-form-label"><b>Session Topic 2</b></label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <input type="text" class="form-control" id="SessionTopic1" formControlName="sessionTopic">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="Presenter" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Presenter</label>
+                        <label for="Presenter" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Presenter</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <input type="text" class="form-control" id="Presenter" formControlName="presenter">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="ExternalPresenter" class="col-lg-2 col-md-4 col-sm-4 col-form-label">External Presenter</label>
+                        <label for="ExternalPresenter" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">External Presenter</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <input type="text" class="form-control" id="ExternalPresenter" formControlName="externalPresenter">
                         </div>
                       </div>
                       <div class="form-group row cust-row">
-                        <label for="MeetingDate" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Meeting Date</label>
+                        <label for="MeetingDate" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Date</label>
                         <div class="col-lg-3 col-md-7 col-sm-9">
                           <div class="cal-wrap">
                             <mat-form-field>
@@ -318,7 +319,7 @@
                         </div>
                       </div>
                       <div class="form-group row cust-row">
-                        <label for="SessionStartTime" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Session Start Time</label>
+                        <label for="SessionStartTime" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Session Start Time</label>
                         <div class="col-lg-3 col-md-7 col-sm-9">
                           <div class="cal-wrap">
                             <div class="timepicker-wrap">
@@ -328,7 +329,7 @@
                             </div>
                           </div>
                         </div>
-                        <label for="SessionEndTime" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Session End Time</label>
+                        <label for="SessionEndTime" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Session End Time</label>
                         <div class="col-lg-3 col-md-7 col-sm-9">
                           <div class="cal-wrap">
                             <div class="timepicker-wrap">
@@ -340,19 +341,19 @@
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="internalParticipants">
-                        <label for="InternalParticipants" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Internal Participants</label>
+                        <label for="InternalParticipants" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Internal Participants</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <app-autocomplete></app-autocomplete>
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="externalParticipants">
-                        <label for="externalParticipants" class="col-lg-2 col-md-4 col-sm-4 col-form-label">External Participants</label>
+                        <label for="externalParticipants" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">External Participants</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <input type="text" class="form-control" id="externalParticipants" formControlName="name">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="Attachments" class="col-lg-2 col-md-4 col-sm-4 col-form-label">Attachments</label>
+                        <label for="Attachments" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Attachments</label>
                         <div class="col-lg-9 col-md-7 col-sm-7">
                           <app-file-upload></app-file-upload>
                         </div>
@@ -510,7 +511,7 @@
                       </div>
                       <div class="form-group row" *ngIf="Session2">
                         <div class="d-flex col">
-                          <a class="btn-orange-sm btn" id="addNew" (click)="addSession()">+ Add Session Topic 3</a>
+                          <a class="btn-orange-sm btn" href="#" id="addNew" (click)="addSession()">+ Add Session Topic 3</a>
                         </div>
                       </div>
                       <!---Session Topic 2-->
@@ -545,13 +546,13 @@
                               <td>{{item.meetaingDate}}</td>
                               <td>{{item.sessionStartTime}}</td>
                               <td>{{item.sessionEndTime}}</td>
-                              <td class="text-center"><a href="#" class="link-view">{{item.InternalParticipants}}</a></td>
-                              <td class="text-center"><a href="#" class="link-view">{{item.externalParticipants}}</a></td>
-                              <td><a href="#" class="link-view">{{item.attachement}}</a></td>
+                              <td class="text-center"><a href="javascript:;" class="link-view">{{item.InternalParticipants}}</a></td>
+                              <td class="text-center"><a href="javascript:;" class="link-view">{{item.externalParticipants}}</a></td>
+                              <td><a href="javascript:;" class="link-view">{{item.attachement}}</a></td>
                               <td>
                                 <span class="actionBtn">
-                                  <a href="#"><img src="assets/images/common/icons/fc-trash.png"></a>
-                                  <a href="#"><img src="assets/images/common/icons/fc-pencil.png"></a>
+                                  <a href="javascript:;"><img src="assets/images/common/icons/fc-trash.png"></a>
+                                  <a href="javascript:;"><img src="assets/images/common/icons/fc-pencil.png"></a>
                                 </span>
                               </td>
                             </tr>
@@ -601,7 +602,6 @@
                                   <th>Session Start Time</th>
                                   <th>Session End Time</th>
                                   <th>Attachment</th>
-                                  <th></th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -612,14 +612,13 @@
                                   <td>{{item.meetingDate}}</td>
                                   <td>{{item.sessionStartTime}}</td>
                                   <td>{{item.sessionEndTime}}</td>
-                                  <td><a href="#" class="btn-link">{{item.attachment}}</a></td>
-                                  <td><a class="fa fa-trash"></a><a class="fa fa-pencil"></a></td>
+                                  <td><a href="javascript:;" class="btn-link">{{item.attachment}}</a></td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
                           <div class="table-responsive mt-2">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered tbl-internal-participant">
                               <tbody>
                                 <tr>
                                   <td><b>Internal Participants</b></td>
