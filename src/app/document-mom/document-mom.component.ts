@@ -27,7 +27,7 @@ export class DocumentMomComponent implements OnInit {
    
    onClick() {
     this.nav.newEvent('clicked!');
-    this.Subnav = true;
+
   }
 
   active = 1;
