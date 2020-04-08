@@ -8,23 +8,22 @@ import { Subject } from 'rxjs';
 export class NavbarService {
 
     visible: boolean;
-    Subnav = false;
 
-    private _subject = new Subject<any>();
 
-  newEvent(event) {
-    this._subject.next(event);
-  }
+    private _subject = new Subject<boolean>();
 
-  get events$ () {
-    return this._subject.asObservable();
-  }
+    newEvent(event) {
+      this._subject.next(event);
+    }
 
-    constructor() { this.visible = false; }
-  
+    get events$ () {
+      return this._subject.asObservable();
+    }
+
+    constructor() { /*this.visible = false;*/ }
+
     hide() { this.visible = false; }
-  
-    show() { 
-      this.visible = true; }
-  
+
+    show() { this.visible = true; }
+
 }

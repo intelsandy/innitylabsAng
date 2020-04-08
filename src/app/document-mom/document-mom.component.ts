@@ -13,23 +13,6 @@ import { NavbarService } from '../../assets/shared/services/navbar.service';
 })
 export class DocumentMomComponent implements OnInit {
 
-
-
-  // disable = false;
-  constructor(
-    private metingdataService: MeetingdataService,
-    private calendar: NgbCalendar,
-    config: NgbAccordionConfig,
-    public nav: NavbarService) {
-      config.closeOthers = true;
-      config.type = 'info';
-   }
-   
-   onClick() {
-    this.nav.newEvent('clicked!');
-
-  }
-
   active = 1;
   meridian = true;
   model: NgbDateStruct;
@@ -39,6 +22,24 @@ export class DocumentMomComponent implements OnInit {
   internalParticipants = [];
   Session2 = false;
   Clonerow = false;
+  Subnav = false;
+
+  // Subnav = false;
+  // disable = false;
+  constructor(
+    private metingdataService: MeetingdataService,
+    private calendar: NgbCalendar,
+    config: NgbAccordionConfig,
+    public nav: NavbarService) {
+      config.closeOthers = true;
+      config.type = 'info';
+   }
+
+
+
+
+
+
 
 
   public meetingDataEdit = [
@@ -112,7 +113,7 @@ export class DocumentMomComponent implements OnInit {
     });
     // console.log(this.internalParticipants);
 
-    //this.nav.hide();
+    // this.nav.hide();
   }
 
 
@@ -131,10 +132,21 @@ export class DocumentMomComponent implements OnInit {
       console.log(this.meetingDataForm.value);
   }
 
-  onNavChange(changeEvent: NgbNavChangeEvent) {
+  // functioin to show sidebar menu
+  onClick() {
+    // this.nav.newEvent(true);
+    this.Subnav = true;
+    this.nav.newEvent('clicked!');
+    // document.getElementById("docMomNav").classList.toggle("show");
+  }
+
+
+
+
+onNavChange(changeEvent: NgbNavChangeEvent) {
     if (changeEvent) {
       console.log(changeEvent.activeId);
-      //document.querySelector('.nav-link').classList.add('success');
+      // document.querySelector('.nav-link').classList.add('success');
 
     }
     // if (changeEvent.nextId === 3) {

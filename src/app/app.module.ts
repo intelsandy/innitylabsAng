@@ -26,7 +26,6 @@ import { TrackActionComponent } from './track-action/track-action.component';
 import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
-import { SessionTopicComponent } from './document-mom/session-topic/session-topic.component';
 import { RightTopBarComponent } from './header/right-top-bar/right-top-bar.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
@@ -36,7 +35,6 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import {FileUploadModule} from 'ng2-file-upload';
 import { WebsiteDiscussionComponent } from './track-action/website-discussion/website-discussion.component';
-import { MeetingSummaryComponent } from './document-mom/meeting-summary/meeting-summary.component';
 
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -56,11 +54,9 @@ import { NavbarService } from 'src/assets/shared/services/navbar.service';
     AllDocumentedMomComponent,
     TrackActionComponent,
     AboutComponent,
-    SessionTopicComponent,
     RightTopBarComponent,
     FileUploadComponent,
     WebsiteDiscussionComponent,
-    MeetingSummaryComponent,
     AutocompleteComponent
   ],
   imports: [
