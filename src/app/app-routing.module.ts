@@ -1,5 +1,4 @@
-import { SessionTopicComponent } from './document-mom/session-topic/session-topic.component';
-import { MeetingSummaryComponent } from './document-mom/meeting-summary/meeting-summary.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,8 +14,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'document-mom', component: DocumentMomComponent },
-  { path: 'document-mom/session-topic', component: SessionTopicComponent },
-  { path: 'document-mom/meeting-summary', component: MeetingSummaryComponent },
+  // { path: 'document-mom/session-topic', component: SessionTopicComponent },
+  // { path: 'document-mom/meeting-summary', component: MeetingSummaryComponent },
   { path: 'all-documented-mom', component: AllDocumentedMomComponent },
   { path: 'track-action', component: TrackActionComponent },
   { path: 'about', component: AboutComponent },
