@@ -10,14 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
   constructor(public nav: NavbarService, private meetingDataService: MeetingdataService) { }
   sessionData = this.meetingDataService.getSessionData();
-
-
+ 
+  subNav = this.nav.show();
 
   ngOnInit(): void {
-    // this.nav.hide();
+    this.nav.hide();
     // console.log(this.sessionData);
 
-    this.nav.events$.forEach(event => console.log(event));
+    // console.log(this.subNav);
   }
 
 
