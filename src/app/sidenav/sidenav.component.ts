@@ -1,6 +1,7 @@
 import { MeetingdataService } from 'src/assets/shared/services/meetingdata.service';
 import { NavbarService } from './../../assets/shared/services/navbar.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
 
 
-  constructor(public nav: NavbarService, private meetingDataService: MeetingdataService) { }
+  constructor(public nav: NavbarService, private meetingDataService: MeetingdataService, public router: Router) { }
   sessionData = this.meetingDataService.getSessionData();
   subNav = false;
 
@@ -20,8 +21,12 @@ export class SidenavComponent implements OnInit {
     this.nav.hide();
     // console.log(this.sessionData);
     // console.log(this.subNav);
-
+    
     this.nav.events$.forEach(event => console.log(event));
+  }
+
+  showSubnav() {
+    this.subNav = true;
   }
 
   // toggleMenu() {

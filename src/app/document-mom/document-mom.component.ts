@@ -35,13 +35,6 @@ export class DocumentMomComponent implements OnInit {
       config.type = 'info';
    }
 
-
-
-
-
-
-
-
   public meetingDataEdit = [
     {
       details: 'Session Topic 1 - Design Thinking Workshop',

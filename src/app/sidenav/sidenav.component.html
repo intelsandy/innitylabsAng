@@ -4,7 +4,7 @@
       <li><a routerLinkActive="active" routerLink="dashboard"><i class="fc-home"></i> <span>Dashboard</span></a></li>
       <li>
         <a routerLinkActive="active"  routerLink="document-mom"><i class="fc-user-plus"></i> <span>Document MOM</span></a>
-        <ul class="subnav" *ngIf="subNav">
+        <ul class="subnav" *ngIf="router.url == '/document-mom'">
           <li><a routerLink="document-mom">Meeting Setup</a></li>
           <li><a routerLink="document-mom">Session Topic 1</a></li>
           <!-- <li *ngIf="Session2"><a routerLink="document-mom">Session Topic 1</a></li> -->
