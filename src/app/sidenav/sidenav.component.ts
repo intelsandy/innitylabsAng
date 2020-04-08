@@ -14,14 +14,14 @@ export class SidenavComponent implements OnInit {
   sessionData = this.meetingDataService.getSessionData();
   subNav = false;
 
-  //this.subNav = this.nav.events$.forEach(event => event);
+  // this.subNav = this.nav.events$.forEach(event => event);
 
   ngOnInit(): void {
     // this.nav.hide();
     // console.log(this.sessionData);
     console.log(this.subNav);
 
-    //this.nav.events$.forEach(event => console.log(event));
+    // this.nav.events$.forEach(event => console.log(event));
   }
 
   // toggleMenu() {
