@@ -10,7 +10,7 @@
     }
     .btn + .btn {margin-left:0;border-top-right-radius: 0.3rem;border-bottom-right-radius: 0.3rem;}
   }
-  span + span {width:auto;position: absolute;right:0; display:inline-block;margin-left:-2px;}
+  span + span {width:auto;position: absolute;right:0; display:inline-block;margin-left:-2px;z-index:1;}
 }
 
 
