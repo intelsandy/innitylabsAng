@@ -12,6 +12,7 @@ export class PieChartComponent implements OnInit {
 
   public pieChartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     legend: {
       position: 'right',
       labels: { fontSize: 16, fontFamily: '\'Ambit\', Arial, Helvetica, sans-serif', fontColor: '#000' }

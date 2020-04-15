@@ -4,6 +4,9 @@ ng-sidebar-container {position: absolute;}
 ng-sidebar {display:table-cell; width:220px;}
 .ng-sidebar__content {padding-left:220px;display:$DispalyTableCell;position:relative;}
 ::ng-deep .ng-sidebar {width:220px; background:$SideNavBgColor;}
+// .ng-sidebar.ng-sidebar--opened {width:220px; background:$SideNavBgColor;}
+// .ng-sidebar.ng-sidebar--closed {width:0px;}
+
 .toogle-search {display:$DisplayInlineBlock;vertical-align: top;}
 
 /**NavBar Css**/
@@ -50,7 +53,11 @@ ng-sidebar {display:table-cell; width:220px;}
 }
 
 @media (max-width: 767.98px) {
-  ::ng-deep .ng-sidebar {width:60px;}
+
+  ::ng-deep .ng-sidebar {width:0px;}
+  ::ng-deep .open.ng-sidebar {width:60px;pointer-events: all !important;transform: translateX(0%) !important;}
+  //.ng-sidebar.ng-sidebar--closed {width:60px;}
+  // .sidenavClosed ::ng-deep .ng-sidebar {width:60px}
   .navbar .navbar-brand {width:$Width100}
   .top-nav {margin-top:60px;width: $Width100;left: 0 !important;z-index:12 !important;border-bottom: 1px solid #ddd;}
   .sidenav > ul > li > a > span {display:$DisplayNone}

@@ -1046,16 +1046,17 @@ textarea.form-control {
 
 @media (max-width: 767.98px) {
   .wrapper.dashboard {
-    margin: 102px 0 0 60px;
-    width: calc(100% - 60px);
+    margin: 102px 0 0 0px;
+    width: calc(100% - 0px);
   }
+  .sidenavClosed .wrapper.dashboard {margin: 102px 0 0 60px !important}
   .wrapper {
-    margin: 132px 0 0 60px;
-    width: calc(100% - 60px);
+    margin: 132px 0 0 0px;
+    width: calc(100% - 0px);
   }
   .sidenavClosed .wrapper {
-    margin: 112px 0 0 0px;
-    width: calc(100% - 0px);
+    margin:132px 0 0 60px !important;
+    width: calc(100% - 60px);
   }
   .container,
   .container-sm {
