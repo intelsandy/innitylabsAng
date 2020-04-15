@@ -1,14 +1,33 @@
 <div class="card cust-card meeting-wrap">
     <h2>{{heading}}</h2>
-    <ng-scrollbar class="virtual-scroll" thumbClass="white-scrollbars">
-      <cdk-virtual-scroll-viewport scrollViewport itemSize="auto" class="example-viewport">
-        <ul class="meeting-listing">
+    <!-- <ng-scrollbar class="virtual-scroll" thumbClass="white-scrollbars">
+      <cdk-virtual-scroll-viewport scrollViewport itemSize="auto" class="example-viewport"> -->
+        <div class="custom-datatable">
+          <table class="table table-bordered" datatable [dtOptions]="dtOptions">
+            <thead>
+              <tr>
+                <th>Meeting Title</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+             <tr *ngFor="let mom of momdata">
+                   <td>{{mom.department}}</td>
+                   <td>{{mom.date}}</td>
+                   <td>{{mom.time}}</td>
+               </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- <ul class="meeting-listing">
             <li *ngFor="let mom of momdata">
                 <div class="txt">{{mom.department}}</div>
                 <div class="date">{{mom.date}}</div>
                 <div class="time">{{mom.time}}</div>
             </li>
-        </ul>
-      </cdk-virtual-scroll-viewport>
-    </ng-scrollbar>
+        </ul> -->
+      <!-- </cdk-virtual-scroll-viewport>
+    </ng-scrollbar> -->
 </div>

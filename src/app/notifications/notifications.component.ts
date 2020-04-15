@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationsComponent implements OnInit {
 
+
+
   constructor(private notifyService : NotificationService) { }
 
   showToasterSuccess(){
@@ -27,6 +29,7 @@ export class NotificationsComponent implements OnInit {
     }
 
   ngOnInit(): void {
+
   }
 
 }

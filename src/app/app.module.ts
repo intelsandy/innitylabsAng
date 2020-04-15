@@ -41,18 +41,10 @@ import { NavbarService } from 'src/assets/shared/services/navbar.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION} from 'ngx-ui-loader';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule} from 'ngx-ui-loader';
+import {DataTablesModule} from 'angular-datatables';
 
 
-const ngxUiLoaderConfig: NgxUiLoaderConfig = {
-  bgsColor: 'red',
-  bgsPosition: POSITION.bottomCenter,
-  bgsSize: 40,
-  bgsType: SPINNER.rectangleBounce, // background spinner type
-  fgsType: SPINNER.chasingDots, // foreground spinner type
-  pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
-  pbThickness: 5 // progress bar thickness
-};
 
 @NgModule({
   declarations: [
@@ -93,9 +85,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxMaterialTimepickerModule,
     NgSelectModule,
     NgxSpinnerModule,
-    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderModule,
     NgxUiLoaderRouterModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DataTablesModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [MeetingdataService, NavbarService, NotificationService],

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MinutesOfMeetingsComponent implements OnInit {
   momdata: any;
   heading = 'Minutes of Meeting';
-
+  dtOptions: DataTables.Settings = {};
 
 constructor() {
   this.momdata = [
@@ -112,6 +112,11 @@ constructor() {
 }
 
 ngOnInit(): void {
+  this.dtOptions = {
+    pagingType: 'full_numbers',
+    pageLength: 5,
+    processing: true
+  };
 }
 
 
