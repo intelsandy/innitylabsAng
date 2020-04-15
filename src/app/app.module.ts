@@ -1,8 +1,9 @@
+import { NotificationService } from './notification.service';
 
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +38,21 @@ import { WebsiteDiscussionComponent } from './track-action/website-discussion/we
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NavbarService } from 'src/assets/shared/services/navbar.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION} from 'ngx-ui-loader';
+
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: 'red',
+  bgsPosition: POSITION.bottomCenter,
+  bgsSize: 40,
+  bgsType: SPINNER.rectangleBounce, // background spinner type
+  fgsType: SPINNER.chasingDots, // foreground spinner type
+  pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
+  pbThickness: 5 // progress bar thickness
+};
 
 @NgModule({
   declarations: [
@@ -54,7 +70,8 @@ import { NavbarService } from 'src/assets/shared/services/navbar.service';
     AboutComponent,
     FileUploadComponent,
     WebsiteDiscussionComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
@@ -74,9 +91,14 @@ import { NavbarService } from 'src/assets/shared/services/navbar.service';
     MatFormFieldModule,
     MatNativeDateModule,
     NgxMaterialTimepickerModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxSpinnerModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule,
+    ToastrModule.forRoot()
   ],
-  providers: [MeetingdataService, NavbarService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [MeetingdataService, NavbarService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

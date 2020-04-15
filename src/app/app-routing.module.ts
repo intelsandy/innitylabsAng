@@ -7,6 +7,7 @@ import { AllDocumentedMomComponent } from './all-documented-mom/all-documented-m
 import { TrackActionComponent } from './track-action/track-action.component';
 import { WebsiteDiscussionComponent } from './track-action/website-discussion/website-discussion.component';
 import { AboutComponent } from './about/about.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 // import { AboutComponent } from './about/about.component';
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'all-documented-mom', component: AllDocumentedMomComponent },
   { path: 'track-action', component: TrackActionComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'track-action/website-discussion', component: WebsiteDiscussionComponent }
+  { path: 'track-action/website-discussion', component: WebsiteDiscussionComponent },
+  { path: 'notifications', component: NotificationsComponent }
   // { path: 'about', component: AboutComponent },
 ];
 
