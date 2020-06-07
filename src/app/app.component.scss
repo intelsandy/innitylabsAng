@@ -53,14 +53,13 @@ ng-sidebar {display:table-cell; width:220px;}
 }
 
 @media (max-width: 767.98px) {
-
-  ::ng-deep .ng-sidebar {width:0px;}
-  ::ng-deep .open.ng-sidebar {width:60px;pointer-events: all !important;transform: translateX(0%) !important;}
+  // ::ng-deep .ng-sidebar {width:0px;}
+  // ::ng-deep .open.ng-sidebar {width:100%;pointer-events: all !important;transform: translateX(0%) !important;}
   //.ng-sidebar.ng-sidebar--closed {width:60px;}
   // .sidenavClosed ::ng-deep .ng-sidebar {width:60px}
   .navbar .navbar-brand {width:$Width100}
   .top-nav {margin-top:60px;width: $Width100;left: 0 !important;z-index:12 !important;border-bottom: 1px solid #ddd;}
-  .sidenav > ul > li > a > span {display:$DisplayNone}
+  // .sidenav > ul > li > a > span {display:$DisplayNone}
   .top-nav {left:0px}
 
 }

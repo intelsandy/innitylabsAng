@@ -36,7 +36,7 @@
 
 .copy-txt { position: absolute; bottom: 0px;  left: 0; right:0; text-align: center; color: $TextWhite; font-size:12px;background: #181f2c;padding: 0.5rem;}
 .fc-copy {width:30px; display:$DisplayInlineBlock}
-.fc-copy:before {top:-2px; position: absolute;}
+.fc-copy:before {top:2px; position: absolute;}
 
 .sidenav > ul > li > a.active { /*background: #fff;*/ color:#181f2c; text-decoration: none;}
 .sidenav > ul > li > a.active:after { width: $Width100;}
@@ -49,7 +49,7 @@
 
 .sidenav  .subnav {margin:0; padding:10px 0 10px 30px;
   li {list-style: none;position: relative;
-    &:before {content:'';background-image: url(/assets/images/common/icons/fc-nav-arrow.png);width:11px; height:13px; position:absolute; left:0;margin-top:5px;}
+    &:before {content:'';background-image: url(/assets/images/common/icons/fc-nav-arrow.png);width:11px; height:13px; position:absolute; left:0;margin-top:9px;}
     a {padding:5px 0 5px 20px;color:#d1dae9;
       &:hover {color:#fff;}
     }
@@ -58,11 +58,11 @@
 
 
 @media (max-width: 767.98px) {
-  .copy-txt span {display:$DisplayNone}
-  .sidenav > ul > li > a > span {display:$DisplayNone;}
+  // .copy-txt span {display:$DisplayNone}
+  // .sidenav > ul > li > a > span {display:$DisplayNone;}
   .sidenav > ul > li > a { padding:25px 0 ;}
   .sidenav {padding-top:150px}
-  .sidenav > ul > li .subnav {display:none;}
+  // .sidenav > ul > li .subnav {display:none;}
 
   .sidenavClosed .top-nav {left:0px !important}
 }

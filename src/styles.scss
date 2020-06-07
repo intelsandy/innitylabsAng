@@ -524,15 +524,17 @@ textarea.form-control {
   margin: 44px 0px 0 50px;
 }
 .sidenavClosed .wrapper {
-  margin: 65px 0px 0 0px;
+  margin: 65px 0 0 50px;
   transition: $AllTransition;
   width: calc(100% - 50px);
 }
 
-.sidenavClosed  .ng-sidebar{width: 50px !important; transform: translateX(0%)!important; }
+.sidenavClosed  .ng-sidebar{width: 50px !important; transform: translateX(0%)!important; pointer-events: auto !important; touch-action: auto !important; will-change: auto !important;overflow: hidden !important;}
 .sidenavClosed .sidenav ul > li > a {display: block; height: 47px;}
 .sidenavClosed .sidenav ul > li > a > span {display: none;}
-
+.sidenavClosed .subnav {display: none !important;}
+.sidenavClosed .copy-txt > span{display: none !important;}
+.top-menu .sidenav li a {height: auto !important;}
 .main-container p {
   text-align: justify;
 }
@@ -1010,6 +1012,7 @@ textarea.form-control {
 .ngb-tp-chevron {color: #495057!important;}
 .ngb-tp-chevron::before {width: 0.59em!important;border-width: 0.19em 0.19em 0 0!important;height: 0.59em!important;}
 .modal-body.remarks textarea { width: 100%; height: 100px; resize: none;}
+.modal .modal-header .close:focus {outline:none}
 .remarks-edit {width: 100%; text-align: center;display: block;}
 
 .custom-datatable {
@@ -1074,6 +1077,39 @@ textarea.form-control {
     button {width:100%;}
     .btn + .btn {margin-left: 0rem; margin-top:0.5rem;}
   }
+  .wrapper {
+    margin: 104px 0 0 0px!important;
+    background: #fff;
+    width: 100%!important;
+    padding-top: 10px!important;
+  }
+  .wrapper.dashboard {
+    margin: 104px 0 0 0px!important;
+    background: #fff;
+    width: 100%!important;
+    padding-top: 10px!important;
+  }
+  .ng-sidebar { transform: translateX(-100%)!important;}
+  .sidenavClosed .wrapper.dashboard {
+    margin: 104px 0 0 0px;
+  }
+  .sidenavClosed .wrapper {
+    margin: 65px 0 0 0px;
+    transition: $AllTransition;
+    width: 100% ;
+  }
+  
+.sidenavClosed .sidenav ul > li > a > span {display: block; padding: 0px 16px 0px 54px; margin-top: -11px;}
+.sidenavClosed .top-menu ul > li > a > span {display:none;}
+.sidenavClosed .top-menu .subnav {display:none !important;}
+.sidenavClosed .top-menu .copy-txt {display:none !important;}
+  .sidenavClosed  .ng-sidebar{width: 220px !important; pointer-events: auto !important; touch-action: auto !important; will-change: auto !important;}
+  // .sidenavClosed .sidenav ul > li > a {display: block; height: 47px;}
+  // .sidenavClosed .sidenav ul > li > a > span {display: none;}
+  .sidenavClosed .subnav {display: block !important;}
+  .sidenavClosed .copy-txt {position: relative !important;}  
+.sidenavClosed .copy-txt > span{display: inline-block !important;}
+
 }
 
 @media (max-width: 575.98px) {
@@ -1098,19 +1134,19 @@ textarea.form-control {
 }
 
 @media (max-width: 767.98px) {
-  .wrapper.dashboard {
-    margin: 102px 0 0 0px;
-    width: calc(100% - 0px);
-  }
-  .sidenavClosed .wrapper.dashboard {margin: 102px 0 0 60px !important}
-  .wrapper {
-    margin: 132px 0 0 0px;
-    width: calc(100% - 0px);
-  }
-  .sidenavClosed .wrapper {
-    margin:132px 0 0 60px !important;
-    width: calc(100% - 60px);
-  }
+  // .wrapper.dashboard {
+  //   margin: 102px 0 0 0px;
+  //   width: calc(100% - 0px);
+  // }
+  // .sidenavClosed .wrapper.dashboard {margin: 102px 0 0 60px !important}
+  // .wrapper {
+  //   margin: 132px 0 0 0px;
+  //   width: calc(100% - 0px);
+  // }
+  // .sidenavClosed .wrapper {
+  //   margin:132px 0 0 60px !important;
+  //   width: calc(100% - 60px);
+  // }
   .container,
   .container-sm {
     max-width: $Width100;
