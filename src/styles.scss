@@ -1033,7 +1033,11 @@ textarea.form-control {
 
 
 .ngx-overlay .ngx-foreground-spinner {color: #000 !important;}
-.chart-wrapper {margin: 0 auto;width: 380px;height: 300px;}
+// .chart-wrapper {margin: 0 auto;width: 380px;height: 300px;}
+.chart-wrapper {margin: 0 auto;}
+// .chart-wrapper canvas{display: block;
+//   width: 545px;
+//   height: 200px;}
 .notification-sec {height:30vh; vertical-align: middle;display: table-cell;}
 
 @media (max-width: 991.98px) {
