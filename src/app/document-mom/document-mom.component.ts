@@ -1,20 +1,98 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable, Input  } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import {NgbCalendar, NgbDate, NgbDateStruct, NgbNavChangeEvent, NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar, NgbDate, NgbDateStruct, NgbNavChangeEvent, NgbAccordionConfig, NgbDateAdapter, NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
 import { MeetingdataService } from '../../assets/shared/services/meetingdata.service';
 import { NavbarService } from '../../assets/shared/services/navbar.service';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+@Component({
+  selector: 'ngbd-modal-content',
+  template: `
+    <div class="modal-header">
+      <h4 class="modal-title">Remarks</h4>
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body remarks">
+      <textarea></textarea>
+    </div>
+    <div class="modal-footer">
+    <button class="btn-secondary btn">Save</button>
+    </div>
+  `
+})
+export class NgbdModalContent {
+  @Input() name;
+
+  constructor(public activeModal: NgbActiveModal) {}
+}
+
+
+/**
+ * This Service handles how the date is represented in scripts i.e. ngModel.
+ */
+@Injectable()
+export class CustomAdapter extends NgbDateAdapter<string> {
+
+  readonly DELIMITER = '-';
+
+  fromModel(value: string | null): NgbDateStruct | null {
+    if (value) {
+      let date = value.split(this.DELIMITER);
+      return {
+        day : parseInt(date[0], 10),
+        month : parseInt(date[1], 10),
+        year : parseInt(date[2], 10)
+      };
+    }
+    return null;
+  }
+
+  toModel(date: NgbDateStruct | null): string | null {
+    return date ? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year : null;
+  }
+}
+
+/**
+ * This Service handles how the date is rendered and parsed from keyboard i.e. in the bound input field.
+ */
+@Injectable()
+export class CustomDateParserFormatter extends NgbDateParserFormatter {
+
+  readonly DELIMITER = '/';
+
+  parse(value: string): NgbDateStruct | null {
+    if (value) {
+      let date = value.split(this.DELIMITER);
+      return {
+        day : parseInt(date[0], 10),
+        month : parseInt(date[1], 10),
+        year : parseInt(date[2], 10)
+      };
+    }
+    return null;
+  }
+
+  format(date: NgbDateStruct | null): string {
+    return date ? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year : '';
+  }
+}
 
 @Component({
   selector: 'app-document-mom',
   templateUrl: './document-mom.component.html',
   styleUrls: ['./document-mom.component.scss'],
-  providers: [NgbAccordionConfig]
+  providers: [NgbAccordionConfig,
+    {provide: NgbDateAdapter, useClass: CustomAdapter},
+    {provide: NgbDateParserFormatter, useClass: CustomDateParserFormatter}
+  ]
 })
 export class DocumentMomComponent implements OnInit {
 
   active = 1;
   meridian = true;
+  time = {hour: 13, minute: 30};
   model: NgbDateStruct;
   meetingdtlTBL;
   sessionData;
@@ -23,17 +101,21 @@ export class DocumentMomComponent implements OnInit {
   Session2 = false;
   Clonerow = false;
   Subnav = false;
-
   // Subnav = false;
   // disable = false;
   constructor(
     private metingdataService: MeetingdataService,
     private calendar: NgbCalendar,
+    private modalService: NgbModal,
     config: NgbAccordionConfig,
     public nav: NavbarService) {
       config.closeOthers = true;
       config.type = 'info';
    }
+   open() {
+    const modalRef = this.modalService.open(NgbdModalContent, { centered: true });
+    modalRef.componentInstance.name = 'World';
+  }
 
   public meetingDataEdit = [
     {

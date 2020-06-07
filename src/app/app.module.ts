@@ -43,6 +43,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule} from 'ngx-ui-loader';
 import {DataTablesModule} from 'angular-datatables';
+import { TimepickerComponent } from './timepicker/timepicker.component';
 
 
 
@@ -63,7 +64,8 @@ import {DataTablesModule} from 'angular-datatables';
     FileUploadComponent,
     WebsiteDiscussionComponent,
     AutocompleteComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    TimepickerComponent
   ],
   imports: [
     BrowserModule,

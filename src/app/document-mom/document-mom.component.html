@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper document">
   <section>
       <div class="container">
           <h1>Documented MOM</h1>
@@ -24,23 +24,17 @@
                       <label for="MeetingStartDate" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Start Date</label>
                       <div class="col-lg-3 col-md-7 col-sm-7">
                         <div class="cal-wrap">
-                          <mat-form-field>
-                            <mat-label>dd-mm-yyyy</mat-label>
-                            <input matInput [matDatepicker]="MeetingStartDate">
-                            <mat-datepicker-toggle matSuffix [for]="MeetingStartDate"></mat-datepicker-toggle>
-                            <mat-datepicker #MeetingStartDate></mat-datepicker>
-                          </mat-form-field>
+                          <input class="form-control" placeholder="dd-mm-yyyy"
+                                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" >
+                          <button class="btn btn-outline-secondary calendar cal-btn" (click)="d.toggle()" type="button"></button>
                         </div>
                       </div>
                       <label for="MeetingEndDate" class="col-lg-3 col-md-4 col-sm-4 col-form-label txt-center">Meeting End Date</label>
                       <div class="col-lg-3 col-md-7 col-sm-7">
                         <div class="cal-wrap">
-                          <mat-form-field>
-                            <mat-label>dd-mm-yyyy</mat-label>
-                            <input matInput [matDatepicker]="MeetingEndDate">
-                            <mat-datepicker-toggle matSuffix [for]="MeetingEndDate"></mat-datepicker-toggle>
-                            <mat-datepicker #MeetingEndDate></mat-datepicker>
-                          </mat-form-field>
+                          <input class="form-control" placeholder="dd-mm-yyyy"
+                                     name="dp" [(ngModel)]="model" ngbDatepicker #e="ngbDatepicker" (click)="e.toggle()" >
+                          <button class="btn btn-outline-secondary calendar cal-btn" (click)="e.toggle()" type="button"></button>
                         </div>
                       </div>
                     </div>
@@ -91,35 +85,20 @@
                         <label for="MeetingDate" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Date</label>
                         <div class="col-lg-3 col-md-7 col-sm-7">
                           <div class="cal-wrap">
-                            <mat-form-field>
-                              <mat-label>22-03-2020</mat-label>
-                              <input matInput [matDatepicker]="MeetingDate" disabled>
-                              <mat-datepicker-toggle matSuffix [for]="MeetingDate"></mat-datepicker-toggle>
-                              <mat-datepicker #MeetingDate></mat-datepicker>
-                            </mat-form-field>
+                            <input class="form-control" placeholder="22-03-2020"
+                                       name="dp" [(ngModel)]="model" ngbDatepicker #f="ngbDatepicker" disabled>
+                            <button class="btn btn-outline-secondary calendar cal-btn" type="button"></button>
                           </div>
                         </div>
                       </div>
                       <div class="form-group row cust-row">
                         <label for="SessionStartTime" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Session Start Time</label>
                         <div class="col-lg-3 col-md-7 col-sm-7">
-                          <div class="cal-wrap">
-                            <div class="timepicker-wrap">
-                              <input [ngxTimepicker]="startTimepicker" [disableClick]="true" readonly>
-                              <ngx-material-timepicker-toggle [for]="startTimepicker"></ngx-material-timepicker-toggle>
-                              <ngx-material-timepicker #startTimepicker></ngx-material-timepicker>
-                            </div>
-                          </div>
+                          <app-timepicker></app-timepicker>
                         </div>
                         <label for="SessionEndTime" class="col-lg-3 col-md-4 col-sm-4 col-form-label">Session End Time</label>
                         <div class="col-lg-3 col-md-7 col-sm-7">
-                          <div class="cal-wrap">
-                            <div class="timepicker-wrap">
-                              <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
-                              <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
-                              <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
-                            </div>
-                          </div>
+                          <app-timepicker></app-timepicker>
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="internalParticipants">
@@ -174,12 +153,9 @@
                             <td>
                               <div class="form-group">
                                 <div class="cal-wrap">
-                                  <mat-form-field>
-                                    <mat-label>dd-mm-yyyy</mat-label>
-                                    <input matInput [matDatepicker]="targetDate">
-                                    <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
-                                    <mat-datepicker #targetDate></mat-datepicker>
-                                  </mat-form-field>
+                                  <input class="form-control" placeholder="dd-mm-yyyy"
+                                             name="dp" [(ngModel)]="model" ngbDatepicker #g="ngbDatepicker" (click)="g.toggle()" >
+                                  <button class="btn btn-outline-secondary calendar cal-btn" (click)="g.toggle()" type="button"></button>
                                 </div>
                               </div>
                             </td>
@@ -191,7 +167,7 @@
                               </select>
                             </td>
                             <td>
-                              <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
+                              <a class="remarks-edit" href="javascript:;" (click)="open()"><img src="assets/images/common/icons/fc-edit.png"></a>
                             </td>
                           </tr>
                           <tr>
@@ -212,12 +188,9 @@
                             <td>
                               <div class="form-group">
                                 <div class="cal-wrap">
-                                  <mat-form-field>
-                                    <mat-label>dd-mm-yyyy</mat-label>
-                                    <input matInput [matDatepicker]="targetDate2">
-                                    <mat-datepicker-toggle matSuffix [for]="targetDate2"></mat-datepicker-toggle>
-                                    <mat-datepicker #targetDate2></mat-datepicker>
-                                  </mat-form-field>
+                                  <input class="form-control" placeholder="dd-mm-yyyy"
+                                             name="dp" [(ngModel)]="model" ngbDatepicker #h="ngbDatepicker" (click)="h.toggle()" >
+                                  <button class="btn btn-outline-secondary calendar cal-btn" (click)="h.toggle()" type="button"></button>
                                 </div>
                               </div>
                             </td>
@@ -229,7 +202,7 @@
                               </select>
                             </td>
                             <td>
-                              <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
+                              <a class="remarks-edit" href="javascript:;" (click)="open()"><img src="assets/images/common/icons/fc-edit.png"></a>
                             </td>
                           </tr>
                           <tr *ngIf="Clonerow">
@@ -250,12 +223,9 @@
                             <td>
                               <div class="form-group">
                                 <div class="cal-wrap">
-                                  <mat-form-field>
-                                    <mat-label>dd-mm-yyyy</mat-label>
-                                    <input matInput [matDatepicker]="targetDate">
-                                    <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
-                                    <mat-datepicker #targetDate></mat-datepicker>
-                                  </mat-form-field>
+                                  <input class="form-control" placeholder="dd-mm-yyyy"
+                                             name="dp" [(ngModel)]="model" ngbDatepicker #i="ngbDatepicker" (click)="i.toggle()" >
+                                  <button class="btn btn-outline-secondary calendar cal-btn" (click)="i.toggle()" type="button"></button>
                                 </div>
                               </div>
                               </td>
@@ -267,7 +237,7 @@
                               </select>
                             </td>
                             <td>
-                              <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
+                              <a class="remarks-edit" href="javascript:;" (click)="open()"><img src="assets/images/common/icons/fc-edit.png"></a>
                             </td>
                           </tr>
 
@@ -309,12 +279,9 @@
                         <label for="MeetingDate" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Meeting Date</label>
                         <div class="col-lg-3 col-md-7 col-sm-9">
                           <div class="cal-wrap">
-                            <mat-form-field>
-                              <mat-label>dd-mm-yyyy</mat-label>
-                              <input matInput [matDatepicker]="MeetingDate">
-                              <mat-datepicker-toggle matSuffix [for]="MeetingDate"></mat-datepicker-toggle>
-                              <mat-datepicker #MeetingDate></mat-datepicker>
-                            </mat-form-field>
+                            <input class="form-control" placeholder="dd-mm-yyyy"
+                                       name="dp" [(ngModel)]="model" ngbDatepicker #j="ngbDatepicker" (click)="j.toggle()" >
+                            <button class="btn btn-outline-secondary calendar cal-btn" (click)="j.toggle()" type="button"></button>
                           </div>
                         </div>
                       </div>
@@ -391,12 +358,9 @@
                               <td>
                                 <div class="form-group">
                                   <div class="cal-wrap">
-                                    <mat-form-field>
-                                      <mat-label>dd-mm-yyyy</mat-label>
-                                      <input matInput [matDatepicker]="targetDate">
-                                      <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
-                                      <mat-datepicker #targetDate></mat-datepicker>
-                                    </mat-form-field>
+                                    <input class="form-control" placeholder="dd-mm-yyyy"
+                                               name="dp" [(ngModel)]="model" ngbDatepicker #k="ngbDatepicker" (click)="k.toggle()" >
+                                    <button class="btn btn-outline-secondary calendar cal-btn" (click)="k.toggle()" type="button"></button>
                                   </div>
                                   <!-- <div class="cal-wrap">
                                     <input class="form-control" placeholder="mm-dd-yyyy" formControlName="targetDate" name="dp" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
@@ -421,7 +385,7 @@
                                 </select>
                               </td>
                               <td>
-                                <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
+                                <a class="remarks-edit" href="javascript:;" (click)="open()"><img src="assets/images/common/icons/fc-edit.png"></a>
                               </td>
                             </tr>
                             <tr>
@@ -442,12 +406,9 @@
                               <td>
                                 <div class="form-group">
                                   <div class="cal-wrap">
-                                    <mat-form-field>
-                                      <mat-label>dd-mm-yyyy</mat-label>
-                                      <input matInput [matDatepicker]="targetDate2">
-                                      <mat-datepicker-toggle matSuffix [for]="targetDate2"></mat-datepicker-toggle>
-                                      <mat-datepicker #targetDate2></mat-datepicker>
-                                    </mat-form-field>
+                                    <input class="form-control" placeholder="dd-mm-yyyy"
+                                               name="dp" [(ngModel)]="model" ngbDatepicker #l="ngbDatepicker" (click)="l.toggle()" >
+                                    <button class="btn btn-outline-secondary calendar cal-btn" (click)="l.toggle()" type="button"></button>
                                   </div>
                                 </div>
                               </td>
@@ -459,7 +420,7 @@
                                 </select>
                               </td>
                               <td>
-                                <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
+                                <a class="remarks-edit" href="javascript:;" (click)="open()"><img src="assets/images/common/icons/fc-edit.png"></a>
                               </td>
                             </tr>
                             <tr *ngIf="Clonerow">
@@ -480,12 +441,9 @@
                               <td>
                                 <div class="form-group">
                                   <div class="cal-wrap">
-                                    <mat-form-field>
-                                      <mat-label>dd-mm-yyyy</mat-label>
-                                      <input matInput [matDatepicker]="targetDate">
-                                      <mat-datepicker-toggle matSuffix [for]="targetDate"></mat-datepicker-toggle>
-                                      <mat-datepicker #targetDate></mat-datepicker>
-                                    </mat-form-field>
+                                    <input class="form-control" placeholder="dd-mm-yyyy"
+                                               name="dp" [(ngModel)]="model" ngbDatepicker #m="ngbDatepicker" (click)="m.toggle()" >
+                                    <button class="btn btn-outline-secondary calendar cal-btn" (click)="m.toggle()" type="button"></button>
                                   </div>
                                 </div>
                               </td>
@@ -497,7 +455,7 @@
                                 </select>
                               </td>
                               <td>
-                                <textarea name="remarks" id="remarks" class="form-control" formControlName="remarks"></textarea>
+                                <a class="remarks-edit" href="javascript:;" (click)="open()"><img src="assets/images/common/icons/fc-edit.png"></a>
                               </td>
                             </tr>
 
