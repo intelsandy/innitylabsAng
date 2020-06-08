@@ -1107,11 +1107,11 @@ textarea.form-control {
 .sidenavClosed .top-menu ul > li > a > span {display:none;}
 .sidenavClosed .top-menu .subnav {display:none !important;}
 .sidenavClosed .top-menu .copy-txt {display:none !important;}
-  .sidenavClosed  .ng-sidebar{width: 220px !important; pointer-events: auto !important; touch-action: auto !important; will-change: auto !important;}
+  .sidenavClosed  .ng-sidebar{width: 220px !important; pointer-events: auto !important; touch-action: auto !important; will-change: auto !important;overflow: auto !important;}
   // .sidenavClosed .sidenav ul > li > a {display: block; height: 47px;}
   // .sidenavClosed .sidenav ul > li > a > span {display: none;}
   .sidenavClosed .subnav {display: block !important;}
-  .sidenavClosed .copy-txt {position: relative !important;}  
+  .sidenavClosed .copy-txt {position: fixed !important;}  
 .sidenavClosed .copy-txt > span{display: inline-block !important;}
 
 }
