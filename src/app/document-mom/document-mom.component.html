@@ -92,13 +92,28 @@
                         </div>
                       </div>
                       <div class="form-group row cust-row">
-                        <label for="SessionStartTime" class="col-xl-2 col-lg-3 col-sm-4 col-form-label">Session Start Time</label>
+                        <label for="SessionStartTime" class="col-xl-2 col-lg-3 col-sm-4 col-form-label lbl-time">Session Start Time</label>
                         <div class="col-lg-3 col-md-7 col-sm-7">
-                          <app-timepicker></app-timepicker>
+                          <div class="ngx-timepicker-field-example">
+                            <ngx-timepicker-field [toggleIcon]="icon"></ngx-timepicker-field>
+                            <ng-template #icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
+                                    <path d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16,16H7.995 C7.445,16,7,15.555,7,15.005v-0.011C7,14.445,7.445,14,7.995,14H14V5.995C14,5.445,14.445,5,14.995,5h0.011 C15.555,5,16,5.445,16,5.995V16z"/>
+                                </svg>
+                            </ng-template>
+                          </div>
+                          <!-- <app-timepicker></app-timepicker> -->
                         </div>
-                        <label for="SessionEndTime" class="col-lg-3 col-md-4 col-sm-4 col-form-label">Session End Time</label>
+                        <label for="SessionEndTime" class="col-lg-3 col-md-4 col-sm-4 col-form-label lbl-time text-right">Session End Time</label>
                         <div class="col-lg-3 col-md-7 col-sm-7">
-                          <app-timepicker></app-timepicker>
+                          <div class="ngx-timepicker-field-example">
+                            <ngx-timepicker-field [toggleIcon]="icon"></ngx-timepicker-field>
+                            <ng-template #icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
+                                    <path d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16,16H7.995 C7.445,16,7,15.555,7,15.005v-0.011C7,14.445,7.445,14,7.995,14H14V5.995C14,5.445,14.445,5,14.995,5h0.011 C15.555,5,16,5.445,16,5.995V16z"/>
+                                </svg>
+                            </ng-template>
+                          </div>
                         </div>
                       </div>
                       <div class="form-group row" formGroupName="internalParticipants">

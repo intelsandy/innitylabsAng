@@ -2,7 +2,7 @@
 
   span {width: 100%;display: inline-block;position: relative;
     &:first-child {vertical-align:top;border-radius:0.2rem;border: 1px solid #ddd;height: 30px;}
-    input {position:absolute; min-width:610px;text-indent: -9999px;text-align:left;overflow:hidden;margin-left: -90px;z-index:1;
+    input {position:absolute; min-width:610px;text-indent: -9999px;text-align:left;overflow:hidden;margin-left: -78px;z-index:1;
     &:focus {outline:0; box-shadow: none;}
     }
     .btn {height:30px;line-height: 1rem;border:1px solid #ddd;

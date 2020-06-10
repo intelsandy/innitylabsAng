@@ -15,11 +15,34 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
       </button>
     </div>
     <div class="modal-body remarks">
-      <textarea></textarea>
+      <div class="mt-2 table-responsive remarks-tbl">
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th scope="col">Date / Time</th>
+              <th scope="col">Name</th>
+              <th scope="col">Remarks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>25/5/2020,<br>
+                10:51:17 AM</td>
+              <td>Kalpesh Joshi</td>
+              <td>Dummy Text</td>
+            </tr>
+            <tr>
+              <td>28/5/2020,<br>
+                11:00:00 AM</td>
+              <td>Kaushal Ranpura</td>
+              <td>Dummy Text</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      
     </div>
-    <div class="modal-footer">
-    <button class="btn-secondary btn">Save</button>
-    </div>
+  
   `
 })
 export class NgbdModalContent {

@@ -46,7 +46,6 @@ import {DataTablesModule} from 'angular-datatables';
 import { TimepickerComponent } from './timepicker/timepicker.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

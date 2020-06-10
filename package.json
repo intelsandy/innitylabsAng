@@ -36,7 +36,7 @@
     "ng-sidebar": "^9.2.0",
     "ng2-charts": "^2.3.0",
     "ng2-file-upload": "^1.4.0",
-    "ngx-material-timepicker": "^5.5.1",
+    "ngx-material-timepicker": "^5.5.3",
     "ngx-scrollbar": "^7.2.1-beta.0",
     "ngx-spinner": "^9.0.2",
     "ngx-toastr": "^12.0.1",
@@ -46,7 +46,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.900.7",
+    "@angular-devkit/build-angular": "^0.901.7",
     "@angular/cli": "~9.0.7",
     "@angular/compiler-cli": "~9.0.7",
     "@angular/language-service": "~9.0.7",

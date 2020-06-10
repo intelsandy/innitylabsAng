@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class TimepickerComponent {
 
-  time = {hour: 13, minute: 30};
+  time = {/*hour: 13, minute: 30*/};
   meridian = true;
 }
